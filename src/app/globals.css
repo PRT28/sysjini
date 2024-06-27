@@ -172,3 +172,37 @@ a {
   50% { transform: rotate(20deg); }
   100% { transform: rotate(0deg); }
 }
+
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+.sidesheet {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #FFF;
+  transition: all 0.5s ease-in-out;
+  display: none;
+}
+
+.close {
+  left: -100vw;
+}
+
+@media screen and (max-width: 480px) {
+  .desktop, .title {
+    display: none !important;
+  }
+  
+  .mobile, .sidesheet {
+    display: block !important;
+  }
+}
+

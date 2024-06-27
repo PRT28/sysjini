@@ -1,0 +1,49 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #31363F;
+    padding: 1rem;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  
+  .navitems {
+    margin: 10px;
+    color: #FFF;
+    font-family: "Oswald", sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .title {
+    font-family: "Oswald", sans-serif;
+    color: #FFF;
+    font-size: 40px;
+    margin-left: 10px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    align-items: center;
+  }
+
+  .navitems:hover {
+    color: #d64646;
+  }
+  
+  @media screen and (max-width: 480px) {
+    .navbar {
+      padding: 5% !important;
+    }
+
+    .navitems {
+      margin: 10px;
+      color: #31363F;
+      font-size: 24px;
+      text-transform: uppercase;
+      font-family: "Nunito", sans-serif;
+    }
+  }
+  

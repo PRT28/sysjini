@@ -101,7 +101,7 @@
   padding: 24px;
   background-color: #FFF;
   border-radius: 12px;
-  width: 33.3%;
+  width: 33vw;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   border: 2px solid #F5F5F5;
   display: flex;
@@ -182,26 +182,52 @@
   color: #333;
 }
 
-.footerhead {
-  color: #FFF;
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 18px;
-  text-decoration: underline;
-  text-underline-offset: 8px;
+
+.contactform {
+  width: 50%;
 }
 
-.footeritem, .footeritemlink {
-  color: #FFF;
-  font-size: 16px;
-  transition: all 0.25s ease-in-out;
-  margin-bottom: 12px;
-}
 
-.footeritemlink {
-  cursor: pointer;
-}
+@media screen and (max-width: 480px) {
+  .herosection {
+    padding: 5% !important;
+  }
 
-.footeritemlink:hover {
-  color: #d64646;
+  .main {
+    padding: 5% !important;
+  }
+
+  .titledesc {
+    font-size: 32px;
+  }
+
+  .desc {
+    font-size: 18px;
+  }
+
+  .section {
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-bottom: 10%;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .sectionhead {
+    margin-bottom: 2rem;
+  }
+
+  .sectionwrapper {
+    flex-direction: column;
+    margin:5%;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .contactform {
+    width: 100%;
+  }
 }

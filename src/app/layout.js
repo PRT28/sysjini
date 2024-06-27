@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "animate.css/animate.compat.css"
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,7 +18,11 @@ export default function RootLayout({ children }) {
       <head>
         <title>Sysjini</title>
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -1,22 +1,9 @@
+
 import Image from "next/image";
 import styles from "./page.module.css";
 export default function Home() {
   return (
     <div>
-      <div className={styles.navbar}>
-        <div style={{display: 'flex', alignItems: 'center'}}>
-          <Image src="/syslogo.svg" alt="" width={100} height={100} />
-          <div className={styles.title}>Sysjini</div>
-        </div>
-
-        <div style={{display: 'flex', alignItems: 'center'}}>
-          <div className={styles.navitems}>Home</div>
-          <div className={styles.navitems}>Solutions</div>
-          <div className={styles.navitems}>About Us</div>
-          <div className={styles.navitems}>Contact Us</div>
-        </div>
-        
-      </div>
       <div className={styles.herosection}>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around'}}>
             <div className={styles.titledesc}>
@@ -58,7 +45,7 @@ export default function Home() {
             </div>
           <div className={styles.sectionhead}>Get in touch</div>
           <div className={styles.section}>
-            <div style={{width: '50%'}}>
+            <div className={styles.contactform}>
               <div style={{marginBottom: '18px'}}>
                 <label className={styles.label}>Name</label>
                 <input className={styles.input} type="text" />
@@ -90,36 +77,15 @@ export default function Home() {
               <button className={styles.button}>Read More</button>
               
             </div>
-            <div class='planet-container'>
-                <div class='night'></div>
-                <div class='day'></div>
-                <div class='clouds'></div>
-                <div class='inner-shadow'></div>
+            <div className='planet-container'>
+                <div className='night'></div>
+                <div className='day'></div>
+                <div className='clouds'></div>
+                <div className='inner-shadow'></div>
             </div>
           </div>
       </div>
-      <div className={styles.navbar} style={{paddingTop: '2.5%', paddingBottom: '2.5%', alignItems: 'flex-start'}}>
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-          <Image src="/syslogo.svg" alt="" width={100} height={100} />
-          <div className={styles.title}>Sysjini</div>
-        </div>
-
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
-          <div className={styles.footerhead}>Services</div>
-          <div className={styles.footeritemlink}>CustomerLink</div>
-          <div className={styles.footeritemlink}>StockSense</div>
-        </div>
-
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
-          <div className={styles.footerhead}>Contact Us</div>
-          <div className={styles.footeritem}>Phone: (+91) 7017197678</div>
-          <div className={styles.footeritem}>Email: prithvirajtiwari28@gmail.com</div>
-        </div>
-        
-      </div>
-      <div style={{width: '100vw', padding: '6px', background: '#d64646', color: '#FFF', paddingLeft: '10%', paddingRight: '10%'}}>
-        © 2023 Sysjini. All rights reserved.
-      </div>
+      
     </div>
   );
 }
