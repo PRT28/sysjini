@@ -47,7 +47,7 @@ export default function Home() {
                   <Image style={{borderRadius: '12px'}} src="/crm.webp" alt="" width={250} height={250} />
                   <div className={styles.cardTitle}>CTS</div>
                   <hr />
-                  <div className={styles.cardBody}>Standing for custom-tailored solutions, crafting unique offerings aligned precisely with clients' needs and specifications. Our approach ensures that every solution is designed to meet and exceed the specific requirements of each individual customer.</div>
+                  <div className={styles.cardBody}>Standing for custom-tailored solutions, crafting unique offerings aligned precisely with clients&apos; needs and specifications. Our approach ensures that every solution is designed to meet and exceed the specific requirements of each individual customer.</div>
                 </div>
                 <button className={styles.button}>Read More</button>
               </a>
