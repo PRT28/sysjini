@@ -1,0 +1,55 @@
+.about {
+    min-height: 100vh;
+    background-color: #FFF;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: "Nunito", sans-serif;
+}
+
+.section {
+    display: flex;
+  }
+
+.aboutwrapper {
+    margin-top: 5%;
+}
+
+.aboutgero {
+    mix-blend-mode: hard-light;
+}
+
+.sectiontitle {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    line-height: 150%;
+  }
+
+  .sectionbody {
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+
+  @media screen and (max-width: 480px) {
+    
+  
+    .about {
+      padding: 5% !important;
+    }
+  
+    .titledesc {
+      font-size: 32px;
+    }
+  
+    .desc {
+      font-size: 18px;
+    }
+  
+    .section {
+      flex-direction: column-reverse;
+      align-items: center;
+      margin-bottom: 10%;
+    }
+  }

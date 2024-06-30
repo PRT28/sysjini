@@ -95,6 +95,8 @@
   margin:2rem;
   margin-bottom: 7rem;
   text-align: center;
+  flex-wrap: wrap;
+  row-gap: 20px
 }
 
 .card {
@@ -149,6 +151,7 @@
   letter-spacing: 1.5px;
   transition: all 0.25s ease-in-out;
   cursor: pointer;
+  width: 100%
 }
 
 .button:hover {

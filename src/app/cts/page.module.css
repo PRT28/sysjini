@@ -1,0 +1,55 @@
+.cts {
+    min-height: 100vh;
+    background-color: #FFF;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: "Nunito", sans-serif;
+    padding-top: 4%;
+}
+
+.section {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+.aboutwrapper {
+    margin-top: 5%;
+}
+
+
+.sectiontitle {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    line-height: 150%;
+    text-align: center;
+  }
+
+  .sectionbody {
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+
+  @media screen and (max-width: 480px) {
+    
+  
+    .stocksense {
+      padding: 5% !important;
+    }
+  
+    .titledesc {
+      font-size: 32px;
+    }
+  
+    .desc {
+      font-size: 18px;
+    }
+  
+    .section {
+      flex-direction: column-reverse;
+      align-items: center;
+      margin-bottom: 10%;
+    }
+  }

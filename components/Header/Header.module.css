@@ -46,4 +46,18 @@
       font-family: "Nunito", sans-serif;
     }
   }
+
+  .popuplink {
+    padding: 24px;
+    background-color: #FFF;
+    text-align: center;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .popuplink:hover {
+    background-color: #e3e3e3;
+    color: #d64646;
+  }
   

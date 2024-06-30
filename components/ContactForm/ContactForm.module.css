@@ -1,0 +1,90 @@
+.section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10%;
+  }
+
+.sectionhead {
+    font-size: 48px;
+    margin-bottom: 7rem;
+    text-align: center;
+  }
+  
+
+.button {
+    background-color: transparent;
+    border: 1.5px solid #d64646;
+    font-size: 18px;
+    color: #d64646;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 12px;
+    letter-spacing: 1.5px;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+    width: 100%
+  }
+  
+  .button:hover {
+    background-color: #d64646;
+    color: #FFF;
+  }
+  
+  .input {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    color: #333;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    height: 50px;
+    box-shadow: 3px 3px 3px #f5f5f5;
+  
+  }
+  
+  .input:focus, .input:active {
+    border: 1px solid #ccc;
+    outline: none;
+  }
+  
+  .label {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.25px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  
+  .contactform {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 480px) {
+  
+    .section {
+      flex-direction: column-reverse;
+      align-items: center;
+      margin-bottom: 10%;
+    }
+  
+    .sectionhead {
+      margin-bottom: 2rem;
+    }
+  
+    .sectionwrapper {
+      flex-direction: column;
+      margin:5%;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+  
+    .contactform {
+      width: 100%;
+    }
+  }
