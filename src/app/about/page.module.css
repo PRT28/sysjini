@@ -1,9 +1,10 @@
 .about {
     min-height: 100vh;
-    background-color: #FFF;
+    background-color: transparent;
     padding-left: 10%;
     padding-right: 10%;
     font-family: "Nunito", sans-serif;
+    color: #FFF;
 }
 
 .section {
@@ -15,7 +16,8 @@
 }
 
 .aboutgero {
-    mix-blend-mode: hard-light;
+    mix-blend-mode: lighten;
+    filter: invert(100%);
 }
 
 .sectiontitle {

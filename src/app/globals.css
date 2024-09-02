@@ -89,8 +89,7 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: #FFF;
+  background: linear-gradient(0deg, rgba(64,46,122,1) 45%, rgba(23,21,59,1) 100%);
 }
 
 a {

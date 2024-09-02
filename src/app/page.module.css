@@ -1,21 +1,62 @@
+.master {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .main {
   min-height: 100vh;
-  background-color: #FFF;
+  background: transparent;
   padding-left: 10%;
   padding-right: 10%;
   font-family: "Nunito", sans-serif;
+  color: #FFF;
+  width: 100vw;
+}
+
+.emailInput {
+  width: 40%;
+  padding: 18px;
+  border-radius: 24px;
+  border: 1px solid #FFF;
+  outline: none;
+  background-color: #00000064;
+  color: #FFF;
+  font-size: 14px;
+}
+
+.emailBtn {
+  background-color: #FFA800;
+  font-size: 14px;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  border-radius: 24px;
+  letter-spacing: 1.5px;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+  margin-left: 12px;
+  border: none;
+}
+
+.emailInput:focus {
+  border: 1px solid #FFF;
+  outline: none;
 }
 
 .herosection {
   background: linear-gradient(#223a7a7e, rgba(0, 0, 0, 0.5)), url("/background.jpg");
   height: fit-content;
-  width: 100%;
+  width: 90%;
   padding: 6rem;
   background-position: center;
   background-size: 100vw;
   padding-top: 10%;
   padding-bottom: 10%;
   font-family: "Nunito", sans-serif;
+  border-radius: 12px;
 }
 
 .section {
@@ -23,7 +64,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 10%;
+  margin-bottom: 0%;
 }
 
 .sectiontitle {
@@ -84,7 +125,7 @@
 
 .sectionhead {
   font-size: 48px;
-  margin-bottom: 7rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -93,7 +134,7 @@
   flex-direction: row;
   justify-content: space-around;
   margin:2rem;
-  margin-bottom: 7rem;
+  margin-bottom: 2rem;
   text-align: center;
   flex-wrap: wrap;
   row-gap: 20px
@@ -103,7 +144,7 @@
   padding: 24px;
   background-color: #FFF;
   border-radius: 12px;
-  width: 33vw;
+  width: 24vw;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   border: 2px solid #F5F5F5;
   display: flex;
@@ -112,15 +153,17 @@
   justify-content: space-between;
   transition: all 0.25s ease-in-out;
   cursor: pointer;
+  background-position: center;
+  color: #FFF;
 }
 
 .card:hover {
-  box-shadow: 0 0 22px #d64646;
-  border: 2px solid #d99696;
+  box-shadow: 0 0 22px #FDE0F9;
+  border: 2px solid #FDE0F9;
 }
 
 .card:hover .button {
-  background-color: #d64646;
+  background-color: #D4419D;
   color: #FFF;
 }
 
@@ -140,9 +183,9 @@
 
 .button {
   background-color: transparent;
-  border: 1.5px solid #d64646;
+  border: 1.5px solid #D4419D;
   font-size: 18px;
-  color: #d64646;
+  color: #D4419D;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -151,11 +194,11 @@
   letter-spacing: 1.5px;
   transition: all 0.25s ease-in-out;
   cursor: pointer;
-  width: 100%
+  width: 37%
 }
 
 .button:hover {
-  background-color: #d64646;
+  background-color: #D4419D;
   color: #FFF;
 }
 
@@ -194,6 +237,10 @@
 @media screen and (max-width: 480px) {
   .herosection {
     padding: 5% !important;
+  }
+
+  .emailInput {
+    width: 100%;
   }
 
   .main {

@@ -7,8 +7,9 @@ export default function about () {
             <div className={styles.section}>
                 <div className={styles.aboutwrapper}>
                     <div className={styles.sectiontitle}>Who are we?</div>
-                    <div className={styles.sectionbody}>Sysjini is a SaaS-based technology company committed to delivering innovative and efficient business solutions. Our diverse range of services, including inventory management and Custom Tailored Solutions (CTS), are designed to streamline operations, enhance productivity, and drive growth for businesses of all sizes. By leveraging cutting-edge technology and a customer-centric approach, we provide our clients with the tools and support they need to succeed in a competitive marketplace.</div>
-                    <div className={styles.sectionbody}>At Sysjini, we believe in the power of technology to transform businesses. Our team of experienced professionals works tirelessly to develop and implement solutions that meet the unique needs of each client. With a focus on continuous improvement and a dedication to excellence, Sysjini is your trusted partner in achieving operational efficiency and business success. Join us and experience the difference that our comprehensive solutions can make for your organization.</div>
+                    <div className={styles.sectionbody}>Welcome to Sysjini, your trusted partner in the digital world. We are a dynamic service provider company, dedicated to empowering businesses through a comprehensive suite of solutions that cater to all your digital needs.</div>
+                    <div className={styles.sectionbody}>Our team of experts is dedicated to providing customized solutions tailored to your unique requirements. Whether you're a startup looking to establish your online presence or an established business aiming to expand your digital footprint, Sysjini is here to support your journey.</div>
+                    <div className={styles.sectionbody}>We believe in innovation, quality, and client satisfaction, striving to deliver results that not only meet but exceed expectations. Let's collaborate and take your business to new heights in the digital landscape.</div>
                 </div>
                 <Image className={styles.aboutgero} src="/hand.svg" alt="" width={500} height={500} />
             </div>

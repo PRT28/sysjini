@@ -1,10 +1,11 @@
 .contact {
     min-height: 100vh;
-    background-color: #FFF;
+    background-color: transparent;
     padding-left: 10%;
     padding-right: 10%;
     font-family: "Nunito", sans-serif;
     display: flex;
+    color: #FFF;
 }
 
 .details {
