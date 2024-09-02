@@ -20,21 +20,6 @@ export default function SideSheet({open, setOpen}) {
 
         <div style={{display: 'flex', flexDirection: 'column'}}>
             <a className={styles.navitems} href="/">Home</a>
-            <div className={styles.navitems} onClick={() => setPopup(!popup)}>Solutions</div>
-            <div style={{ 
-                marginTop: popup ? '10px' : '',
-                marginBottom:  popup ? '10px' : '', 
-                marginLeft: '60px', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                height: popup ? '50px' : '0px',
-                justifyContent: 'space-between',
-                transition: 'all 0.25s ease-in-out',
-                overflow: 'hidden'
-            }}>
-                <a className={styles.navsubitems} href="/stocksense">• StockSense</a>
-                <a className={styles.navsubitems} href="/cts">• CTS</a>
-            </div>
             <a className={styles.navitems} href="/about">About Us</a>
             <a className={styles.navitems} href="/contact">Contact Us</a>
         </div>

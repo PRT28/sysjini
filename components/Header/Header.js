@@ -23,16 +23,6 @@ export default function Header() {
 
         <div className='desktop' style={{display: 'flex', alignItems: 'center'}}>
           <a className={styles.navitems} href="/">Home</a>
-          <div style={{position: 'relative'}}>
-            <div className={styles.navitems} onClick={() => setPopup(true)}>Solutions</div>
-            {popup && <Popup onBackdropClick={() => setPopup(false)} width={200}>
-                  <div style={{display: 'flex', flexDirection: 'column'}}>
-                    {/* <a className={styles.popuplink} href="/customerlink">CustomerLink</a> */}
-                    <a className={styles.popuplink} href="/stocksense">StockSense</a>
-                    <a className={styles.popuplink} href="/cts">CTS</a>
-                  </div>
-              </Popup>}
-          </div>
           <a className={styles.navitems} href="/about">About Us</a>
           <a className={styles.navitems} href="/contact">Contact Us</a>
         </div>

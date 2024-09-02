@@ -12,9 +12,12 @@ export default function Footer() {
 
                 <div className={styles.footerwrapper}>
                     <div className={styles.footerhead}>Services</div>
-                    <a href="/customerlink" className={styles.footeritemlink}>CustomerLink</a>
-                    <a href="/stocksense" className={styles.footeritemlink}>StockSense</a>
-                    <a href="/cts" className={styles.footeritemlink}>CTS</a>
+                    <div className={styles.footeritem}>Web Development</div>
+                    <div className={styles.footeritem}>Mobile App</div>
+                    <div className={styles.footeritem}>SEO</div>
+                    <div className={styles.footeritem}>Web Pentesting</div>
+                    <div className={styles.footeritem}>Digital Marketing</div>
+                    <div className={styles.footeritem}>Designing</div>
                 </div>
 
                 <div className={styles.footerwrapper}>
@@ -24,7 +27,7 @@ export default function Footer() {
                 </div>
                 
             </div>
-            <div style={{width: '100vw', padding: '6px', background: '#d64646', color: '#FFF', paddingLeft: '10%', paddingRight: '10%'}}>
+            <div style={{width: '100vw', padding: '6px', background: '#D4419D', color: '#FFF', paddingLeft: '10%', paddingRight: '10%'}}>
                 © {new Date().getFullYear()} Sysjini. All rights reserved.
             </div>
         </>

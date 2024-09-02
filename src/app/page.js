@@ -11,7 +11,7 @@ export default function Home() {
             </div>
             <div style={{display: 'flex', alignItems: 'center', width: '100%'}}>
               <input className={styles.emailInput} type="text" placeholder="Enter email" />
-              <button className={styles.emailBtn} type="button">Let's Connect</button>
+              <button className={styles.emailBtn} type="button">Let&apos;s Connect</button>
             </div>
           </div>
       </div>

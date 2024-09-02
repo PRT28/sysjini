@@ -3,10 +3,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #31363F;
+    background-color: #2E236C;
     padding: 1rem;
     padding-left: 10%;
     padding-right: 10%;
+    border-radius:  24px;
   }
   
   .navitems {

@@ -8,8 +8,8 @@ export default function about () {
                 <div className={styles.aboutwrapper}>
                     <div className={styles.sectiontitle}>Who are we?</div>
                     <div className={styles.sectionbody}>Welcome to Sysjini, your trusted partner in the digital world. We are a dynamic service provider company, dedicated to empowering businesses through a comprehensive suite of solutions that cater to all your digital needs.</div>
-                    <div className={styles.sectionbody}>Our team of experts is dedicated to providing customized solutions tailored to your unique requirements. Whether you're a startup looking to establish your online presence or an established business aiming to expand your digital footprint, Sysjini is here to support your journey.</div>
-                    <div className={styles.sectionbody}>We believe in innovation, quality, and client satisfaction, striving to deliver results that not only meet but exceed expectations. Let's collaborate and take your business to new heights in the digital landscape.</div>
+                    <div className={styles.sectionbody}>Our team of experts is dedicated to providing customized solutions tailored to your unique requirements. Whether you&apos;re a startup looking to establish your online presence or an established business aiming to expand your digital footprint, Sysjini is here to support your journey.</div>
+                    <div className={styles.sectionbody}>We believe in innovation, quality, and client satisfaction, striving to deliver results that not only meet but exceed expectations. Let&apos;s collaborate and take your business to new heights in the digital landscape.</div>
                 </div>
                 <Image className={styles.aboutgero} src="/hand.svg" alt="" width={500} height={500} />
             </div>

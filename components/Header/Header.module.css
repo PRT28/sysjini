@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #31363F;
+    background-color: transparent;
     padding: 1rem;
     padding-left: 10%;
     padding-right: 10%;
@@ -30,7 +30,7 @@
   }
 
   .navitems:hover {
-    color: #d64646;
+    color: #D4419D;
   }
   
   @media screen and (max-width: 480px) {
