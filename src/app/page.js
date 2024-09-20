@@ -1,7 +1,34 @@
+'use client'
+
+import { useState } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import ContactForm from "../../components/ContactForm/ContactForm";
+import axios from "axios";
+import { useToast } from '@chakra-ui/react'
+
 export default function Home() {
+
+  const toast = useToast();
+  const [email, setEmail] = useState('');
+
+  const sendMail = async () => {
+    await axios.post('/api/email', {
+      name: 'NA',
+      email,
+      message: 'Contact the lead through mail',
+      phone: 'NA'
+    });
+    setEmail('');
+    toast({
+      title: 'Request Raised',
+      description: "Our representative will reach you shortly",
+      status: 'success',
+      duration: 9000,
+      isClosable: true,
+    })
+  }
+
   return (
     <div className={styles.master}>
       <div className={styles.herosection}>
@@ -10,8 +37,8 @@ export default function Home() {
               Transforming Ideas into Impactful Digital Experiences, One Tailored Solution at a Time
             </div>
             <div style={{display: 'flex', alignItems: 'center', width: '100%'}}>
-              <input className={styles.emailInput} type="text" placeholder="Enter email" />
-              <button className={styles.emailBtn} type="button">Let&apos;s Connect</button>
+              <input onChange={e => setEmail(e.target.value)} className={styles.emailInput} type="text" placeholder="Enter email" />
+              <button onClick={sendMail} className={styles.emailBtn} type="button">Let&apos;s Connect</button>
             </div>
           </div>
       </div>

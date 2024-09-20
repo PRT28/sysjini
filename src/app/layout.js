@@ -3,6 +3,7 @@ import "./globals.css";
 import "animate.css/animate.compat.css"
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import { Providers } from "./provider";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,7 +17,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className={inter.className}>
         <Header />
-        {children}
+        <Providers>
+          {children}
+        </Providers>
         <Footer />
       </body>
     </html>
