@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import axios from "axios";
 import { useToast } from '@chakra-ui/react'
+import Head from "next/head";
 
 export default function Home() {
 
@@ -30,6 +31,10 @@ export default function Home() {
   }
 
   return (
+    <>
+    <Head>
+      <link rel="canonical" href="https://sysjini.in" />
+    </Head>
     <div className={styles.master}>
       <div className={styles.herosection}>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around'}}>
@@ -110,5 +115,6 @@ export default function Home() {
       </div>
       
     </div>
+    </>
   );
 }
