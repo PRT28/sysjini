@@ -20,8 +20,6 @@ export async function GET() {
             <url>
               <loc>${baseUrl}${page}</loc>
               <lastmod>${new Date().toISOString()}</lastmod>
-              <changefreq>daily</changefreq>
-              <priority>0.7</priority>
             </url>
           `;
         })
