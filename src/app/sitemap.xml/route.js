@@ -43,5 +43,5 @@ async function getDynamicPaths() {
   // Fetch dynamic data here if needed
   // Example: const posts = await fetch('https://api.example.com/posts');
   // return posts.map(post => `/posts/${post.id}`);
-  return ['/post/1', '/post/2']; // Replace with actual dynamic paths
+  return []; // Replace with actual dynamic paths
 }
