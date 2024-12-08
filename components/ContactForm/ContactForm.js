@@ -3,12 +3,14 @@
 import {useState} from 'react';
 import styles from './ContactForm.module.css';
 import axios from 'axios';
+import { useToast } from '@chakra-ui/react'
 
 export default function ContactForm({showImage, fullSize=false, label="Get in touch", selected=""}) {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const toast = useToast();
 
     const handleSubmit = async () => {
       await axios.post('/api/email', {

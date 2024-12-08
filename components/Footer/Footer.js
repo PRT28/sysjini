@@ -3,8 +3,9 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <>
-            <div className={styles.footer} style={{paddingTop: '2.5%', paddingBottom: '2.5%', alignItems: 'flex-start'}}>
+        <div className={styles.footer}>
+            <img src="/screwfooter.svg" alt="" style={{position: 'absolute', left: 0, bottom: 0}} />
+            <div className={styles.footercontainer} style={{paddingTop: '2.5%', paddingBottom: '2.5%', alignItems: 'flex-start'}}>
                 <div className={styles.footerlogo}>
                     <Image src="/syslogo.svg" alt="" width={100} height={100} />
                     <div className={styles.title}>Sysjini</div>
@@ -27,9 +28,6 @@ export default function Footer() {
                 </div>
                 
             </div>
-            <div style={{width: '100vw', padding: '6px', background: '#D4419D', color: '#FFF', paddingLeft: '10%', paddingRight: '10%'}}>
-                © {new Date().getFullYear()} Sysjini. All rights reserved.
-            </div>
-        </>
+        </div>
     )
 }

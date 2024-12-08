@@ -1,34 +1,10 @@
-'use client'
 
-import { useState } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
-import ContactForm from "../../components/ContactForm/ContactForm";
-import axios from "axios";
-import { useToast } from '@chakra-ui/react'
 import Head from "next/head";
+import TypeWriter from "../../components/TypeWrtier/TypeWriter";
 
 export default function Home() {
-
-  const toast = useToast();
-  const [email, setEmail] = useState('');
-
-  const sendMail = async () => {
-    await axios.post('/api/email', {
-      name: 'NA',
-      email,
-      message: 'Contact the lead through mail',
-      phone: 'NA'
-    });
-    setEmail('');
-    toast({
-      title: 'Request Raised',
-      description: "Our representative will reach you shortly",
-      status: 'success',
-      duration: 9000,
-      isClosable: true,
-    })
-  }
 
   return (
     <>
@@ -37,81 +13,81 @@ export default function Home() {
     </Head>
     <div className={styles.master}>
       <div className={styles.herosection}>
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around'}}>
-            <div className={styles.titledesc}>
-              Transforming Ideas into Impactful Digital Experiences, One Tailored Solution at a Time
-            </div>
-            <div style={{display: 'flex', alignItems: 'center', width: '100%'}}>
-              <input onChange={e => setEmail(e.target.value)} className={styles.emailInput} type="text" placeholder="Enter email" />
-              <button onClick={sendMail} className={styles.emailBtn} type="button">Let&apos;s Connect</button>
-            </div>
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around', gap: '36px'}}>
+            <div className={styles.titledesc}> One stop solution for <br /> <TypeWriter /></div>
+            <div className={styles.desc}>We have 459 rooms spread throuout Indonesia with room standards equivalent to 5 star hotels.</div>
           </div>
       </div>
       <div className={styles.main}>
 
-          <div className={styles.section}>
-                <div style={{marginTop: '10%'}}>
-                  <div className={styles.sectiontitle}>About us</div>
-                  <div className={styles.sectionbody}>Sysjini is a dynamic service provider offering customized solutions in web and app development, SEO, digital marketing, web pentesting, and designing to elevate your business in the digital landscape.</div>
-                  <a href="/about" className={styles.button}>Read More</a>
+          <div className={styles.sectionbg}>
+              <div className={styles.sectionbgtitle}>Esteemed global <span style={{color: '#8154FF'}}>corporations</span></div>
+              <div className={styles.flexwrap}>
+                <div className={styles.compcard}>
+                    <Image src="https://www.eazotel.com/static/media/EAZOTEL.e61658f63d96bbf572b862ff6f851084.svg" width={200} height={200} />
                 </div>
-                <Image style={{borderRadius: '12px'}} src="/hero.png" alt="" width={450} height={450} />
+              </div>
           </div>
-            <div className={styles.sectionhead}>What we offer</div>
-            <div className={styles.sectionwrapper}>
-              {/* <a href="/customerlink" className={styles.card}>
-                <div>
-                  <Image style={{borderRadius: '12px'}} src="/projectmanage.webp" alt="" width={250} height={250} />
-                  <div className={styles.cardTitle}>CustomerLink</div>
-                  <hr />
-                  <div className={styles.cardBody}>CustomerLink is a robust CRM system meticulously crafted to streamline interactions, enhance customer relationships, and optimize business processes. With its intuitive tools and comprehensive analytics, it empowers organizations to make informed decisions and achieve sustainable growth by leveraging actionable insights and efficient management capabilities.</div>
+
+          <div className={styles.section}>
+            <div className={styles.sectiontitle}>Our Services</div>
+            <div className={styles.smText}>Sysjini is a dynamic service provider offering customized solutions in web and app development, SEO, digital marketing, web pentesting, and designing to elevate your business in the digital landscape</div>
+            <div className={styles.flexwrap}>
+              <div className={styles.card}>
+                <div className={styles.cardlogo}>
+                  <Image src="/services/web.svg" width={50} height={50} />
                 </div>
-                <button className={styles.button}>Read More</button>
-              </a> */}
-              <div className={styles.card} style={{background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://www.creative-tim.com/blog/content/images/size/w1140/2022/01/which-development-job-is-right-for-you.jpg)", backgroundPosition: 'center', backgroundSize: 'cover'}}>
-                <div className={styles.cardTitle}>Web Development</div>
-                <div className={styles.cardBody}>Crafting responsive, user-friendly websites that captivate and convert.</div>
+                <div className={styles.cardtitle}>Mobile Development</div>
+                <div className={styles.carddesc}>Crafting responsive, user-friendly websites that captivate and convert.</div>
               </div>
-              <div className={styles.card} style={{background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://ezranking.s3.eu-west-2.amazonaws.com/blog/wp-content/uploads/2022/01/07063220/mobile-app-development-trends.png)", backgroundPosition: 'center', backgroundSize: 'cover'}}>
-                <div className={styles.cardTitle}>Mobile App</div>
-                <div className={styles.cardBody}>Building seamless, high-performance mobile applications that keep you connected with your audience.</div>
-              </div>
-              <div className={styles.card} style={{background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://www.cloudways.com/blog/wp-content/uploads/SEO-for-Startups.jpg)", backgroundPosition: 'center', backgroundSize: 'cover'}}>
-                <div className={styles.cardTitle}>SEO</div>
-                <div className={styles.cardBody}>Boosting your online presence with strategies that drive traffic and enhance visibility.</div>
-              </div>
-              <div className={styles.card} style={{background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://www.alpinesecurity.com/wp-content/uploads/2020/02/web+application+penetration+testing.jpg)", backgroundPosition: 'center', backgroundSize: 'cover'}}>
-                <div className={styles.cardTitle}>Web Pentesting</div>
-                <div className={styles.cardBody}>Securing your digital assets with rigorous testing to protect against vulnerabilities.</div>
-              </div>
-              <div className={styles.card} style={{background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://www.michaelpage.ae/sites/michaelpage.ae/files/styles/advice_node_desktop/public/legacy/7_digital_skills600x387.png.webp?itok=AJaywa6V", backgroundPosition: 'center', backgroundSize: 'cover'}}>
-                <div className={styles.cardTitle}>Digital Marketing</div>
-                <div className={styles.cardBody}>Delivering targeted campaigns that engage and convert, ensuring your brand reaches its full potential.</div>
-              </div>
-              <div className={styles.card} style={{background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://blogassets.leverageedu.com/blog/wp-content/uploads/2020/05/18175211/Designing-Courses.jpg)", backgroundPosition: 'center', backgroundSize: 'cover'}}>
-                <div className={styles.cardTitle}>Designing</div>
-                <div className={styles.cardBody}>Creating visually stunning and impactful designs that resonate with your brand identity.</div>
-              </div>
-              {/* <a href="/stocksense" className={styles.card}>
-                <div>
-                  <Image style={{borderRadius: '12px'}} src="/inventormanage.webp" alt="" width={250} height={250} />
-                  <div className={styles.cardTitle}>StockSense</div>
-                  <hr />
-                  <div className={styles.cardBody}>StockSense is a sophisticated inventory management system meticulously crafted to optimize stock levels, streamline operations, and enhance decision-making processes. It empowers businesses with insightful analytics and intuitive controls that provide real-time visibility into inventory status, ensuring efficient stock management from procurement to distribution.</div>
+              <div className={styles.card}>
+                <div className={styles.cardlogo}>
+                  <Image src="/services/mobile.svg" width={50} height={50} />
                 </div>
-                <button className={styles.button}>Read More</button>
-              </a>
-              <a href="/cts" className={styles.card}>
-                <div>
-                  <Image style={{borderRadius: '12px'}} src="/crm.webp" alt="" width={250} height={250} />
-                  <div className={styles.cardTitle}>CTS</div>
-                  <hr />
-                  <div className={styles.cardBody}>Standing for custom-tailored solutions, crafting unique offerings aligned precisely with clients&apos; needs and specifications. Our approach ensures that every solution is designed to meet and exceed the specific requirements of each individual customer.</div>
+                <div className={styles.cardtitle}>Web Development</div>
+                <div className={styles.carddesc}>Building seamless, high-performance mobile applications that keep you connected with your audience.</div>
+              </div>
+              <div className={styles.card}>
+                <div className={styles.cardlogo}>
+                  <Image src="/services/seo.svg" width={50} height={50} />
                 </div>
-                <button className={styles.button}>Read More</button>
-              </a> */}
+                <div className={styles.cardtitle}>SEO</div>
+                <div className={styles.carddesc}>Boosting your online presence with strategies that drive traffic and enhance visibility.</div>
+              </div>
+              <div className={styles.card}>
+                <div className={styles.cardlogo}>
+                  <Image src="/services/marketing.svg" width={50} height={50} />
+                </div>
+                <div className={styles.cardtitle}>Digital Marketing</div>
+                <div className={styles.carddesc}>Delivering targeted campaigns that engage and convert, ensuring your brand reaches its full potential.</div>
+              </div>
+              <div className={styles.card}>
+                <div className={styles.cardlogo}>
+                  <Image src="/services/design.svg" width={50} height={50} />
+                </div>
+                <div className={styles.cardtitle}>Designing</div>
+                <div className={styles.carddesc}>Creating visually stunning and impactful designs that resonate with your brand identity.</div>
+              </div>
             </div>
-            <ContactForm showImage />
+          </div>
+
+          <div className={styles.section}>
+            <div className={styles.sectionbgtitle}>Get started in 4 simple steps</div>
+            <img src="/timeline.svg" alt="" />
+          </div>
+
+
+          <div className={styles.sectionbg} style={{position: 'relative', overflow: 'hidden'}}>
+              <div className={styles.sectionbgtitle} style={{zIndex: 100}}>Our Technology Stack</div>
+              <div className={styles.smText} style={{zIndex: 100}}>Our software engineers are among the world's best specialists in their fields. Your app will benefit from<br />unmatched development expertise from a team familiar with the latest approaches and technologies.</div>
+              <div style={{zIndex: 100}}>
+                <img src="/stack.svg" alt="" />
+              </div>
+              <div className={styles.screw}>
+                <img src="/screw.svg" alt="" />
+              </div>
+          </div>
+
       </div>
       
     </div>

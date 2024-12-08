@@ -7,78 +7,86 @@
 .main {
   min-height: 100vh;
   background: transparent;
-  padding-left: 7.5%;
-  padding-right: 7.5%;
+  padding: 4% 7.5%;
   font-family: "Nunito", sans-serif;
-  color: #FFF;
   width: 100vw;
 }
 
-.emailInput {
-  width: 40%;
-  padding: 18px;
-  border-radius: 24px;
-  border: 1px solid #FFF;
-  outline: none;
-  background-color: #00000064;
-  color: #FFF;
-  font-size: 14px;
-}
-
-.emailBtn {
-  background-color: #FFA800;
-  font-size: 14px;
-  color: #FFF;
+.section {
+  border-radius: 32px;
+  text-align: center;
+  width: 100%;
+  padding: 3rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 18px;
-  border-radius: 24px;
-  letter-spacing: 1.5px;
-  transition: all 0.25s ease-in-out;
-  cursor: pointer;
-  margin-left: 12px;
-  border: none;
+  gap: 24px
 }
 
-.emailInput:focus {
-  border: 1px solid #FFF;
-  outline: none;
+.sectiontitle {
+  font-family: 'Archivo', sans-serif;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 56px;
 }
+
+.smText {
+  font-family: 'Archivo', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2%;
+  text-align: justify;
+}
+
+
+.sectionbg {
+  background-color: #F4F6FA;
+  border-radius: 32px;
+  text-align: center;
+  width: 100%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px
+}
+
+.sectionbgtitle {
+  font-family: 'Archivo', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 56px;
+}
+
+.flexwrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.compcard {
+  border: 2px solid #A1AEBF;
+  border-radius: 22.48px;
+  padding: 1rem 2rem;
+}
+
 
 .herosection {
-  background: linear-gradient(#223a7a7e, rgba(0, 0, 0, 0.5)), url("/background.jpg");
-  height: fit-content;
-  width: 85%;
-  padding: 6rem;
+  background: url("/herobg.svg");
+  height: 100vh;
+  width: 100vw;
+  padding: 3rem;
   background-position: center;
   background-size: 100vw;
   padding-top: 10%;
   padding-bottom: 10%;
-  font-family: "Nunito", sans-serif;
   border-radius: 12px;
-}
-
-.section {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 0%;
-}
-
-.sectiontitle {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 18px;
-  line-height: 150%;
-}
-
-.sectionbody {
-  font-size: 18px;
-  line-height: 150%;
-  letter-spacing: 2px;
-  margin-bottom: 14px;
+  background-repeat: no-repeat;
+  background-position: top;
 }
 
 .navbar {
@@ -101,136 +109,102 @@
 }
 
 .title {
-  font-family: "Oswald", sans-serif;
-  color: #FFF;
   font-size: 40px;
   margin-left: 10px;
   letter-spacing: 8px;
-  text-transform: uppercase;
   align-items: center;
 }
 
 .titledesc {
-  color: #FFF;
-  font-size: 42px;
-  margin-bottom: 4rem;
-  text-decoration: underline;
-  text-underline-offset: 8px;
+  font-size: 62px;
+  font-family: "Archivo", sans-serif;
+  text-align: center;
+  line-height: normal;
 }
 
 .desc {
-  color: #FFF;
   font-size: 24px;
+  font-family: "Archivo", sans-serif;
+  text-align: center;
+  line-height: normal;
 }
 
-.sectionhead {
-  font-size: 48px;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.sectionwrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 5rem;
-  text-align: center;
-  flex-wrap: wrap;
-  row-gap: 20px
-}
 
 .card {
-  padding: 24px;
-  background-color: #FFF;
-  border-radius: 12px;
-  width: 24vw;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-  border: 2px solid #F5F5F5;
+  border: 2px solid #F4F6F8;
+  background: #F4F6F8;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  padding: 28px;
+  width: 375px;
+  height: 355px;
+  border-radius: 25px;
   transition: all 0.25s ease-in-out;
-  cursor: pointer;
-  background-position: center;
-  color: #FFF;
 }
 
 .card:hover {
-  box-shadow: 0 0 22px #FDE0F9;
-  border: 2px solid #FDE0F9;
+  border: 2px solid #8154FF;
 }
 
-.card:hover .button {
-  background-color: #D4419D;
-  color: #FFF;
-}
-
-.cardTitle {
-  font-size: 24px;
-  margin-bottom: 12px;
-  margin-top: 12px;
-  letter-spacing: 1.5px;
-}
-
-
-.cardBody {
-  margin-top: 12px;
-  margin-bottom: 12px;
-  letter-spacing: 1.5px;
-}
-
-.button {
-  background-color: transparent;
-  border: 1.5px solid #D4419D;
-  font-size: 18px;
-  color: #D4419D;
+.cardlogo {
+  background: #222228;
+  border-radius: 30px;
+  width: 100px;
+  height: 100px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 8px 16px;
-  border-radius: 12px;
-  letter-spacing: 1.5px;
+  justify-content: center;
   transition: all 0.25s ease-in-out;
-  cursor: pointer;
-  width: 37%
 }
 
-.button:hover {
-  background-color: #D4419D;
-  color: #FFF;
+.card:hover > .cardlogo {
+  background: linear-gradient(45deg, #FF9898, #8054FF);
 }
 
-.input {
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  color: #333;
-  width: 100%;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  padding: 6px 10px;
-  height: 50px;
-  box-shadow: 3px 3px 3px #f5f5f5;
-
+.cardtitle {
+  color: #070909;
+  font-family: "Archivo", sans-serif;
+  font-size: 28px;
+  line-height: 36px;
 }
 
-.input:focus, .input:active {
-  border: 1px solid #ccc;
-  outline: none;
-}
-
-.label {
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 1.25px;
-  margin-bottom: 5px;
-  color: #333;
+.carddesc {
+  color: #9E9E9E;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  line-height: 28px;
 }
 
 
-.contactform {
-  width: 50%;
+.screw {
+  position: absolute;
+  bottom: -70%;  /* Keep bottom fixed */
+  left: 0;  /* Reset left to 0 or any desired initial position */
+  z-index: 0;
+  animation-name: screwanim;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
 }
+
+@keyframes screwanim {
+  0% {
+    transform: translateX(-30%) rotate(0deg);  /* Move from the left side */
+  }
+
+  100% {
+    transform: translateX(60%) rotate(360deg);  /* Move to the right side */
+  }
+}
+
+
+
 
 
 @media screen and (max-width: 480px) {

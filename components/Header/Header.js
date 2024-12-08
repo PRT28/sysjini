@@ -14,14 +14,14 @@ export default function Header() {
   const [popup, setPopup] = useState(false);
     
     return (
-        <div className={styles.navbar}>
+        <div className={`navbar ${open ? 'navopen' : ''}`}>
           <SideSheet open={open} setOpen={setOpen} />
           <div style={{display: 'flex', alignItems: 'center'}}>
             <div className='desktop'><Image src="/syslogo.svg" alt="" width={100} height={100} /></div>
             <div className={styles.title}>Sysjini</div>
           </div>
 
-        <div className='desktop' style={{display: 'flex', alignItems: 'center'}}>
+        {/* <div className='desktop' style={{display: 'flex', alignItems: 'center'}}>
           <a className={styles.navitems} href="/">Home</a>
           <a className={styles.navitems} href="/about">About Us</a>
           <a className={styles.navitems} href="/contact">Contact Us</a>
@@ -29,6 +29,10 @@ export default function Header() {
 
         <div className='mobile' onClick={() => setOpen(true)}>
           <IoMdMenu size={32} color="#FFF" />
+        </div> */}
+        <div onClick={() => setOpen(!open)} style={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
+          <div className={styles.whiteline} />
+          <div className={styles.whiteline} />
         </div>
         
       </div>

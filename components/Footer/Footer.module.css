@@ -1,13 +1,21 @@
 .footer {
+  background-color: #120D28;
+  position: relative;
+  padding: 7.5%;
+}
+
+.footercontainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #2E236C;
+    background: linear-gradient(45deg, #100B24, #3F2C8A);
     padding: 1rem;
     padding-left: 7.5%;
     padding-right: 7.5%;
     border-radius:  24px;
+    z-index: 100;
+    position: relative;
   }
   
   .navitems {
