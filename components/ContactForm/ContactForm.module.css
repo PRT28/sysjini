@@ -81,3 +81,14 @@
   background: #755ADF;
   color: #FFF;
 }
+
+@media screen and (max-width: 480px) {
+
+  .section{
+    padding: 1rem;
+  }
+
+  .input {
+    width: 100%;
+  }
+}

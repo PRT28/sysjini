@@ -1,6 +1,7 @@
 "use client"
 
 import { TypeAnimation } from 'react-type-animation';
+import styles from './TypeWriter.module.css';
 
 const TypeWriter = () => {
     return (
@@ -19,7 +20,7 @@ const TypeWriter = () => {
         ]}
         wrapper="span"
         speed={50}
-        style={{color: '#8A3CD6', fontSize: '98px'}}
+        className={styles.typewriter}
         repeat={Infinity}
       />);
 }

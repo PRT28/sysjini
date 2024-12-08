@@ -208,47 +208,36 @@
 
 
 @media screen and (max-width: 480px) {
-  .herosection {
-    padding: 5% !important;
-  }
-
-  .emailInput {
-    width: 100%;
-  }
-
-  .button {
-    width: 100%;
-  }
-
   .main {
-    padding: 5% !important;
+    padding: 1rem;
+  }
+
+  .screw {
+    bottom: -35%;
+  }
+
+  .sectionbg, .section{
+    padding: 1rem;
+  }
+
+  .sectiontitle {
+    font-size: 42px;
+  }
+
+  .herosection {
+    background-size: cover;
+    background-position: unset;
+    height: fit-content;
+    padding: 1rem;
+    padding-top: 8rem;
   }
 
   .titledesc {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .desc {
+    color: #FFF;
     font-size: 18px;
-  }
-
-  .card {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .sectionhead {
-    margin-bottom: 2rem;
-  }
-
-  .sectionwrapper {
-    flex-direction: column;
-    margin:5%;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-
-  .contactform {
-    width: 100%;
   }
 }
