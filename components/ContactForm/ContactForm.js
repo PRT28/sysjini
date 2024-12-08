@@ -5,7 +5,7 @@ import styles from './ContactForm.module.css';
 import axios from 'axios';
 import { useToast } from '@chakra-ui/react'
 
-export default function ContactForm({showImage, fullSize=false, label="Get in touch", selected=""}) {
+export default function ContactForm({fullSize=false}) {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
@@ -33,40 +33,23 @@ export default function ContactForm({showImage, fullSize=false, label="Get in to
     }
     
     return (
-        <>
-            <div className={styles.sectionhead}>{label}</div>
-          <div className={styles.section}>
-            <div style={{width: fullSize ? '100%' : ''}} className={styles.contactform}>
-              <div style={{marginBottom: '18px'}}>
-                <label className={styles.label}>Name</label>
-                <input className={styles.input} type="text" value={name} onChange={e => setName(e.target.value)} />
-              </div>
-
-              <div style={{marginBottom: '18px'}}>
-                <label className={styles.label}>Phone</label>
-                <input className={styles.input} type="text" value={phone} onChange={e => setPhone(e.target.value)} />
-              </div>
-
-              <div style={{marginBottom: '18px'}}>
-                <label className={styles.label}>Email</label>
-                <input className={styles.input} type="email" value={email} onChange={e => setEmail(e.target.value)} />
-              </div>
-
-              <div style={{marginBottom: '18px'}}>
-                <label className={styles.label}>Message</label>
-                <textarea className={styles.input} type="text" cols={15} rows={5} style={{height: '150px', resize: 'none'}} value={message} onChange={e => setMessage(e.target.value)} />
-              </div>
-
-              <button className={styles.button} onClick={() => handleSubmit()}>Submit</button>
-              
-            </div>
-           {showImage && <div className='planet-container'>
-                <div className='night'></div>
-                <div className='day'></div>
-                <div className='clouds'></div>
-                <div className='inner-shadow'></div>
-            </div>}
+        <div className={styles.section}>
+          <div className={styles.cflogoWrapper}>
+            <img src="/cf2.svg" alt="" className={styles.img2} />
+            <img src="/cf1.svg" alt="" className={styles.img1} />
           </div>
-        </>
+          <div>
+            <div className={styles.cftitle}>Still have questions?</div>
+            <div className={styles.cfdesc}>Book a call with our team to learn how Sysjini<br />can help you change the way you manage your e-<br />commerce business—forever.</div>
+          </div>
+            
+            <div className={styles.formContainer}>
+                <input className={styles.input} type="text" placeholder='Name' value={name} onChange={e => setName(e.target.value)} />
+                <input className={styles.input} type="text" placeholder='Phone Number' value={phone} onChange={e => setPhone(e.target.value)} />
+                <input className={styles.input} type="email" placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
+                <input className={styles.input} type="text" placeholder='Tell us more about your requirement' value={message} onChange={e => setMessage(e.target.value)} />
+                <button className={styles.button} onClick={() => handleSubmit()}>Submit</button>
+            </div>
+        </div>
     );
 }

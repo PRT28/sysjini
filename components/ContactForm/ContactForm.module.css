@@ -1,91 +1,83 @@
 .section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 10%;
-  }
+  border-radius: 32px;
+  text-align: center;
+  width: 100%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  background: #FFF;
+  border-radius: 32px;
+  margin-top: 24px;
+}
 
-.sectionhead {
-    font-size: 48px;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-  
+.cflogoWrapper {
+  display: flex;
+  align-items: baseline;
+}
+
+.img2, .img1 {
+  transition: all 0.25s ease-in-out;
+}
+
+.cflogoWrapper:hover > .img2 {
+  transform: rotate(-15deg);
+}
+
+.cflogoWrapper:hover > .img1 {
+  transform: rotate(15deg);
+}
+
+.cftitle {
+  color: #472388;
+  font-size: 60px;
+  font-family: 'Archivo', sans-serif;
+  line-height: 73.1px;
+  font-weight: 700;
+}
+
+.cfdesc {
+  color: #472388;
+  font-size: 20px;
+  line-height: 30.6px;
+  font-family: 'Archivo', sans-serif;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+}
+
+.input {
+  width: 60%;
+  border: 1.5px solid #755ADF;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.input::placeholder {
+  color: #9F8AF1;
+}
 
 .button {
-    background-color: transparent;
-    border: 1.5px solid #D4419D;
-    font-size: 18px;
-    color: #D4419D;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 16px;
-    border-radius: 12px;
-    letter-spacing: 1.5px;
-    transition: all 0.25s ease-in-out;
-    cursor: pointer;
-    width: 100%
-  }
-  
-  .button:hover {
-    background-color: #D4419D;
-    color: #FFF;
-  }
-  
-  .input {
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    color: #000;
-    width: 100%;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    padding: 6px 10px;
-    height: 50px;
-    box-shadow: 3px 3px 3px #f5f5f5;
-    border: none
-  
-  }
-  
-  .input:focus, .input:active {
-    border: 1px solid #ccc;
-    outline: none;
-  }
-  
-  .label {
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 1.25px;
-    margin-bottom: 5px;
-    color: #FFF;
-  }
-  
-  
-  .contactform {
-    width: 50%;
-  }
+  border: 1.5px solid #755ADF;
+  background: #DDD8F6;
+  padding: 12px 48px;
+  font-size: 26px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  border-radius: 66.47px;
+  transition: all 0.25s ease-in-out;
+}
 
-  @media screen and (max-width: 480px) {
-  
-    .section {
-      flex-direction: column-reverse;
-      align-items: center;
-      margin-bottom: 10%;
-    }
-  
-    .sectionhead {
-      margin-bottom: 2rem;
-    }
-  
-    .sectionwrapper {
-      flex-direction: column;
-      margin:5%;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-  
-    .contactform {
-      width: 100%;
-    }
-  }
+.button:hover {
+  background: #755ADF;
+  color: #FFF;
+}

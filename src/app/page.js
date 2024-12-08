@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Head from "next/head";
 import TypeWriter from "../../components/TypeWrtier/TypeWriter";
+import ContactForm from "../../components/ContactForm/ContactForm";
 
 export default function Home() {
 
@@ -87,6 +88,8 @@ export default function Home() {
                 <img src="/screw.svg" alt="" />
               </div>
           </div>
+
+          <ContactForm />
 
       </div>
       

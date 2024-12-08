@@ -104,11 +104,15 @@ a {
   }
 }
 
+.navopen {
+  height: 100vh !important;
+  background: #0F0F0F;
+}
 
 .navbar {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: transparent;
   padding: 1rem;
@@ -121,13 +125,8 @@ a {
   border-radius: 0px 0px 50px 50px;
   background: #0F0F0F66;
   backdrop-filter: blur(18px);
-  z-index: 100;
+  z-index: 200;
   transition: all 300s ease-in-out;
-}
-
-.navopen {
-  height: 100vh;
-  background: #0F0F0F;
 }
 
 .image-container {

@@ -232,12 +232,6 @@
     font-size: 18px;
   }
 
-  .section {
-    flex-direction: column-reverse;
-    align-items: center;
-    margin-bottom: 10%;
-  }
-
   .card {
     width: 100%;
     margin-bottom: 20px;
