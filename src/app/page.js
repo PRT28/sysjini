@@ -80,7 +80,7 @@ export default function Home() {
 
           <div className={styles.sectionbg} style={{position: 'relative', overflow: 'hidden'}}>
               <div className={styles.sectionbgtitle} style={{zIndex: 100}}>Our Technology Stack</div>
-              <div className={styles.smText} style={{zIndex: 100}}>Our software engineers are among the world's best specialists in their fields. Your app will benefit from<br />unmatched development expertise from a team familiar with the latest approaches and technologies.</div>
+              <div className={styles.smText} style={{zIndex: 100}}>Our software engineers are among the world&apos;s best specialists in their fields. Your app will benefit from<br />unmatched development expertise from a team familiar with the latest approaches and technologies.</div>
               <div style={{zIndex: 100}}>
                 <img src="/stack.svg" alt="" />
               </div>
