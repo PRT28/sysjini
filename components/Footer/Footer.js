@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Footer() {
     return (
         <div className={styles.footer}>
-            <img src="/screwfooter.svg" alt="" style={{position: 'absolute', left: 0, bottom: 0}} />
+            <Image src="/screwfooter.svg" alt="" width={350} height={350}  style={{position: 'absolute', left: 0, bottom: 0}} />
             <div className={styles.footercontainer} style={{paddingTop: '2.5%', paddingBottom: '2.5%', alignItems: 'flex-start'}}>
                 <div className={styles.footerlogo}>
                     <Image src="/syslogo.svg" alt="" width={100} height={100} />

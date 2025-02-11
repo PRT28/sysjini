@@ -4,6 +4,7 @@ import {useState} from 'react';
 import styles from './ContactForm.module.css';
 import axios from 'axios';
 import { useToast } from '@chakra-ui/react'
+import Image from 'next/image';
 
 export default function ContactForm({fullSize=false}) {
     const [name, setName] = useState('');
@@ -35,8 +36,8 @@ export default function ContactForm({fullSize=false}) {
     return (
         <div className={styles.section}>
           <div className={styles.cflogoWrapper}>
-            <img src="/cf2.svg" alt="" className={styles.img2} />
-            <img src="/cf1.svg" alt="" className={styles.img1} />
+            <Image src="/cf2.svg" alt="" height={100} width={100} className={styles.img2} />
+            <Image src="/cf1.svg" alt="" height={150} width={150} className={styles.img1} />
           </div>
           <div>
             <div className={styles.cftitle}>Still have questions?</div>

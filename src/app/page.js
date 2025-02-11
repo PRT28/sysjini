@@ -16,7 +16,7 @@ export default function Home() {
       <div className={styles.herosection}>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around', gap: '36px'}}>
             <div className={styles.titledesc}> One stop solution for <br /> <TypeWriter /></div>
-            <div className={styles.desc}>At Sysjini, we’re not just a tech company—we’re your growth partners. We provide cutting-edge solutions tailored to help businesses thrive in the digital era. Whether you're a startup, an established enterprise, or an individual with a big idea, we’ve got you covered.</div>
+            <div className={styles.desc}>At Sysjini, we&apos;re not just a tech company—we&apos;re your growth partners. We provide cutting-edge solutions tailored to help businesses thrive in the digital era. Whether you&apos;re a startup, an established enterprise, or an individual with a big idea, we&apos;ve got you covered.</div>
           </div>
       </div>
       <div className={styles.main}>
@@ -67,7 +67,7 @@ export default function Home() {
                   <Image src="/services/design.svg" width={50} height={50} />
                 </div>
                 <div className={styles.cardtitle}>Designing</div>
-                <div className={styles.carddesc}>From UI/UX design to brand identity, we create visuals that speak your brand’s language and resonate with your audience.</div>
+                <div className={styles.carddesc}>From UI/UX design to brand identity, we create visuals that speak your brand&apos;s language and resonate with your audience.</div>
               </div>
             </div>
           </div>
@@ -94,9 +94,9 @@ export default function Home() {
               <div className={styles.sectionbgtitle} style={{marginBottom: '24px'}}>Why Choose us</div>
               <ul style={{gap: '10px', display: 'grid'}}>
                 <li className={styles.smText}><b>Full-Stack Expertise:</b> From front-end to back-end, we handle it all.</li>
-                <li className={styles.smText}><b>Tailored Solutions:</b> We don't believe in one-size-fits-all. Your business is unique, and so are our strategies.</li>
+                <li className={styles.smText}><b>Tailored Solutions:</b> We don&apos;t believe in one-size-fits-all. Your business is unique, and so are our strategies.</li>
                 <li className={styles.smText}><b>Cloud-Ready:</b> Deploying robust applications with AWS, Nginx, and advanced cloud services.</li>
-                <li className={styles.smText}><b>End-to-End Support:</b> We're with you from ideation to launch—and beyond.</li>
+                <li className={styles.smText}><b>End-to-End Support:</b> We&apos;re with you from ideation to launch—and beyond.</li>
               </ul>
             </div>
             <Image src="/chooseus.svg" width={250} height={400} />
