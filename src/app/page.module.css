@@ -180,6 +180,12 @@
   line-height: 28px;
 }
 
+.flexRes {
+  display: flex;
+  flex-direction: row;
+  padding: 3rem;
+}
+
 
 .screw {
   position: absolute;
@@ -239,5 +245,13 @@
   .desc {
     color: #FFF;
     font-size: 18px;
+  }
+
+  .flexRes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
   }
 }

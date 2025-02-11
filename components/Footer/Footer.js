@@ -24,7 +24,7 @@ export default function Footer() {
                 <div className={styles.footerwrapper}>
                     <div className={styles.footerhead}>Contact Us</div>
                     <div className={styles.footeritem}>Phone: (+91) 7017197678</div>
-                    <div className={styles.footeritem}>Email: prithvirajtiwari28@gmail.com</div>
+                    <div className={styles.footeritem}>Email: contact8@sysjini.in</div>
                 </div>
                 
             </div>

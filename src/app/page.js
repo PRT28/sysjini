@@ -16,7 +16,7 @@ export default function Home() {
       <div className={styles.herosection}>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around', gap: '36px'}}>
             <div className={styles.titledesc}> One stop solution for <br /> <TypeWriter /></div>
-            <div className={styles.desc}>We have 459 rooms spread throuout Indonesia with room standards equivalent to 5 star hotels.</div>
+            <div className={styles.desc}>At Sysjini, we’re not just a tech company—we’re your growth partners. We provide cutting-edge solutions tailored to help businesses thrive in the digital era. Whether you're a startup, an established enterprise, or an individual with a big idea, we’ve got you covered.</div>
           </div>
       </div>
       <div className={styles.main}>
@@ -32,28 +32,28 @@ export default function Home() {
 
           <div className={styles.section}>
             <div className={styles.sectiontitle}>Our Services</div>
-            <div className={styles.smText}>Sysjini is a dynamic service provider offering customized solutions in web and app development, SEO, digital marketing, web pentesting, and designing to elevate your business in the digital landscape</div>
+            <div className={styles.smText}>Sysjini is a dynamic service provider offering customized solutions in web and app development, SEO, digital marketing, and designing to elevate your business in the digital landscape</div>
             <div className={styles.flexwrap}>
               <div className={styles.card}>
                 <div className={styles.cardlogo}>
                   <Image src="/services/web.svg" width={50} height={50} />
                 </div>
                 <div className={styles.cardtitle}>Mobile Development</div>
-                <div className={styles.carddesc}>Crafting responsive, user-friendly websites that captivate and convert.</div>
+                <div className={styles.carddesc}>Building seamless, user-friendly mobile applications using Flutter and robust backend technologies like Node.js and Spring Boot.</div>
               </div>
               <div className={styles.card}>
                 <div className={styles.cardlogo}>
                   <Image src="/services/mobile.svg" width={50} height={50} />
                 </div>
                 <div className={styles.cardtitle}>Web Development</div>
-                <div className={styles.carddesc}>Building seamless, high-performance mobile applications that keep you connected with your audience.</div>
+                <div className={styles.carddesc}>Crafting responsive, fast, and scalable websites with the latest technologies like React.js, Next.js, and more.</div>
               </div>
               <div className={styles.card}>
                 <div className={styles.cardlogo}>
                   <Image src="/services/seo.svg" width={50} height={50} />
                 </div>
                 <div className={styles.cardtitle}>SEO</div>
-                <div className={styles.carddesc}>Boosting your online presence with strategies that drive traffic and enhance visibility.</div>
+                <div className={styles.carddesc}>Boost your online presence with result-driven SEO strategies and data-backed digital marketing campaigns.</div>
               </div>
               <div className={styles.card}>
                 <div className={styles.cardlogo}>
@@ -67,7 +67,7 @@ export default function Home() {
                   <Image src="/services/design.svg" width={50} height={50} />
                 </div>
                 <div className={styles.cardtitle}>Designing</div>
-                <div className={styles.carddesc}>Creating visually stunning and impactful designs that resonate with your brand identity.</div>
+                <div className={styles.carddesc}>From UI/UX design to brand identity, we create visuals that speak your brand’s language and resonate with your audience.</div>
               </div>
             </div>
           </div>
@@ -87,6 +87,20 @@ export default function Home() {
               <div className={styles.screw}>
                 <img src="/screw.svg" alt="" />
               </div>
+          </div>
+
+          <div className={`${styles.section}, ${styles.flexRes}`} style={{justifyContent: 'space-between'}}>
+            <div style={{textAlign: 'justify'}}>
+              <div className={styles.sectionbgtitle} style={{marginBottom: '24px'}}>Why Choose us</div>
+              <ul style={{gap: '10px', display: 'grid'}}>
+                <li className={styles.smText}><b>Full-Stack Expertise:</b> From front-end to back-end, we handle it all.</li>
+                <li className={styles.smText}><b>Tailored Solutions:</b> We don't believe in one-size-fits-all. Your business is unique, and so are our strategies.</li>
+                <li className={styles.smText}><b>Cloud-Ready:</b> Deploying robust applications with AWS, Nginx, and advanced cloud services.</li>
+                <li className={styles.smText}><b>End-to-End Support:</b> We're with you from ideation to launch—and beyond.</li>
+              </ul>
+            </div>
+            <Image src="/chooseus.svg" width={250} height={400} />
+
           </div>
 
           <ContactForm />
