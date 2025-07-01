@@ -3,31 +3,15 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <div className={styles.footer}>
-            <Image src="/screwfooter.svg" alt="" width={350} height={350}  style={{position: 'absolute', left: 0, bottom: 0}} />
-            <div className={styles.footercontainer} style={{paddingTop: '2.5%', paddingBottom: '2.5%', alignItems: 'flex-start'}}>
-                <div className={styles.footerlogo}>
-                    <Image src="/syslogo.svg" alt="" width={100} height={100} />
-                    <div className={styles.title}>Sysjini</div>
+        <footer className="bg-gray-800 text-white py-8">
+            <div className="container mx-auto px-4 text-center">
+                <p>&copy; 2025 Sysjini. All rights reserved.</p>
+                <div className="flex justify-center space-x-6 mt-4">
+                    <a href="#" className="text-gray-400 hover:text-white transition duration-300">Facebook</a>
+                    <a href="#" className="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
+                    <a href="#" className="text-gray-400 hover:text-white transition duration-300">Twitter</a>
                 </div>
-
-                <div className={styles.footerwrapper}>
-                    <div className={styles.footerhead}>Services</div>
-                    <div className={styles.footeritem}>Web Development</div>
-                    <div className={styles.footeritem}>Mobile App</div>
-                    <div className={styles.footeritem}>SEO</div>
-                    <div className={styles.footeritem}>Web Pentesting</div>
-                    <div className={styles.footeritem}>Digital Marketing</div>
-                    <div className={styles.footeritem}>Designing</div>
-                </div>
-
-                <div className={styles.footerwrapper}>
-                    <div className={styles.footerhead}>Contact Us</div>
-                    <div className={styles.footeritem}>Phone: (+91) 7017197678</div>
-                    <div className={styles.footeritem}>Email: contact8@sysjini.in</div>
-                </div>
-                
             </div>
-        </div>
+        </footer>
     )
 }

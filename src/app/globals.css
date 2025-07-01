@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
 
 :root {
   --max-width: 1100px;
@@ -44,111 +43,193 @@
   --card-border-rgb: 131, 134, 135;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
 
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
 
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
+ body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F8F8F8; /* Light grey background for contrast */
+    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+}
+.text-forest-green {
+    color: #228B22; /* Forest Green */
+}
+.bg-forest-green {
+    background-color: #228B22; /* Forest Green */
+}
+.border-forest-green {
+    border-color: #228B22; /* Forest Green */
+}
+.hover-darken:hover {
+    filter: brightness(0.9);
+}
+.card-shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+/* Custom scrollbar for subtle design */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-body {
-  background: linear-gradient(180deg, #FFFEFF 0%, #F3F2F8 100%);
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+@keyframes drawLine {
+    from { stroke-dashoffset: 1000; }
+    to { stroke-dashoffset: 0; }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+.animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+}
+.animate-draw-line {
+    animation: drawLine 1.5s ease-out forwards;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Delay for sequential animations */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+.delay-900 { animation-delay: 0.9s; }
+.delay-1000 { animation-delay: 1s; }
+.delay-1100 { animation-delay: 1.1s; }
+.delay-1200 { animation-delay: 1.2s; }
+.delay-1300 { animation-delay: 1.3s; }
+.delay-1400 { animation-delay: 1.4s; }
+.delay-1500 { animation-delay: 1.5s; }
+
+
+/* Ensure elements are initially hidden for animations */
+.animated-element {
+    opacity: 0;
+}
+
+/* For roadmap step lines - now SVG based */
+.roadmap-svg-line {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 1.5s ease-out;
+}
+.roadmap-svg-line.active {
+    stroke-dashoffset: 0;
+}
+
+/* Testimonial specific animation */
+@keyframes slideInFromRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+.testimonial-slide-in {
+    animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+/* Modal specific styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+}
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.75rem; /* rounded-lg */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-xl */
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+.modal-overlay.show .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+.modal-close-button {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #4a5568;
+    line-height: 1;
+    padding: 0.25rem;
+    border-radius: 9999px; /* rounded-full */
+    transition: background-color 0.2s ease-in-out;
+}
+.modal-close-button:hover {
+    background-color: #e2e8f0;
 }
 
 
-@keyframes rotate-day {
-  0% { background-position: 120% 0; }
-  100% { background-position: -80% 0; }
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #16abff; /* Primary color */
+    color: #fff; /* White text */
+    border-radius: 50%; /* Circular button */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
-@keyframes rotate-night {
-  0% { background-position: calc(120% + 120px) 0; }
-  100% { background-position: calc(-80% + 120px) 0; }
+.floating-button:hover {
+    background-color: #0885ff; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
-@keyframes spin-clouds {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(20deg); }
-  100% { transform: rotate(0deg); }
+.floating-button:active {
+    transform: scale(0.95); /* Slightly shrink on click */
 }
-
-.desktop {
-  display: block;
-}
-
-.mobile {
-  display: none;
-}
-
-.sidesheet {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: #FFF;
-  transition: all 0.5s ease-in-out;
-  display: none;
-}
-
-.close {
-  left: -100vw;
-}
-
-@media screen and (max-width: 480px) {
-  .desktop, .title {
-    display: none !important;
-  }
-  
-  .mobile, .sidesheet {
-    display: block !important;
-  }
-}
-
