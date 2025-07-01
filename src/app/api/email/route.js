@@ -1,4 +1,4 @@
-import { EmailTemplate } from '../../../../components/EmailTemplate/email';
+// import { EmailTemplate } from '../../../../components/EmailTemplate/email';
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
@@ -8,12 +8,12 @@ export async function POST(req) {
   try {
     const { name, email, message, phone } = await req.json();
 
-    const data = await resend.emails.send({
-      from: 'contact@sysjini.in', // Use a verified domain or the default Resend address
-      to: 'contact@sysjini.in',
-      subject: `Lead mail - ${name}`,
-      react: EmailTemplate({ name, email, phone, message })
-    });
+    // const data = await resend.emails.send({
+    //   from: 'contact@sysjini.in', // Use a verified domain or the default Resend address
+    //   to: 'contact@sysjini.in',
+    //   subject: `Lead mail - ${name}`,
+    //   react: EmailTemplate({ name, email, phone, message })
+    // });
 
     return NextResponse.json(data, { status: 200 });
   } catch (error) {
