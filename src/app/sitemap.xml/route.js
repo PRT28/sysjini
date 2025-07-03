@@ -4,7 +4,7 @@ const baseUrl = 'https://sysjini.in'; // Replace with your site's domain
 
 export async function GET() {
   // Define the paths that you want to include in your sitemap
-  const staticPages = ['', '/about', '/contact']; // Add your static routes here
+  const staticPages = ['', '/about', '/contact', '/blogs', '/services', '/glossary', '/service/cloud-and-devops', '/service/design-and-branding', '/service/digital-marketing-and-seo', 'e-commerce-solutions', 'ui-ux-consulting', 'web-and-mobile-app-development']; // Add your static routes here
 
   // Fetch dynamic pages if needed
   const dynamicPages = await getDynamicPaths(); // This is an example of fetching dynamic routes
