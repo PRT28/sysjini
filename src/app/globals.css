@@ -233,3 +233,15 @@
 .floating-button:active {
     transform: scale(0.95); /* Slightly shrink on click */
 }
+
+.travel-line {
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .travel-line {
+    position: relative;
+    transform: none; /* optional: remove translateX if not needed on mobile */
+  }
+}

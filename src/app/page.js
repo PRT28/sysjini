@@ -1,5 +1,7 @@
 import Head from "next/head";
 
+import Travel from "../../components/Animation/Travel";
+
 export default function Home() {
 
   return (
@@ -57,7 +59,7 @@ export default function Home() {
         </div>
     </section>
 
-    <section id="roadmap" className="py-16 md:py-24 bg-gray-50">
+    <section id="roadmap" className="max-md:hidden py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-forest-green mb-12 animated-element animate-fade-in-up">Our Simple Process</h2>
             <div className="relative flex flex-col items-center md:flex-row md:justify-center md:items-start gap-8 md:gap-16">
@@ -82,6 +84,8 @@ export default function Home() {
                             <p className="text-gray-600">Once you give the nod, a strong foundation is laid down for the engagement to ensure a hassle-free experience.</p>
                         </div>
                     </div>
+
+                   
                 </div>
 
                 <div className="flex flex-col md:w-1/2 md:pl-16 space-y-12 md:space-y-24 mt-0 md:mt-24">
@@ -105,11 +109,61 @@ export default function Home() {
         </div>
     </section>
 
+    <section id="roadmap" className="max-md:block hidden py-16 md:py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-forest-green mb-12 animated-element animate-fade-in-up">Our Simple Process</h2>
+            <div className="relative flex flex-col items-center md:flex-row md:justify-center md:items-start gap-8 md:gap-16">
+                <svg className="absolute hidden md:block left-1/2 transform -translate-x-1/2 h-full w-2" viewBox="0 0 4 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="2" y1="0" x2="2" y2="500" stroke="#E0E0E0" strokeWidth="4" strokeLinecap="round" className="roadmap-svg-line" />
+                </svg>
+
+
+                
+                    <div className="flex flex-col gap-[1rem] md:flex-row-reverse items-center md:justify-between w-full relative z-10 animated-element animate-fade-in-up delay-100 roadmap-step-item">
+                        <div className="flex-shrink-0 w-16 h-16 bg-forest-green text-white rounded-full flex items-center justify-center text-2xl font-bold border-4 border-white shadow-lg transform hover:scale-110 transition duration-300 ease-in-out">1</div>
+                        <div className="text-center md:text-right w-full md:w-auto mt-4 md:mt-0">
+                            <h3 className="text-2xl font-semibold text-gray-800 mb-2">Tell us what you need</h3>
+                            <p className="text-gray-600">Share your requirements and get on a discovery call so that the team can align with your objectives.</p>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col gap-[1rem] md:flex-row items-center md:justify-between w-full relative z-10 animated-element animate-fade-in-up delay-200 roadmap-step-item">
+                        <div className="flex-shrink-0 w-16 h-16 bg-forest-green text-white rounded-full flex items-center justify-center text-2xl font-bold border-4 border-white shadow-lg transform hover:scale-110 transition duration-300 ease-in-out">2</div>
+                        <div className="text-center md:text-left w-full md:w-auto mt-4 md:mt-0">
+                            <h3 className="text-2xl font-semibold text-gray-800 mb-2">Get a well-suited option</h3>
+                            <p className="text-gray-600">The ideal option is suggested for you - Dedicated Web Developer Team OR Project-based Delivery.</p>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col gap-[1rem] md:flex-row-reverse items-center md:justify-between w-full relative z-10 animated-element animate-fade-in-up delay-300 roadmap-step-item">
+                        <div className="flex-shrink-0 w-16 h-16 bg-forest-green text-white rounded-full flex items-center justify-center text-2xl font-bold border-4 border-white shadow-lg transform hover:scale-110 transition duration-300 ease-in-out">3</div>
+                        <div className="text-center md:text-right w-full md:w-auto mt-4 md:mt-0">
+                            <h3 className="text-2xl font-semibold text-gray-800 mb-2">The stage is set</h3>
+                            <p className="text-gray-600">Once you give the nod, a strong foundation is laid down for the engagement to ensure a hassle-free experience.</p>
+                        </div>
+                    </div>
+
+                   
+
+               
+                    
+
+                    <div className="flex flex-col gap-[1rem] md:flex-row items-center md:justify-between w-full relative z-10 animated-element animate-fade-in-up delay-400 roadmap-step-item">
+                        <div className="flex-shrink-0 w-16 h-16 bg-forest-green text-white rounded-full flex items-center justify-center text-2xl font-bold border-4 border-white shadow-lg transform hover:scale-110 transition duration-300 ease-in-out">4</div>
+                        <div className="text-center md:text-left w-full md:w-auto mt-4 md:mt-0">
+                            <h3 className="text-2xl font-semibold text-gray-800 mb-2">Get excellence delivered</h3>
+                            <p className="text-gray-600">Get the ball rolling in 5 days. Expect a seamless experience with a team that delivers its promise.</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
     <section id="technology-stack" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 text-center flex flex-col items-center">
             <h2 className="text-3xl md:text-4xl font-bold text-forest-green mb-6 animated-element animate-fade-in-up">Our Technology Stack</h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-12 animated-element animate-fade-in-up delay-100">
-                Our software engineers are among the world's best specialists in their fields. Your app will benefit from
+                Our software engineers are among the world&apos;s best specialists in their fields. Your app will benefit from
                 unmatched development expertise from a team familiar with the latest approaches and technologies.
             </p>
             <img src="/stack.svg" alt="Technology Stack" className="animate-fade-in-up delay-200" />
@@ -158,7 +212,7 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 animated-element animate-fade-in-up">Ready to Transform Your Digital Presence?</h2>
             <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 opacity-90 animated-element animate-fade-in-up delay-100">
-                Let's discuss your project and turn your vision into a stunning reality.
+                Let&apos;s discuss your project and turn your vision into a stunning reality.
             </p>
             <a href="contact.html" className="bg-white text-forest-green hover:bg-gray-100 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 animated-element animate-fade-in-up delay-200">
                 Get a Free Consultation

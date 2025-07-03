@@ -4,7 +4,7 @@ export default function Contact() {
         <>
             <section className="bg-forest-green text-white py-16 md:py-20 text-center rounded-bl-[80px]">
                 <h1 className="text-4xl md:text-5xl font-extrabold mb-4 animated-element animate-fade-in-up">Get in Touch with Sysjini</h1>
-                <p className="text-lg md:text-xl max-w-2xl mx-auto animated-element animate-fade-in-up delay-200">We'd love to hear from you. Reach out to discuss your project or any inquiries.</p>
+                <p className="text-lg md:text-xl max-w-2xl mx-auto animated-element animate-fade-in-up delay-200">We'&apos; love to hear from you. Reach out to discuss your project or any inquiries.</p>
             </section>
 
             <section className="py-16 md:py-24 bg-gray-50">
