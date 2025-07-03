@@ -17,7 +17,7 @@ export default function Home() {
                         <div className="bg-gray-50 p-6 rounded-lg shadow-md animated-element animate-fade-in-up delay-200">
                             <h3 className="text-2xl font-semibold text-forest-green mb-2">UI/UX Design (User Interface/User Experience Design)</h3>
                             <p className="text-gray-700">
-                                <strong>UI Design</strong> focuses on the look and feel of an application's interface (buttons, typography, colors). <strong>UX Design</strong> focuses on the overall experience a user has with a product, ensuring it's intuitive, efficient, and enjoyable.
+                                <strong>UI Design</strong> focuses on the look and feel of an application&apos;s interface (buttons, typography, colors). <strong>UX Design</strong> focuses on the overall experience a user has with a product, ensuring it&apos;s intuitive, efficient, and enjoyable.
                             </p>
                         </div>
                         <div className="bg-gray-50 p-6 rounded-lg shadow-md animated-element animate-fade-in-up delay-300">

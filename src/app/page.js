@@ -175,7 +175,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-center text-forest-green mb-12 animated-element animate-fade-in-up">What Our Clients Say</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div className="bg-white p-8 rounded-lg shadow-md animated-element animate-scale-in delay-100">
-                    <p className="text-lg italic text-gray-700 mb-6">"Sysjini transformed our online presence. Their development team is incredibly skilled and attentive to detail. Highly recommend!"</p>
+                    <p className="text-lg italic text-gray-700 mb-6">&ldquo;Sysjini transformed our online presence. Their development team is incredibly skilled and attentive to detail. Highly recommend!&ldquo;</p>
                     <div className="flex items-center">
                         <img src="https://placehold.co/60x60/228B22/FFFFFF?text=JD" alt="Client Avatar" className="w-16 h-16 rounded-full mr-4 border-2 border-forest-green" />
                         <div>
@@ -185,7 +185,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="bg-white p-8 rounded-lg shadow-md animated-element animate-scale-in delay-200">
-                    <p className="text-lg italic text-gray-700 mb-6">"Their digital marketing strategies boosted our leads by 200%. Sysjini is truly a partner for growth!"</p>
+                    <p className="text-lg italic text-gray-700 mb-6">&ldquo;Their digital marketing strategies boosted our leads by 200%. Sysjini is truly a partner for growth!&ldquo;</p>
                     <div className="flex items-center">
                         <img src="https://placehold.co/60x60/228B22/FFFFFF?text=MS" alt="Client Avatar" className="w-16 h-16 rounded-full mr-4 border-2 border-forest-green" />
                         <div>
@@ -195,7 +195,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="bg-white p-8 rounded-lg shadow-md animated-element animate-scale-in delay-300">
-                    <p className="text-lg italic text-gray-700 mb-6">"The design work was exceptional! They captured our brand essence perfectly. A fantastic experience from start to finish."</p>
+                    <p className="text-lg italic text-gray-700 mb-6">&ldquo;The design work was exceptional! They captured our brand essence perfectly. A fantastic experience from start to finish.&ldquo;</p>
                     <div className="flex items-center">
                         <img src="https://placehold.co/60x60/228B22/FFFFFF?text=LC" alt="Client Avatar" className="w-16 h-16 rounded-full mr-4 border-2 border-forest-green" />
                         <div>

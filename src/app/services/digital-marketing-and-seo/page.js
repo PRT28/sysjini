@@ -8,7 +8,7 @@ export default function Home() {
             <section className="px-8 md:px-24 py-8 md:py-12 space-y-6 animate-slide-up delay-100">
                 <h3 className="text-3xl font-bold text-green-700 border-b-2 border-lime-300 pb-3">What We Offer in Digital Marketing & SEO</h3>
                 <p className="text-gray-700 leading-relaxed">
-                    We provide a full spectrum of digital marketing services designed to enhance your bran&apos;'s online presence, engage your target audience, and convert leads into loyal customers. Our strategies are data-driven and tailored to deliver measurable results.
+                    We provide a full spectrum of digital marketing services designed to enhance your bran&apos;s online presence, engage your target audience, and convert leads into loyal customers. Our strategies are data-driven and tailored to deliver measurable results.
                 </p>
                 <ul className="list-disc list-inside text-gray-700 space-y-2">
                     <li>Search Engine Optimization (SEO) - On-page, Off-page, Technical</li>
