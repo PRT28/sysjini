@@ -1,19 +1,42 @@
-export default function Home() {
+export default function Blogs() {
     return (
         <>
-            <section className="bg-forest-green text-white py-16 md:py-20 text-center rounded-bl-[80px]">
-                <h1 className="text-4xl md:text-5xl font-extrabold mb-4 animated-element animate-fade-in-up">Our Latest Blogs</h1>
-                <p className="text-lg md:text-xl max-w-2xl mx-auto animated-element animate-fade-in-up delay-200">Stay updated with insights on web development, digital marketing, AI, and more.</p>
+            {/* Hero Section */}
+            <section className="relative py-32 md:py-40 overflow-hidden">
+                {/* Animated Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-forest-50 to-sage-50">
+                    <div className="absolute inset-0 bg-mesh-gradient opacity-30"></div>
+                    <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
+                    <div className="absolute top-40 right-10 w-72 h-72 bg-forest-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float delay-1000"></div>
+                </div>
+
+                <div className="container mx-auto px-4 text-center relative z-10 pt-20">
+                    <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 animated-element animate-fade-in-up">
+                        <span className="bg-gradient-to-r from-emerald-600 via-forest-600 to-sage-700 bg-clip-text text-transparent">
+                            Our Latest
+                        </span>
+                        <br />
+                        <span className="text-gray-800">Blogs</span>
+                    </h1>
+
+                    <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-12 text-gray-600 leading-relaxed animated-element animate-fade-in-up delay-200">
+                        Stay updated with insights on
+                        <span className="text-emerald-600 font-semibold"> web development, digital marketing, AI, </span>
+                        and more.
+                    </p>
+                </div>
             </section>
 
-            <section className="py-16 md:py-24 bg-white">
+            {/* Blog Posts Section */}
+            <section className="py-20 md:py-32 relative">
                 <div className="container mx-auto px-4">
-                    <div className="flex flex-wrap justify-center gap-4 mb-12 animated-element animate-fade-in-up delay-100">
-                        <button className="px-6 py-2 rounded-full bg-forest-green text-white font-medium hover:bg-green-700 transition duration-300">All</button>
-                        <button className="px-6 py-2 rounded-full border border-forest-green text-forest-green font-medium hover:bg-forest-green hover:text-white transition duration-300" data-category="web-dev">Web Development</button>
-                        <button className="px-6 py-2 rounded-full border border-forest-green text-forest-green font-medium hover:bg-forest-green hover:text-white transition duration-300" data-category="digital-marketing">Digital Marketing</button>
-                        <button className="px-6 py-2 rounded-full border border-forest-green text-forest-green font-medium hover:bg-forest-green hover:text-white transition duration-300" data-category="ai-ml">AI/ML</button>
-                        <button className="px-6 py-2 rounded-full border border-forest-green text-forest-green font-medium hover:bg-forest-green hover:text-white transition duration-300" data-category="devops">DevOps</button>
+                    {/* Filter Buttons */}
+                    <div className="flex flex-wrap justify-center gap-4 mb-16 animated-element animate-fade-in-up delay-100">
+                        <button className="px-8 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-forest-600 text-white font-semibold hover:from-emerald-700 hover:to-forest-700 transition-all duration-300 shadow-lg">All</button>
+                        <button className="px-8 py-3 rounded-xl border-2 border-emerald-600 text-emerald-600 font-semibold hover:bg-emerald-600 hover:text-white transition-all duration-300" data-category="web-dev">Web Development</button>
+                        <button className="px-8 py-3 rounded-xl border-2 border-forest-600 text-forest-600 font-semibold hover:bg-forest-600 hover:text-white transition-all duration-300" data-category="digital-marketing">Digital Marketing</button>
+                        <button className="px-8 py-3 rounded-xl border-2 border-sage-600 text-sage-600 font-semibold hover:bg-sage-600 hover:text-white transition-all duration-300" data-category="ai-ml">AI/ML</button>
+                        <button className="px-8 py-3 rounded-xl border-2 border-mint-600 text-mint-600 font-semibold hover:bg-mint-600 hover:text-white transition-all duration-300" data-category="devops">DevOps</button>
                     </div>
 
                     <div id="blog-posts-container" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

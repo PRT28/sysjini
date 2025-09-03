@@ -1,252 +1,122 @@
-export default function Home() {
+'use client'
+import { TechDNAHelix, HolographicCode } from "../../../components/3D"
+
+export default function UIUXConsulting() {
     return (
         <>
-            <section className="bg-forest-green text-white py-16 md:py-20 text-center rounded-bl-[80px]">
-                <h1 className="text-4xl md:text-5xl font-extrabold mb-4 animated-element animate-fade-in-up">UI/UX Consulting Services</h1>
-                <p className="text-lg md:text-xl max-w-2xl mx-auto animated-element animate-fade-in-up delay-200">We provide comprehensive UI/UX consulting services to help businesses create intuitive, engaging, and accessible digital products. Our approach combines in-depth user research, strategic design thinking, and iterative prototyping to deliver solutions that not only look great but also perform exceptionally and meet user needs effectively.</p>
-            </section>
-            <section className="px-8 md:px-24 py-8 md:py-12 space-y-6 animate-slide-up delay-100">
-                <h3 className="text-3xl font-bold text-green-700 border-b-2 border-lime-300 pb-3">What We Offer in UI/UX Consulting</h3>
-                <p className="text-gray-700 leading-relaxed">
-                    We provide comprehensive UI/UX consulting services, from user research and persona development to wireframing, prototyping, and usability testing. Our solutions are designed to enhance user satisfaction, improve accessibility, and drive business success through effective design.
-                </p>
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
-                    <li>User Research & Analysis (Interviews, Surveys, Usability Testing)</li>
-                    <li>User Experience (UX) Strategy & Roadmapping</li>
-                    <li>Information Architecture & Wireframing</li>
-                    <li>User Interface (UI) Design & Prototyping</li>
-                    <li>Interaction Design & Animation</li>
-                    <li>Accessibility (WCAG) Compliance Consulting</li>
-                    <li>Design System Development & Implementation</li>
-                    <li>Heuristic Evaluation & UX Audit</li>
-                </ul>
-            </section>
+            {/* Hero Section */}
+            <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-sage-50 to-mint-50">
+                    <div className="absolute inset-0 bg-mesh-gradient opacity-30"></div>
+                    <div className="absolute top-20 left-10 w-72 h-72 bg-sage-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
+                    <div className="absolute top-40 right-10 w-72 h-72 bg-mint-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float delay-1000"></div>
+                    <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float delay-500"></div>
+                </div>
 
-            <section className="px-8 md:px-24 py-8 md:py-12 space-y-6 animate-slide-up delay-200">
-               <h3 className="text-3xl font-bold text-green-700 border-b-2 border-lime-300 pb-3">Our Key Features</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 border border-green-100 hover:shadow-lg transition-shadow duration-300">
-                        <div className="text-4xl">🔬</div>
-                        <div>
-                            <h4 className="text-xl font-semibold text-green-700 mb-2">User-Centric Approach</h4>
-                            <p className="text-gray-600">Placing the user at the core of every design decision to create truly intuitive experiences.</p>
+                {/* 3D DNA Helix for User Journey */}
+                <div className="absolute top-10 right-10 w-96 h-96 opacity-40 hidden lg:block">
+                    <TechDNAHelix />
+                </div>
+
+                {/* 3D Holographic Code for Design Process */}
+                <div className="absolute bottom-10 left-10 w-80 h-80 opacity-30 hidden xl:block">
+                    <HolographicCode />
+                </div>
+
+                <div className="container mx-auto px-4 text-center relative z-10">
+                    <div className="max-w-5xl mx-auto">
+                        <div className="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-sage-400 to-sage-600 rounded-2xl flex items-center justify-center shadow-green animated-element animate-scale-in">
+                            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
                         </div>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 border border-green-100 hover:shadow-lg transition-shadow duration-300">
-                        <div className="text-4xl">💡</div>
-                        <div>
-                            <h4 className="text-xl font-semibold text-green-700 mb-2">Strategic Insights</h4>
-                            <p className="text-gray-600">Translating complex user data into actionable design strategies that align with business goals.</p>
-                        </div>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 border border-green-100 hover:shadow-lg transition-shadow duration-300">
-                        <div className="text-4xl">✨</div>
-                        <div>
-                            <h4 className="text-xl font-semibold text-green-700 mb-2">Aesthetic & Functional Design</h4>
-                            <p className="text-gray-600">Balancing beautiful aesthetics with seamless functionality for optimal user engagement.</p>
-                        </div>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 border border-green-100 hover:shadow-lg transition-shadow duration-300">
-                        <div className="text-4xl">🤝</div>
-                        <div>
-                            <h4 className="text-xl font-semibold text-green-700 mb-2">Collaborative Process</h4>
-                            <p className="text-gray-600">Working closely with your team to ensure designs meet your vision and objectives.</p>
-                        </div>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 border border-green-100 hover:shadow-lg transition-shadow duration-300">
-                        <div className="text-4xl">📊</div>
-                        <div>
-                            <h4 className="text-xl font-semibold text-green-700 mb-2">Measurable Results</h4>
-                            <p className="text-gray-600">Focusing on designs that improve key metrics like conversion rates and user retention.</p>
-                        </div>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 border border-green-100 hover:shadow-lg transition-shadow duration-300">
-                        <div className="text-4xl">♿</div>
-                        <div>
-                            <h4 className="text-xl font-semibold text-green-700 mb-2">Accessibility Compliance</h4>
-                            <p className="text-gray-600">Ensuring your digital products are usable by people of all abilities, adhering to WCAG standards.</p>
+
+                        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 animated-element animate-fade-in-up">
+                            <span className="bg-gradient-to-r from-sage-600 via-mint-600 to-emerald-700 bg-clip-text text-transparent">
+                                UI/UX Consulting
+                            </span>
+                            <br />
+                            <span className="text-gray-800">Services</span>
+                        </h1>
+
+                        <p className="text-xl md:text-2xl max-w-4xl mx-auto mb-12 text-gray-600 leading-relaxed animated-element animate-fade-in-up delay-200">
+                            We provide comprehensive UI/UX consulting services to help businesses create intuitive, engaging, and accessible digital products through
+                            <span className="text-sage-600 font-semibold"> strategic design thinking</span>.
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animated-element animate-fade-in-up delay-400">
+                            <a href="/contact" className="btn-primary hover-lift text-lg px-8 py-4">
+                                Improve Your UX
+                                <svg className="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                            <a href="/contact" className="btn-secondary text-lg px-8 py-4">
+                                Get Free Quote
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
-
-            <section className="px-8 md:px-24 py-8 md:py-12 space-y-6 animate-slide-up delay-300">
-                <h3 className="text-3xl font-bold text-green-700 border-b-2 border-lime-300 pb-3">Industries We Serve</h3>
-                <div className="flex flex-wrap gap-4 text-gray-700">
-                    <span className="bg-lime-100 text-lime-800 px-4 py-2 rounded-full shadow-sm">Software & SaaS</span>
-                    <span className="bg-lime-100 text-lime-800 px-4 py-2 rounded-full shadow-sm">E-commerce & Retail</span>
-                    <span className="bg-lime-100 text-lime-800 px-4 py-2 rounded-full shadow-sm">Fintech</span>
-                    <span className="bg-lime-100 text-lime-800 px-4 py-2 rounded-full shadow-sm">Healthcare</span>
-                    <span className="bg-lime-100 text-lime-800 px-4 py-2 rounded-full shadow-sm">Education</span>
-                    <span className="bg-lime-100 text-lime-800 px-4 py-2 rounded-full shadow-sm">Media & Entertainment</span>
-                    <span className="bg-lime-100 text-lime-800 px-4 py-2 rounded-full shadow-sm">Automotive</span>
+            {/* CTA Section */}
+            <section className="py-20 md:py-32 bg-gradient-to-br from-sage-600 via-mint-600 to-emerald-700 relative overflow-hidden">
+                <div className="absolute inset-0">
+                    <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-10 animate-float"></div>
+                    <div className="absolute bottom-10 right-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-10 animate-float delay-1000"></div>
                 </div>
-                <p className="text-gray-700 leading-relaxed">
-                     Our UI/UX consulting expertise spans diverse industries, helping businesses create digital products that are not only visually appealing but also highly functional and user-friendly.
-                </p>
-            </section>
 
-            <section className="px-8 md:px-24 py-8 md:py-12 space-y-6 animate-slide-up delay-400">
-                <h3 className="text-3xl font-bold text-green-700 border-b-2 border-lime-300 pb-3">Our Expertise</h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="bg-white p-6 rounded-lg shadow-md border border-lime-100 hover:shadow-lg transition-shadow duration-300">
-                        <h4 className="text-xl font-semibold text-green-700 mb-3">UX Research & Strategy</h4>
-                        <ul className="list-disc list-inside text-gray-600 space-y-1">
-                            <li>User Interviews & Surveys</li>
-                            <li>Persona & User Journey Mapping</li>
-                            <li>Competitive Analysis</li>
-                            <li>UX Audits & Heuristic Evaluations</li>
-                        </ul>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md border border-lime-100 hover:shadow-lg transition-shadow duration-300">
-                        <h4 className="text-xl font-semibold text-green-700 mb-3">UI Design & Prototyping</h4>
-                        <ul className="list-disc list-inside text-gray-600 space-y-1">
-                            <li>Wireframing & Low-Fidelity Prototypes</li>
-                            <li>High-Fidelity UI Design</li>
-                            <li>Interactive Prototypes</li>
-                            <li>Design Systems & Style Guides</li>
-                        </ul>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md border border-lime-100 hover:shadow-lg transition-shadow duration-300">
-                        <h4 className="text-xl font-semibold text-green-700 mb-3">Interaction Design</h4>
-                        <ul className="list-disc list-inside text-gray-600 space-y-1">
-                            <li>Micro-interactions</li>
-                            <li>Animation & Transitions</li>
-                            <li>User Flow Optimization</li>
-                            <li>Feedback Mechanisms</li>
-                        </ul>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md border border-lime-100 hover:shadow-lg transition-shadow duration-300">
-                        <h4 className="text-xl font-semibold text-green-700 mb-3">Usability Testing</h4>
-                        <ul className="list-disc list-inside text-gray-600 space-y-1">
-                            <li>Moderated & Unmoderated Testing</li>
-                            <li>A/B Testing</li>
-                            <li>Eye-Tracking & Heatmaps</li>
-                            <li>Post-Test Analysis & Recommendations</li>
-                        </ul>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md border border-lime-100 hover:shadow-lg transition-shadow duration-300">
-                        <h4 className="text-xl font-semibold text-green-700 mb-3">Accessibility (A11y)</h4>
-                        <ul className="list-disc list-inside text-gray-600 space-y-1">
-                            <li>WCAG Compliance Audits</li>
-                            <li>Accessible Design Implementation</li>
-                            <li>Assistive Technology Testing</li>
-                            <li>Accessibility Training</li>
-                        </ul>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md border border-lime-100 hover:shadow-lg transition-shadow duration-300">
-                        <h4 className="text-xl font-semibold text-green-700 mb-3">Tools & Technologies</h4>
-                        <ul className="list-disc list-inside text-gray-600 space-y-1">
-                            <li>Figma, Sketch, Adobe XD</li>
-                            <li>Miro, Mural</li>
-                            <li>UserTesting, Hotjar</li>
-                            <li>Google Analytics</li>
-                        </ul>
+                <div className="container mx-auto px-4 text-center relative z-10">
+                    <div className="max-w-4xl mx-auto">
+                        <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 animated-element animate-fade-in-up">
+                            Ready to Enhance Your User Experience?
+                        </h2>
+                        <p className="text-xl md:text-2xl text-emerald-100 mb-12 leading-relaxed animated-element animate-fade-in-up delay-200">
+                            Let&apos;s create intuitive and engaging user experiences that delight your users and drive business growth. Our UX experts will help you design products that users love.
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animated-element animate-fade-in-up delay-400">
+                            <a href="/contact" className="bg-white text-sage-600 px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-emerald-50">
+                                Start UX Consultation
+                                <svg className="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                            <a href="tel:+917500269270" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-sage-600 transition-all duration-300 transform hover:scale-105">
+                                Call: +91 7500269270
+                            </a>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 animated-element animate-fade-in-up delay-600">
+                            <div className="text-center">
+                                <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-2xl flex items-center justify-center">
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-xl font-semibold text-white mb-2">User Research</h3>
+                                <p className="text-emerald-100">Deep insights into user behavior and preferences</p>
+                            </div>
+                            <div className="text-center">
+                                <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-2xl flex items-center justify-center">
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-xl font-semibold text-white mb-2">Design Systems</h3>
+                                <p className="text-emerald-100">Consistent and scalable design frameworks</p>
+                            </div>
+                            <div className="text-center">
+                                <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-2xl flex items-center justify-center">
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-xl font-semibold text-white mb-2">Usability Testing</h3>
+                                <p className="text-emerald-100">Validated designs through user testing</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
-
-          <section className="px-8 md:px-24 py-8 md:py-12 space-y-6 animate-slide-up delay-500">
-                <h3 className="text-3xl font-bold text-green-700 border-b-2 border-lime-300 pb-3">Ongoing UI/UX Support & Optimization</h3>
-                <p className="text-gray-700 leading-relaxed">
-                    UI/UX is an iterative process. We offer continuous support and optimization services to ensure your digital products remain user-friendly, competitive, and aligned with evolving user behaviors and market trends.
-                </p>
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
-                    <li>Regular UX Audits & Performance Reviews</li>
-                    <li>A/B Testing & Conversion Rate Optimization (CRO)</li>
-                    <li>User Feedback Integration & Iterative Design</li>
-                    <li>Design System Maintenance & Updates</li>
-                    <li>Accessibility Compliance Monitoring</li>
-                    <li>New Feature UI/UX Design & Integration</li>
-                </ul>
-            </section>
-
-            <section className="px-8 md:px-24 py-8 md:py-12 space-y-6 animate-slide-up delay-600">
-                <h3 className="text-3xl font-bold text-green-700 border-b-2 border-lime-300 pb-3">What Our Clients Say</h3>
-                <div id="testimonials-container" className="grid md:grid-cols-2 gap-6">
-                    <p className="text-gray-600 col-span-2 text-center">Loading testimonials...</p>
-                </div>
-                <div className="text-center mt-8">
-                    <button
-                        onClick="alert('Functionality to add testimonials is not implemented in this static page.');"
-                        className="px-8 py-3 bg-emerald-600 text-white font-semibold rounded-full shadow-lg hover:bg-emerald-700 transition-colors duration-300 transform hover:scale-105"
-                    >
-                        Share Your Experience
-                    </button>
-                </div>
-            </section>
-
-            <section className="px-8 md:px-24 py-8 md:py-12 space-y-6 animate-slide-up delay-700">
-                <h3 className="text-3xl font-bold text-green-700 border-b-2 border-lime-300 pb-3">Countries We Serve</h3>
-                <p className="text-gray-700 leading-relaxed">
-                    We collaborate with clients globally, providing expert UI/UX consulting services to enhance digital products and user experiences worldwide.
-                </p>
-                <div className="flex flex-wrap gap-4 text-gray-700">
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">USA</span>
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">Canada</span>
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">UK</span>
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">Australia</span>
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">Germany</span>
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">India</span>
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">UAE</span>
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">Singapore</span>
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">Japan</span>
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">Netherlands</span>
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">Sweden</span>
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">Brazil</span>
-                </div>
-            </section>
-
-            <section className="px-8 md:px-24 py-8 md:py-12 flex flex-col items-center bg-green-50 p-8 rounded-xl shadow-inner animate-fade-in-up delay-800">
-                <h3 className="text-3xl font-bold text-green-800 mb-6 text-center">Ready to Start Your Project?</h3>
-                <p className="text-lg text-gray-700 mb-8 text-center">
-                    Fill out the form below to get a free consultation and discuss your UI/UX consulting needs.
-                </p>
-                <div className="max-md:w-full w-[50rem]">
-                    <form id="contact-form" className="space-y-6" style={{ maxWidth: '100%'}}>
-                    <div>
-                        <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">Name:</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            required
-                            className="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
-                            placeholder="Your Name"
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">Email:</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required
-                            className="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
-                            placeholder="you@example.com"
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="message" className="block text-gray-700 text-sm font-bold mb-2">Your Message/Project Details:</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="5"
-                            required
-                            className="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
-                            placeholder="Tell us about your app idea or project requirements..."
-                        ></textarea>
-                    </div>
-                    <button
-                        type="submit"
-                        className="w-full bg-green-600 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors duration-300 transform hover:scale-105"
-                    >
-                        Submit Your Inquiry
-                    </button>
-                    <p id="form-status" className="text-center mt-4"></p>
-                </form>
-                </div>
-                
             </section>
         </>
     );

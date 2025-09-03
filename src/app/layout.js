@@ -41,13 +41,15 @@ export default function RootLayout({ children }) {
             <FaPhoneAlt className="w-6 h-6" color="#FFF" />
         </a>
 
-        <a href="https://wa.me/7500269270" target="_blank" style={{bottom: '100px', backgroundColor: 'green'}} rel="noopener noreferrer" className="floating-button" aria-label="Chat on WhatsApp">
+        <a href="https://wa.me/7500269270" target="_blank" rel="noopener noreferrer" className="floating-button whatsapp" aria-label="Chat on WhatsApp">
             <IoLogoWhatsapp className="w-6 h-6" color="#FFF" />
         </a>
         <Footer />
 
-        {/* ✅ Proper script placement */}\
-        <Script src="/animation.js" strategy="afterInteractive" />
+        {/* ✅ Modern animation script */}
+        <Script src="/modern-animation.js" strategy="afterInteractive" />
+        {/* ✅ Timeline animations */}
+        <Script src="/timeline-animations.js" strategy="afterInteractive" />
       </body>
     </html>
   );

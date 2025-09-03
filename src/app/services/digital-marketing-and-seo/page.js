@@ -1,239 +1,308 @@
-export default function Home() {
+'use client'
+import { TechDNAHelix, CircuitBoard } from "../../../components/3D"
+
+export default function DigitalMarketingAndSEO() {
     return (
         <>
-            <section className="bg-forest-green text-white py-16 md:py-20 text-center rounded-bl-[80px]">
-                <h1 className="text-4xl md:text-5xl font-extrabold mb-4 animated-element animate-fade-in-up">Digital Marketing & SEO Services</h1>
-                <p className="text-lg md:text-xl max-w-2xl mx-auto animated-element animate-fade-in-up delay-200">Boosting your online visibility and driving targeted traffic to achieve your business goals through comprehensive digital marketing strategies.</p>
-            </section>
-            <section className="px-8 md:px-24 py-8 md:py-12 space-y-6 animate-slide-up delay-100">
-                <h3 className="text-3xl font-bold text-green-700 border-b-2 border-lime-300 pb-3">What We Offer in Digital Marketing & SEO</h3>
-                <p className="text-gray-700 leading-relaxed">
-                    We provide a full spectrum of digital marketing services designed to enhance your bran&apos;s online presence, engage your target audience, and convert leads into loyal customers. Our strategies are data-driven and tailored to deliver measurable results.
-                </p>
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
-                    <li>Search Engine Optimization (SEO) - On-page, Off-page, Technical</li>
-                    <li>Pay-Per-Click (PPC) Advertising & Google Ads Management</li>
-                    <li>Social Media Marketing (SMM) - Strategy & Campaign Management</li>
-                    <li>Content Marketing - Strategy, Creation & Distribution</li>
-                    <li>Email Marketing Campaigns & Automation</li>
-                    <li>Local SEO & Google My Business Optimization</li>
-                    <li>Analytics & Performance Reporting</li>
-                </ul>
-            </section>
+            {/* Hero Section */}
+            <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+                {/* Animated Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-forest-50 to-sage-50">
+                    <div className="absolute inset-0 bg-mesh-gradient opacity-30"></div>
+                    <div className="absolute top-20 left-10 w-72 h-72 bg-forest-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
+                    <div className="absolute top-40 right-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float delay-1000"></div>
+                    <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-sage-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float delay-500"></div>
+                </div>
 
-            <section className="px-8 md:px-24 py-8 md:py-12 space-y-6 animate-slide-up delay-200">
-                <h3 className="text-3xl font-bold text-green-700 border-b-2 border-lime-300 pb-3">Our Key Features</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 border border-green-100 hover:shadow-lg transition-shadow duration-300">
-                        <div className="text-4xl">📈</div>
-                        <div>
-                            <h4 className="text-xl font-semibold text-green-700 mb-2">Data-Driven Strategies</h4>
-                            <p className="text-gray-600">Utilizing in-depth analytics and market research to formulate effective marketing plans.</p>
+                {/* 3D DNA Helix for Growth */}
+                <div className="absolute top-10 right-10 w-96 h-96 opacity-40 hidden lg:block">
+                    <TechDNAHelix />
+                </div>
+
+                {/* 3D Circuit Board for Analytics */}
+                <div className="absolute bottom-10 left-10 w-80 h-80 opacity-30 hidden xl:block">
+                    <CircuitBoard />
+                </div>
+
+                <div className="container mx-auto px-4 text-center relative z-10">
+                    <div className="max-w-5xl mx-auto">
+                        <div className="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-forest-400 to-forest-600 rounded-2xl flex items-center justify-center shadow-green animated-element animate-scale-in">
+                            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                        </div>
+
+                        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 animated-element animate-fade-in-up">
+                            <span className="bg-gradient-to-r from-forest-600 via-emerald-600 to-sage-700 bg-clip-text text-transparent">
+                                Digital Marketing
+                            </span>
+                            <br />
+                            <span className="text-gray-800">& SEO Services</span>
+                        </h1>
+
+                        <p className="text-xl md:text-2xl max-w-4xl mx-auto mb-12 text-gray-600 leading-relaxed animated-element animate-fade-in-up delay-200">
+                            Boosting your online visibility and driving targeted traffic to achieve your business goals through
+                            <span className="text-forest-600 font-semibold"> comprehensive digital marketing strategies</span>.
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animated-element animate-fade-in-up delay-400">
+                            <a href="#services" className="btn-primary hover-lift text-lg px-8 py-4">
+                                Explore Our Services
+                                <svg className="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                                </svg>
+                            </a>
+                            <a href="/contact" className="btn-secondary text-lg px-8 py-4">
+                                Get Free Quote
+                            </a>
                         </div>
                     </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 border border-green-100 hover:shadow-lg transition-shadow duration-300">
-                        <div className="text-4xl">🎯</div>
-                        <div>
-                            <h4 className="text-xl font-semibold text-green-700 mb-2">Targeted Campaigns</h4>
-                            <p className="text-gray-600">Reaching the right audience with precision to maximize conversion rates.</p>
-                        </div>
+                </div>
+            </section>
+            {/* What We Offer Section */}
+            <section id="services" className="py-20 md:py-32 relative">
+                <div className="container mx-auto px-4">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6 animated-element animate-fade-in-up">
+                            <span className="bg-gradient-to-r from-forest-600 to-emerald-700 bg-clip-text text-transparent">
+                                What We Offer
+                            </span>
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-4xl mx-auto animated-element animate-fade-in-up delay-200">
+                            We provide a full spectrum of digital marketing services designed to enhance your brand&apos;s online presence, engage your target audience, and convert leads into loyal customers.
+                        </p>
                     </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 border border-green-100 hover:shadow-lg transition-shadow duration-300">
-                        <div className="text-4xl">📊</div>
-                        <div>
-                            <h4 className="text-xl font-semibold text-green-700 mb-2">Transparent Reporting</h4>
-                            <p className="text-gray-600">Providing clear and regular reports on campaign performance and ROI.</p>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-100">
+                            <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-forest-400 to-forest-600 rounded-2xl flex items-center justify-center">
+                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Search Engine Optimization</h3>
+                            <p className="text-gray-600 text-center leading-relaxed">On-page, off-page, and technical SEO to improve your search rankings.</p>
                         </div>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 border border-green-100 hover:shadow-lg transition-shadow duration-300">
-                        <div className="text-4xl">💡</div>
-                        <div>
-                            <h4 className="text-xl font-semibold text-green-700 mb-2">Continuous Optimization</h4>
-                            <p className="text-gray-600">Constantly analyzing and refining strategies for improved results and efficiency.</p>
+
+                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-200">
+                            <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center">
+                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">PPC & Google Ads</h3>
+                            <p className="text-gray-600 text-center leading-relaxed">Strategic pay-per-click advertising and Google Ads management for maximum ROI.</p>
                         </div>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 border border-green-100 hover:shadow-lg transition-shadow duration-300">
-                        <div className="text-4xl">🔗</div>
-                        <div>
-                            <h4 className="text-xl font-semibold text-green-700 mb-2">Integrated Approach</h4>
-                            <p className="text-gray-600">Combining various digital channels for a cohesive and powerful marketing presence.</p>
+
+                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-300">
+                            <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-sage-400 to-sage-600 rounded-2xl flex items-center justify-center">
+                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Social Media Marketing</h3>
+                            <p className="text-gray-600 text-center leading-relaxed">Strategy and campaign management across all social media platforms.</p>
                         </div>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 border border-green-100 hover:shadow-lg transition-shadow duration-300">
-                        <div className="text-4xl">🚀</div>
-                        <div>
-                            <h4 className="text-xl font-semibold text-green-700 mb-2">Growth-Oriented Solutions</h4>
-                            <p className="text-gray-600">Focusing on sustainable growth and long-term success for your business.</p>
+
+                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-400">
+                            <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-mint-400 to-mint-600 rounded-2xl flex items-center justify-center">
+                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Content Marketing</h3>
+                            <p className="text-gray-600 text-center leading-relaxed">Strategy, creation, and distribution of engaging content that converts.</p>
+                        </div>
+
+                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-500">
+                            <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-emerald-500 to-forest-500 rounded-2xl flex items-center justify-center">
+                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Email Marketing</h3>
+                            <p className="text-gray-600 text-center leading-relaxed">Automated email campaigns and marketing automation for lead nurturing.</p>
+                        </div>
+
+                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-600">
+                            <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-forest-400 to-sage-500 rounded-2xl flex items-center justify-center">
+                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Analytics & Reporting</h3>
+                            <p className="text-gray-600 text-center leading-relaxed">Comprehensive performance tracking and detailed reporting for data-driven decisions.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="px-8 md:px-24 py-8 md:py-12 space-y-6 animate-slide-up delay-300">
-                <h3 className="text-3xl font-bold text-green-700 border-b-2 border-lime-300 pb-3">Industries We Serve</h3>
-                <div className="flex flex-wrap gap-4 text-gray-700">
-                    <span className="bg-lime-100 text-lime-800 px-4 py-2 rounded-full shadow-sm">E-commerce & Retail</span>
-                    <span className="bg-lime-100 text-lime-800 px-4 py-2 rounded-full shadow-sm">Healthcare & Pharma</span>
-                    <span className="bg-lime-100 text-lime-800 px-4 py-2 rounded-full shadow-sm">Real Estate</span>
-                    <span className="bg-lime-100 text-lime-800 px-4 py-2 rounded-full shadow-sm">Education & EdTech</span>
-                    <span className="bg-lime-100 text-lime-800 px-4 py-2 rounded-full shadow-sm">Hospitality & Travel</span>
-                    <span className="bg-lime-100 text-lime-800 px-4 py-2 rounded-full shadow-sm">Financial Services</span>
-                    <span className="bg-lime-100 text-lime-800 px-4 py-2 rounded-full shadow-sm">Technology & SaaS</span>
-                    <span className="bg-lime-100 text-lime-800 px-4 py-2 rounded-full shadow-sm">Automotive</span>
-                </div>
-                <p className="text-gray-700 leading-relaxed">
-                    We have a proven track record of delivering successful digital marketing campaigns across diverse industries, understanding their unique market dynamics and consumer behaviors.
-                </p>
-            </section>
+            {/* Key Features Section */}
+            <section className="py-20 md:py-32 bg-gradient-to-br from-gray-50 to-forest-50 relative">
+                <div className="container mx-auto px-4">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6 animated-element animate-fade-in-up">
+                            <span className="bg-gradient-to-r from-forest-600 to-emerald-700 bg-clip-text text-transparent">
+                                Our Key Features
+                            </span>
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto animated-element animate-fade-in-up delay-200">
+                            We deliver exceptional digital marketing results with data-driven strategies and proven methodologies.
+                        </p>
+                    </div>
 
-            <section className="px-8 md:px-24 py-8 md:py-12 space-y-6 animate-slide-up delay-400">
-                <h3 className="text-3xl font-bold text-green-700 border-b-2 border-lime-300 pb-3">Our Expertise</h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="bg-white p-6 rounded-lg shadow-md border border-lime-100 hover:shadow-lg transition-shadow duration-300">
-                        <h4 className="text-xl font-semibold text-green-700 mb-3">SEO (Search Engine Optimization)</h4>
-                        <ul className="list-disc list-inside text-gray-600 space-y-1">
-                            <li>Keyword Research & Strategy</li>
-                            <li>On-Page & Technical SEO</li>
-                            <li>Off-Page SEO & Link Building</li>
-                            <li>Local SEO & GMB Optimization</li>
-                        </ul>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md border border-lime-100 hover:shadow-lg transition-shadow duration-300">
-                        <h4 className="text-xl font-semibold text-green-700 mb-3">PPC (Pay-Per-Click) Advertising</h4>
-                        <ul className="list-disc list-inside text-gray-600 space-y-1">
-                            <li>Google Ads (Search, Display, Video)</li>
-                            <li>Social Media Ads (Facebook, Instagram, LinkedIn)</li>
-                            <li>Campaign Management & Optimization</li>
-                        </ul>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md border border-lime-100 hover:shadow-lg transition-shadow duration-300">
-                        <h4 className="text-xl font-semibold text-green-700 mb-3">Social Media Marketing</h4>
-                        <ul className="list-disc list-inside text-gray-600 space-y-1">
-                            <li>Social Media Strategy</li>
-                            <li>Content Creation & Scheduling</li>
-                            <li>Community Management</li>
-                        </ul>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md border border-lime-100 hover:shadow-lg transition-shadow duration-300">
-                        <h4 className="text-xl font-semibold text-green-700 mb-3">Content Marketing</h4>
-                        <ul className="list-disc list-inside text-gray-600 space-y-1">
-                            <li>Blog Posts & Articles</li>
-                            <li>Website Copywriting</li>
-                            <li>Video & Infographic Content</li>
-                        </ul>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md border border-lime-100 hover:shadow-lg transition-shadow duration-300">
-                        <h4 className="text-xl font-semibold text-green-700 mb-3">Email Marketing</h4>
-                        <ul className="list-disc list-inside text-gray-600 space-y-1">
-                            <li>Newsletter Campaigns</li>
-                            <li>Drip Campaigns & Automation</li>
-                            <li>List Segmentation & Management</li>
-                        </ul>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md border border-lime-100 hover:shadow-lg transition-shadow duration-300">
-                        <h4 className="text-xl font-semibold text-green-700 mb-3">Analytics & Reporting</h4>
-                        <ul className="list-disc list-inside text-gray-600 space-y-1">
-                            <li>Google Analytics Setup & Monitoring</li>
-                            <li>Custom Dashboard Creation</li>
-                            <li>Performance Analysis & Insights</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-100 group">
+                            <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-forest-400 to-forest-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-4 text-center group-hover:text-forest-600 transition-colors duration-300">Data-Driven Strategies</h3>
+                            <p className="text-gray-600 text-center leading-relaxed">Utilizing in-depth analytics and market research to formulate effective marketing plans.</p>
+                        </div>
 
-            <section className="px-8 md:px-24 py-8 space-y-6 animate-slide-up delay-500">
-                <h3 className="text-3xl font-bold text-green-700 border-b-2 border-lime-300 pb-3">Ongoing Digital Marketing Support</h3>
-                <p className="text-gray-700 leading-relaxed">
-                    Digital marketing is an ongoing process. We provide continuous support and optimization to ensure your campaigns remain effective, adapt to algorithm changes, and continue to deliver strong ROI.
-                </p>
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
-                    <li>Continuous SEO Monitoring & Optimization</li>
-                    <li>PPC Campaign Performance Tuning</li>
-                    <li>Social Media Content Updates & Engagement Monitoring</li>
-                    <li>Website Analytics & Conversion Rate Optimization (CRO)</li>
-                    <li>Regular Performance Reports & Strategy Reviews</li>
-                    <li>Market Trend Analysis & Competitor Monitoring</li>
-                </ul>
-            </section>
+                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-200 group">
+                            <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-4 text-center group-hover:text-emerald-600 transition-colors duration-300">Targeted Campaigns</h3>
+                            <p className="text-gray-600 text-center leading-relaxed">Reaching the right audience with precision to maximize conversion rates.</p>
+                        </div>
 
-            <section className="px-8 md:px-24 py-8 md:py-12 space-y-6 animate-slide-up delay-600">
-                <h3 className="text-3xl font-bold text-green-700 border-b-2 border-lime-300 pb-3">What Our Clients Say</h3>
-                <div id="testimonials-container" className="grid md:grid-cols-2 gap-6">
-                    <p className="text-gray-600 col-span-2 text-center">Loading testimonials...</p>
-                </div>
-                <div className="text-center mt-8">
-                    <button
-                        onClick="alert('Functionality to add testimonials is not implemented in this static page.');"
-                        className="px-8 py-3 bg-emerald-600 text-white font-semibold rounded-full shadow-lg hover:bg-emerald-700 transition-colors duration-300 transform hover:scale-105"
-                    >
-                        Share Your Experience
-                    </button>
+                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-300 group">
+                            <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-sage-400 to-sage-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-4 text-center group-hover:text-sage-600 transition-colors duration-300">Transparent Reporting</h3>
+                            <p className="text-gray-600 text-center leading-relaxed">Providing clear and regular reports on campaign performance and ROI.</p>
+                        </div>
+
+                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-400 group">
+                            <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-mint-400 to-mint-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-4 text-center group-hover:text-mint-600 transition-colors duration-300">Continuous Optimization</h3>
+                            <p className="text-gray-600 text-center leading-relaxed">Constantly analyzing and refining strategies for improved results and efficiency.</p>
+                        </div>
+
+                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-500 group">
+                            <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-emerald-500 to-forest-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-4 text-center group-hover:text-emerald-600 transition-colors duration-300">Integrated Approach</h3>
+                            <p className="text-gray-600 text-center leading-relaxed">Combining various digital channels for a cohesive and powerful marketing presence.</p>
+                        </div>
+
+                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-600 group">
+                            <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-forest-400 to-sage-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-4 text-center group-hover:text-forest-600 transition-colors duration-300">Growth-Oriented Solutions</h3>
+                            <p className="text-gray-600 text-center leading-relaxed">Focusing on sustainable growth and long-term success for your business.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <section className="px-8 md:px-24 py-8 md:py-12 space-y-6 animate-slide-up delay-700">
-                <h3 className="text-3xl font-bold text-green-700 border-b-2 border-lime-300 pb-3">Countries We Serve</h3>
-                <p className="text-gray-700 leading-relaxed">
-                    We are proud to serve clients globally, delivering high-quality mobile app development solutions across continents.
-                </p>
-                <div className="flex flex-wrap gap-4 text-gray-700">
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">USA</span>
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">Canada</span>
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">UK</span>
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">Australia</span>
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">Germany</span>
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">India</span>
-                    <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full shadow-sm">UAE</span>
+            {/* Industries We Serve Section */}
+            <section className="py-20 md:py-32 relative">
+                <div className="container mx-auto px-4">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6 animated-element animate-fade-in-up">
+                            <span className="bg-gradient-to-r from-forest-600 to-emerald-700 bg-clip-text text-transparent">
+                                Industries We Serve
+                            </span>
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-4xl mx-auto animated-element animate-fade-in-up delay-200">
+                            We have a proven track record of delivering successful digital marketing campaigns across diverse industries, understanding their unique market dynamics and consumer behaviors.
+                        </p>
+                    </div>
+
+                    <div className="flex flex-wrap justify-center gap-4 mb-12">
+                        <span className="bg-gradient-to-r from-forest-100 to-forest-200 text-forest-800 px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow duration-300 animated-element animate-scale-in delay-100">E-commerce & Retail</span>
+                        <span className="bg-gradient-to-r from-emerald-100 to-emerald-200 text-emerald-800 px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow duration-300 animated-element animate-scale-in delay-200">Healthcare & Pharma</span>
+                        <span className="bg-gradient-to-r from-sage-100 to-sage-200 text-sage-800 px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow duration-300 animated-element animate-scale-in delay-300">Real Estate</span>
+                        <span className="bg-gradient-to-r from-mint-100 to-mint-200 text-mint-800 px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow duration-300 animated-element animate-scale-in delay-400">Education & EdTech</span>
+                        <span className="bg-gradient-to-r from-emerald-100 to-forest-200 text-emerald-800 px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow duration-300 animated-element animate-scale-in delay-500">Hospitality & Travel</span>
+                        <span className="bg-gradient-to-r from-forest-100 to-sage-200 text-forest-800 px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow duration-300 animated-element animate-scale-in delay-600">Financial Services</span>
+                        <span className="bg-gradient-to-r from-sage-100 to-mint-200 text-sage-800 px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow duration-300 animated-element animate-scale-in delay-700">Technology & SaaS</span>
+                        <span className="bg-gradient-to-r from-mint-100 to-emerald-200 text-mint-800 px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow duration-300 animated-element animate-scale-in delay-800">Automotive</span>
+                    </div>
                 </div>
             </section>
 
-            <section className="px-8 md:px-24 py-8 md:py-12 flex flex-col items-center bg-green-50 p-8 rounded-xl shadow-inner animate-fade-in-up delay-800">
-                <h3 className="text-3xl font-bold text-green-800 mb-6 text-center">Ready to Start Your Project?</h3>
-                <p className="text-lg text-gray-700 mb-8 text-center">
-                    Fill out the form below to get a free consultation and quote for your mobile app idea.
-                </p>
-                <form className="max-md:w-full w-[50rem]">
-                    <div>
-                        <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">Name:</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            required
-                            className="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
-                            placeholder="Your Name"
-                        />
+            {/* CTA Section */}
+            <section className="py-20 md:py-32 bg-gradient-to-br from-forest-600 via-emerald-600 to-sage-700 relative overflow-hidden">
+                {/* Background Effects */}
+                <div className="absolute inset-0">
+                    <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-10 animate-float"></div>
+                    <div className="absolute bottom-10 right-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-10 animate-float delay-1000"></div>
+                </div>
+
+                <div className="container mx-auto px-4 text-center relative z-10">
+                    <div className="max-w-4xl mx-auto">
+                        <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 animated-element animate-fade-in-up">
+                            Ready to Boost Your Online Presence?
+                        </h2>
+                        <p className="text-xl md:text-2xl text-emerald-100 mb-12 leading-relaxed animated-element animate-fade-in-up delay-200">
+                            Let&apos;s create data-driven digital marketing campaigns that drive real results. Our expert team is ready to help you reach your target audience and grow your business online.
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animated-element animate-fade-in-up delay-400">
+                            <a href="/contact" className="bg-white text-forest-600 px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-emerald-50">
+                                Get Free Marketing Audit
+                                <svg className="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                            <a href="tel:+917500269270" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-forest-600 transition-all duration-300 transform hover:scale-105">
+                                Call: +91 7500269270
+                            </a>
+                        </div>
+
+                        {/* Additional Features */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 animated-element animate-fade-in-up delay-600">
+                            <div className="text-center">
+                                <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-2xl flex items-center justify-center">
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-xl font-semibold text-white mb-2">Proven Results</h3>
+                                <p className="text-emerald-100">Track record of increasing ROI and conversions</p>
+                            </div>
+                            <div className="text-center">
+                                <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-2xl flex items-center justify-center">
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-xl font-semibold text-white mb-2">Data-Driven</h3>
+                                <p className="text-emerald-100">Analytics-based strategies for maximum impact</p>
+                            </div>
+                            <div className="text-center">
+                                <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-2xl flex items-center justify-center">
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-xl font-semibold text-white mb-2">Full Support</h3>
+                                <p className="text-emerald-100">Ongoing optimization and campaign management</p>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">Email:</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required
-                            className="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
-                            placeholder="you@example.com"
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="message" className="block text-gray-700 text-sm font-bold mb-2">Your Message/Project Details:</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="5"
-                            required
-                            className="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
-                            placeholder="Tell us about your app idea or project requirements..."
-                        ></textarea>
-                    </div>
-                    <button
-                        type="submit"
-                        className="w-full bg-green-600 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors duration-300 transform hover:scale-105"
-                    >
-                        Submit Your Inquiry
-                    </button>
-                    <p id="form-status" className="text-center mt-4"></p>
-                </form>
+                </div>
             </section>
         </>
     );
