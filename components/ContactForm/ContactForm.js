@@ -6,7 +6,7 @@ const ContactForm = ({ onSuccess, isModal = false }) => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        subject: '',
+        service: '',
         budget: '',
         message: ''
     });
@@ -57,12 +57,21 @@ const ContactForm = ({ onSuccess, isModal = false }) => {
             errors.push('Please provide a valid email address');
         }
         
-        if (!formData.subject.trim() || formData.subject.trim().length < 5) {
-            errors.push('Subject must be at least 5 characters long');
+        if (!formData.service || !formData.service.trim()) {
+            errors.push('Please select a service');
         }
-        
-        if (!formData.message.trim() || formData.message.trim().length < 10) {
-            errors.push('Message must be at least 10 characters long');
+
+        // Budget validation (optional but if provided should be valid)
+        if (formData.budget) {
+            const budgetNum = parseInt(formData.budget);
+            if (isNaN(budgetNum) || budgetNum < 20000 || budgetNum > 500000) {
+                errors.push('Budget must be between ₹20,000 and ₹5,00,000');
+            }
+        }
+
+        // Message is now optional, but if provided should have minimum length
+        if (formData.message && formData.message.trim() && formData.message.trim().length < 10) {
+            errors.push('Message must be at least 10 characters long if provided');
         }
         
         return errors;
@@ -111,7 +120,8 @@ const ContactForm = ({ onSuccess, isModal = false }) => {
                 setFormData({
                     name: '',
                     email: '',
-                    subject: '',
+                    service: '',
+                    budget: '',
                     message: ''
                 });
                 
@@ -231,20 +241,26 @@ const ContactForm = ({ onSuccess, isModal = false }) => {
                     </div>
                 </div>
                 <div>
-                    <label htmlFor="subject" className={`block text-gray-700 text-sm font-semibold ${isModal ? 'mb-2' : 'mb-3'}`}>
-                        Subject *
+                    <label htmlFor="service" className={`block text-gray-700 text-sm font-semibold ${isModal ? 'mb-2' : 'mb-3'}`}>
+                        Service *
                     </label>
-                    <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
+                    <select
+                        id="service"
+                        name="service"
+                        value={formData.service}
                         onChange={handleChange}
                         className={`w-full px-4 ${isModal ? 'py-2.5' : 'py-3'} border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300`}
-                        placeholder="Subject of your inquiry"
                         required
                         disabled={formState.isSubmitting}
-                    />
+                    >
+                        <option value="">Select Service</option>
+                        <option value="web-development">Web & Mobile Development</option>
+                        <option value="digital-marketing">Digital Marketing & SEO</option>
+                        <option value="design-branding">Design & Branding</option>
+                        <option value="ecommerce">E-commerce Solutions</option>
+                        <option value="cloud-devops">Cloud & DevOps</option>
+                        <option value="ui-ux">UI/UX Consulting</option>
+                    </select>
                 </div>
                 <div>
                     <label htmlFor="budget" className={`block text-gray-700 text-sm font-semibold ${isModal ? 'mb-2' : 'mb-3'}`}>

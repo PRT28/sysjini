@@ -12,6 +12,68 @@ export default function LandingPage() {
   const [isLoaded, setIsLoaded] = useState(false);
   const { isModalOpen: isOpen, openModal, closeModal } = useContactModal();
 
+  // Contact form state
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    service: '',
+    budget: '100000',
+    message: ''
+  });
+
+  const [formState, setFormState] = useState({
+    isSubmitting: false,
+    isSubmitted: false,
+    error: null
+  });
+
+  // Handle form input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setFormState({ isSubmitting: true, isSubmitted: false, error: null });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setFormState({ isSubmitting: false, isSubmitted: true, error: null });
+        setFormData({
+          name: '',
+          email: '',
+          service: '',
+          budget: '100000',
+          message: ''
+        });
+      } else {
+        setFormState({
+          isSubmitting: false,
+          isSubmitted: false,
+          error: result.errors ? result.errors.join(', ') : result.message || 'Failed to send message. Please try again.'
+        });
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setFormState({ isSubmitting: false, isSubmitted: false, error: 'Failed to send message. Please try again.' });
+    }
+  };
+
   // Smooth scroll to contact section
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact-section');
@@ -56,7 +118,7 @@ export default function LandingPage() {
       // Check if modal should be shown (not shown in current session)
       const hasShownInSession = sessionStorage.getItem('contactModalShown');
       if (!hasShownInSession) {
-        openModal();
+        // openModal();
         sessionStorage.setItem('contactModalShown', true);
         console.log('📱 Modal opened and session storage set');
       } else {
@@ -202,7 +264,6 @@ export default function LandingPage() {
           <a
             href="tel:+917500269270"
             className="floating-button group"
-            data-landing-floating="true"
             aria-label="Call us"
           >
             <svg className="w-6 h-6 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -705,83 +766,136 @@ export default function LandingPage() {
 
                 {/* Contact Form */}
                 <div className="animated-element animate-fade-in-up delay-600">
-                  <form className="space-y-6">
-                    <div>
-                      <input
-                        type="text"
-                        placeholder="Your Name"
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-emerald-200 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all duration-200"
-                        required
-                      />
+                  {formState.isSubmitted ? (
+                    <div className="text-center py-8">
+                      <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
+                      <p className="text-emerald-100 mb-6">Thank you for contacting us. We&apos;ll get back to you soon.</p>
+                      <button
+                        onClick={() => setFormState({ isSubmitting: false, isSubmitted: false, error: null })}
+                        className="bg-white text-emerald-600 px-6 py-3 rounded-xl font-semibold hover:bg-emerald-50 transition-all duration-300"
+                      >
+                        Send Another Message
+                      </button>
                     </div>
-
-                    <div>
-                      <input
-                        type="email"
-                        placeholder="Your Email"
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-emerald-200 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all duration-200"
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <select className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all duration-200">
-                        <option value="" className="text-gray-800">Select Service</option>
-                        <option value="web-development" className="text-gray-800">Web & Mobile Development</option>
-                        <option value="digital-marketing" className="text-gray-800">Digital Marketing & SEO</option>
-                        <option value="design-branding" className="text-gray-800">Design & Branding</option>
-                        <option value="ecommerce" className="text-gray-800">E-commerce Solutions</option>
-                        <option value="cloud-devops" className="text-gray-800">Cloud & DevOps</option>
-                        <option value="ui-ux" className="text-gray-800">UI/UX Consulting</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-emerald-100 text-sm font-semibold mb-3">
-                        Budget Range: ₹20,000 - ₹5,00,000
-                      </label>
-                      <div className="space-y-4">
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div>
                         <input
-                          type="range"
-                          min="20000"
-                          max="500000"
-                          step="5000"
-                          defaultValue="100000"
-                          className="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer slider"
-                          style={{
-                            background: 'linear-gradient(to right, #10b981 0%, #10b981 30%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.2) 100%)'
-                          }}
-                          onInput={(e) => {
-                            const value = parseInt(e.target.value);
-                            const percentage = ((value - 20000) / (500000 - 20000)) * 100;
-                            e.target.style.background = `linear-gradient(to right, #10b981 0%, #10b981 ${percentage}%, rgba(255,255,255,0.2) ${percentage}%, rgba(255,255,255,0.2) 100%)`;
-                            e.target.nextElementSibling.textContent = `₹${value.toLocaleString('en-IN')}`;
-                          }}
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="Your Name"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-emerald-200 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all duration-200"
+                          required
+                          disabled={formState.isSubmitting}
                         />
-                        <div className="text-center text-emerald-100 font-semibold text-lg">
-                          ₹1,00,000
+                      </div>
+
+                      <div>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="Your Email"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-emerald-200 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all duration-200"
+                          required
+                          disabled={formState.isSubmitting}
+                        />
+                      </div>
+
+                      <div>
+                        <select
+                          name="service"
+                          value={formData.service}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all duration-200"
+                          required
+                          disabled={formState.isSubmitting}
+                        >
+                          <option value="" className="text-gray-800">Select Service</option>
+                          <option value="web-development" className="text-gray-800">Web & Mobile Development</option>
+                          <option value="digital-marketing" className="text-gray-800">Digital Marketing & SEO</option>
+                          <option value="design-branding" className="text-gray-800">Design & Branding</option>
+                          <option value="ecommerce" className="text-gray-800">E-commerce Solutions</option>
+                          <option value="cloud-devops" className="text-gray-800">Cloud & DevOps</option>
+                          <option value="ui-ux" className="text-gray-800">UI/UX Consulting</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-emerald-100 text-sm font-semibold mb-3">
+                          Budget Range: ₹20,000 - ₹5,00,000
+                        </label>
+                        <div className="space-y-4">
+                          <input
+                            type="range"
+                            name="budget"
+                            min="20000"
+                            max="500000"
+                            step="5000"
+                            value={formData.budget}
+                            onChange={handleChange}
+                            className="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer slider"
+                            style={{
+                              background: `linear-gradient(to right, #10b981 0%, #10b981 ${((formData.budget - 20000) / (500000 - 20000)) * 100}%, rgba(255,255,255,0.2) ${((formData.budget - 20000) / (500000 - 20000)) * 100}%, rgba(255,255,255,0.2) 100%)`
+                            }}
+                            disabled={formState.isSubmitting}
+                          />
+                          <div className="text-center text-emerald-100 font-semibold text-lg">
+                            ₹{parseInt(formData.budget).toLocaleString('en-IN')}
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div>
-                      <textarea
-                        rows="3"
-                        placeholder="Brief project description (optional)..."
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-emerald-200 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all duration-200 resize-none"
-                      ></textarea>
-                    </div>
+                      <div>
+                        <textarea
+                          name="message"
+                          value={formData.message}
+                          onChange={handleChange}
+                          rows="3"
+                          placeholder="Brief project description (optional)..."
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-emerald-200 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-all duration-200 resize-none"
+                          disabled={formState.isSubmitting}
+                        />
+                      </div>
 
-                    <button
-                      type="submit"
-                      className="w-full bg-white text-emerald-600 px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-emerald-50"
-                    >
-                      Send Message
-                      <svg className="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                      </svg>
-                    </button>
-                  </form>
+                      {formState.error && (
+                        <div className="p-4 bg-red-500/20 border border-red-400/30 rounded-xl">
+                          <p className="text-red-200 text-sm">{formState.error}</p>
+                        </div>
+                      )}
+
+                      <button
+                        type="submit"
+                        disabled={formState.isSubmitting}
+                        className="w-full bg-white text-emerald-600 px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-emerald-50 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                      >
+                        {formState.isSubmitting ? (
+                          <>
+                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-emerald-600 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            Send Message
+                            <svg className="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                            </svg>
+                          </>
+                        )}
+                      </button>
+                    </form>
+                  )}
                 </div>
               </div>
             </div>

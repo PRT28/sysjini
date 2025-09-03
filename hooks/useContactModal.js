@@ -51,20 +51,19 @@ const useContactModal = () => {
         return 'organic';
     };
 
-    // Check if modal should be shown (not shown in current session)
+    // Check if modal should be shown (show on every reload)
     const shouldShowModal = () => {
         if (typeof window === 'undefined') return false;
-        
-        // Check sessionStorage to avoid showing multiple times in same session
-        const hasShownInSession = sessionStorage.getItem('contactModalShown');
-        return !hasShownInSession && !hasShown;
+
+        // Only check if it has been shown in the current page load
+        // Remove session storage check to allow modal on every reload
+        return !hasShown;
     };
 
-    // Mark modal as shown
+    // Mark modal as shown (only for current page load)
     const markModalAsShown = () => {
-        if (typeof window !== 'undefined') {
-            sessionStorage.setItem('contactModalShown', 'true');
-        }
+        // Only set local state, don't use session storage
+        // This allows modal to show again on page reload
         setHasShown(true);
     };
 

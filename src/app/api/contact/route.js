@@ -19,7 +19,20 @@ const createTransporter = () => {
 // Auto-reply email template
 
 // Auto-reply template
-const createAutoReplyTemplate = (name) => {
+const createAutoReplyTemplate = (name, service, budget) => {
+    // Format service name
+    const serviceMap = {
+        'web-development': 'Web & Mobile Development',
+        'digital-marketing': 'Digital Marketing & SEO',
+        'design-branding': 'Design & Branding',
+        'ecommerce': 'E-commerce Solutions',
+        'cloud-devops': 'Cloud & DevOps',
+        'ui-ux': 'UI/UX Consulting'
+    };
+    const serviceName = serviceMap[service] || service;
+
+    // Format budget
+    const budgetText = budget ? `₹${parseInt(budget).toLocaleString('en-IN')}` : 'To be discussed';
     return {
         html: `
             <!DOCTYPE html>
@@ -51,6 +64,12 @@ const createAutoReplyTemplate = (name) => {
                         <h2>Hi ${name},</h2>
                         <p>Thank you for reaching out to <strong>Sysjini</strong>! I've personally received your message and appreciate you taking the time to contact us.</p>
 
+                        <div style="background-color: #f0fdf4; border-left: 4px solid #10b981; padding: 20px; margin: 20px 0; border-radius: 8px;">
+                            <h3 style="color: #065f46; margin: 0 0 10px 0; font-size: 18px;">Your Inquiry Details:</h3>
+                            <p style="margin: 5px 0; color: #047857;"><strong>Service:</strong> ${serviceName}</p>
+                            <p style="margin: 5px 0; color: #047857;"><strong>Budget Range:</strong> ${budgetText}</p>
+                        </div>
+
                         <p>I will review your inquiry and get back to you within <strong>24 hours</strong>. I'm excited to learn more about your project and explore how we can help bring your digital vision to life.</p>
                         
                         <p>In the meantime, feel free to:</p>
@@ -77,6 +96,10 @@ Hi ${name},
 
 Thank you for reaching out to Sysjini! I've personally received your message and appreciate you taking the time to contact us.
 
+Your Inquiry Details:
+- Service: ${serviceName}
+- Budget Range: ${budgetText}
+
 I will review your inquiry and get back to you within 24 hours. I'm excited to learn more about your project and explore how we can help bring your digital vision to life.
 
 In the meantime, feel free to:
@@ -98,26 +121,48 @@ Founder & CEO, Sysjini
 
 // Validation function
 const validateFormData = (data) => {
-    const { name, email, subject, message } = data;
+    const { name, email, service, budget, message } = data;
     const errors = [];
-    
+
     if (!name || name.trim().length < 2) {
         errors.push('Name must be at least 2 characters long');
     }
-    
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email || !emailRegex.test(email)) {
         errors.push('Please provide a valid email address');
     }
-    
-    if (!subject || subject.trim().length < 5) {
-        errors.push('Subject must be at least 5 characters long');
+
+    if (!service || service.trim().length === 0) {
+        errors.push('Please select a service');
     }
-    
-    if (!message || message.trim().length < 10) {
-        errors.push('Message must be at least 10 characters long');
+
+    // Validate service is one of the allowed values
+    const allowedServices = [
+        'web-development',
+        'digital-marketing',
+        'design-branding',
+        'ecommerce',
+        'cloud-devops',
+        'ui-ux'
+    ];
+    if (service && !allowedServices.includes(service)) {
+        errors.push('Please select a valid service');
     }
-    
+
+    // Budget validation (optional but if provided should be valid)
+    if (budget) {
+        const budgetNum = parseInt(budget);
+        if (isNaN(budgetNum) || budgetNum < 20000 || budgetNum > 500000) {
+            errors.push('Budget must be between ₹20,000 and ₹5,00,000');
+        }
+    }
+
+    // Message is now optional, but if provided should have minimum length
+    if (message && message.trim().length > 0 && message.trim().length < 10) {
+        errors.push('Message must be at least 10 characters long if provided');
+    }
+
     return errors;
 };
 
@@ -135,7 +180,7 @@ export async function POST(request) {
             );
         }
         
-        const { name, email } = formData;
+        const { name, email, service, budget } = formData;
 
         // Save to Google Sheets first
         try {
@@ -153,7 +198,7 @@ export async function POST(request) {
         await transporter.verify();
 
         // Email template for auto-reply only
-        const autoReplyTemplate = createAutoReplyTemplate(name);
+        const autoReplyTemplate = createAutoReplyTemplate(name, service, budget);
 
         // Send auto-reply to user from prithvi.raj@sysjini.in
         const userMailOptions = {
