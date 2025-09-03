@@ -1,5 +1,5 @@
 'use client'
-import { TechDNAHelix, CircuitBoard } from "../../../components/3D"
+import { TechDNAHelix, CircuitBoard } from "../../../../components/3D"
 
 export default function DigitalMarketingAndSEO() {
     return (

@@ -106,7 +106,7 @@ export default function Services() {
                             </div>
                             <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-sage-600 transition-colors duration-300">Designing & Branding</h3>
                             <p className="text-gray-600 leading-relaxed">
-                                From captivating UI/UX design to a cohesive brand identity, we create visuals that speak your brand's language and resonate with your audience. Memorable and impactful design is our forte.
+                                From captivating UI/UX design to a cohesive brand identity, we create visuals that speak your brand&apos;s language and resonate with your audience. Memorable and impactful design is our forte.
                             </p>
                             <div className="mt-6 text-sage-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
                                 Learn More →
@@ -192,7 +192,7 @@ export default function Services() {
                         </h2>
 
                         <p className="text-xl md:text-2xl text-emerald-100 max-w-3xl mx-auto mb-12 leading-relaxed animated-element animate-fade-in-up delay-200">
-                            Let's discuss your project and turn your vision into a stunning reality.
+                            Let&apos;s discuss your project and turn your vision into a stunning reality.
                             Get started with a free consultation today.
                         </p>
 

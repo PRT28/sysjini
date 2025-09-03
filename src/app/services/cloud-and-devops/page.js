@@ -1,5 +1,5 @@
 'use client'
-import { NetworkNodes, FloatingTechCube } from "../../../components/3D"
+import { NetworkNodes, FloatingTechCube } from "../../../../components/3D"
 
 export default function CloudAndDevOps() {
     return (

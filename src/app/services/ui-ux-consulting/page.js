@@ -1,5 +1,5 @@
 'use client'
-import { TechDNAHelix, HolographicCode } from "../../../components/3D"
+import { TechDNAHelix, HolographicCode } from "../../../../components/3D"
 
 export default function UIUXConsulting() {
     return (

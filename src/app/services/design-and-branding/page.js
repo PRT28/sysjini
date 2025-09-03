@@ -1,5 +1,5 @@
 'use client'
-import { HolographicCode, NetworkNodes } from "../../../components/3D"
+import { HolographicCode, NetworkNodes } from "../../../../components/3D"
 
 export default function DesignAndBranding() {
     return (
