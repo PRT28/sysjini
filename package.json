@@ -12,6 +12,7 @@
     "@react-three/drei": "^9.88.13",
     "@react-three/fiber": "^8.15.11",
     "axios": "^1.7.7",
+    "critters": "^0.0.23",
     "googleapis": "^128.0.0",
     "lottie-react": "^2.4.1",
     "next": "14.2.4",

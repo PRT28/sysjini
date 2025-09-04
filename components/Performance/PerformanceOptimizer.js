@@ -246,6 +246,38 @@ export default function PerformanceOptimizer() {
     monitorCoreWebVitals();
     addResourceHints();
 
+    // Performance monitoring and reporting
+    const reportPerformanceMetrics = () => {
+      if ('performance' in window && 'getEntriesByType' in performance) {
+        // Report navigation timing
+        const navigation = performance.getEntriesByType('navigation')[0];
+        if (navigation) {
+          console.log('Performance Metrics:', {
+            domContentLoaded: navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart,
+            loadComplete: navigation.loadEventEnd - navigation.loadEventStart,
+            firstByte: navigation.responseStart - navigation.requestStart,
+            domInteractive: navigation.domInteractive - navigation.navigationStart,
+          });
+        }
+
+        // Report resource timing
+        const resources = performance.getEntriesByType('resource');
+        const slowResources = resources.filter(resource => resource.duration > 1000);
+        if (slowResources.length > 0) {
+          console.log('Slow Resources:', slowResources.map(r => ({ name: r.name, duration: r.duration })));
+        }
+      }
+    };
+
+    // Report metrics after page load
+    if (document.readyState === 'complete') {
+      setTimeout(reportPerformanceMetrics, 1000);
+    } else {
+      window.addEventListener('load', () => {
+        setTimeout(reportPerformanceMetrics, 1000);
+      });
+    }
+
     // Cleanup function
     return () => {
       // Remove any event listeners or observers if needed
