@@ -72,8 +72,8 @@ class ErrorBoundary extends React.Component {
                             </button>
                             <div className="mt-4 text-sm text-gray-500">
                                 <p>If the problem persists, please contact us:</p>
-                                <a href="mailto:prithvi.raj@sysjini.in" className="text-emerald-600 hover:text-emerald-800">
-                                    prithvi.raj@sysjini.in
+                                <a href="mailto:hello@sysjini.in" className="text-emerald-600 hover:text-emerald-800">
+                                    hello@sysjini.in
                                 </a>
                             </div>
                         </div>

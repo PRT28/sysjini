@@ -268,8 +268,8 @@ export default function DigitalMarketingAndSEO() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </a>
-                            <a href="tel:+917500269270" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-forest-600 transition-all duration-300 transform hover:scale-105">
-                                Call: +91 7500269270
+                            <a href="tel:+917017197678" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-forest-600 transition-all duration-300 transform hover:scale-105">
+                                Call: +91 7017197678
                             </a>
                         </div>
 

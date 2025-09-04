@@ -99,8 +99,8 @@ export default function Contact() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                                 </svg>
                             </a>
-                            <a href="tel:+917500269270" className="border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:scale-105">
-                                Call Now: +91 7500269270
+                            <a href="tel:+917017197678" className="border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:scale-105">
+                                Call Now: +91 7017197678
                             </a>
                         </div>
                     </div>
@@ -279,7 +279,7 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <p className="font-semibold text-gray-800">Email</p>
-                                        <p className="text-gray-600">prithvi.raj@sysjini.in</p>
+                                        <p className="text-gray-600">hello@sysjini.in</p>
                                     </div>
                                 </div>
 
@@ -291,7 +291,7 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <p className="font-semibold text-gray-800">Phone</p>
-                                        <p className="text-gray-600">+91 7500269270</p>
+                                        <p className="text-gray-600">+91 7017197678</p>
                                     </div>
                                 </div>
 

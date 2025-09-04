@@ -28,13 +28,13 @@ export default function SEOHead({
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-7500269270",
+      "telephone": "+91-7017197678",
       "contactType": "customer service",
       "availableLanguage": ["English", "Hindi"]
     },
     "sameAs": [
       "https://www.linkedin.com/company/sysjini",
-      "https://wa.me/7500269270"
+      "https://wa.me/7017197678"
     ],
     "offers": {
       "@type": "Offer",

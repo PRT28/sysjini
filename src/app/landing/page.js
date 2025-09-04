@@ -249,7 +249,7 @@ export default function LandingPage() {
         <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-40">
           {/* WhatsApp Button */}
           <a
-            href="https://wa.me/917500269270?text=Hi%20Sysjini,%20I'm%20interested%20in%20your%20services"
+            href="https://wa.me/917017197678?text=Hi%20Sysjini,%20I'm%20interested%20in%20your%20services"
             target="_blank"
             rel="noopener noreferrer"
             className="floating-button whatsapp group"
@@ -263,7 +263,7 @@ export default function LandingPage() {
 
           {/* Call Button */}
           <a
-            href="tel:+917500269270"
+            href="tel:+917017197678"
             className="floating-button group"
             aria-label="Call us"
           >
@@ -734,7 +734,7 @@ export default function LandingPage() {
                       </div>
                       <div>
                         <div className="text-emerald-100 text-sm">Phone</div>
-                        <div className="text-white font-semibold">+91 7500269270</div>
+                        <div className="text-white font-semibold">+91 7017197678</div>
                       </div>
                     </div>
 
@@ -746,7 +746,7 @@ export default function LandingPage() {
                       </div>
                       <div>
                         <div className="text-emerald-100 text-sm">Email</div>
-                        <div className="text-white font-semibold">prithvi.raj@sysjini.com</div>
+                        <div className="text-white font-semibold">hello@sysjini.com</div>
                       </div>
                     </div>
 

@@ -13,14 +13,14 @@ export const organizationSchema = {
   },
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+91-7500269270",
+    "telephone": "+91-7017197678",
     "contactType": "customer service",
     "availableLanguage": ["English", "Hindi"],
     "areaServed": "Worldwide"
   },
   "sameAs": [
     "https://www.linkedin.com/company/sysjini",
-    "https://wa.me/7500269270"
+    "https://wa.me/7017197678"
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -93,7 +93,7 @@ export const localBusinessSchema = {
   "name": "Sysjini",
   "image": "https://sysjini.in/logoGnRm2.png",
   "url": "https://sysjini.in",
-  "telephone": "+91-7500269270",
+  "telephone": "+91-7017197678",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "IN",

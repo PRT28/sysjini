@@ -84,7 +84,7 @@ const createAutoReplyTemplate = (name, service, budget) => {
                     
                     <div class="footer">
                         <p><strong>Best regards,<br/>Prithviraj Tiwari<br/>Founder & CEO, Sysjini</strong></p>
-                        <p>📧 prithvi.raj@sysjini.in | 📞 +91 7500269270</p>
+                        <p>📧 hello@sysjini.in | 📞 +91 7017197678</p>
                         <p>🌐 www.sysjini.in</p>
                     </div>
                 </div>
@@ -111,7 +111,7 @@ Best regards,
 Prithviraj Tiwari
 Founder & CEO, Sysjini
 
-📧 prithvi.raj@sysjini.in | 📞 +91 7500269270
+📧 hello@sysjini.in | 📞 +91 7017197678
 🌐 www.sysjini.in
         `
     };
@@ -200,7 +200,7 @@ export async function POST(request) {
         // Email template for auto-reply only
         const autoReplyTemplate = createAutoReplyTemplate(name, service, budget);
 
-        // Send auto-reply to user from prithvi.raj@sysjini.in
+        // Send auto-reply to user from hello@sysjini.in
         const userMailOptions = {
             from: `"Prithviraj Tiwari - Sysjini" <${process.env.EMAIL_USER}>`,
             to: email,

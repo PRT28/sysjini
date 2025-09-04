@@ -230,10 +230,10 @@ export default function Services() {
                             </a>
 
                             <a
-                                href="tel:+917500269270"
+                                href="tel:+917017197678"
                                 className="border-2 border-white text-white hover:bg-white hover:text-emerald-600 font-bold py-4 px-10 rounded-2xl transition-all duration-300 transform hover:scale-105 text-lg"
                             >
-                                Call Now: +91 7500269270
+                                Call Now: +91 7017197678
                             </a>
                         </div>
                     </div>

@@ -97,11 +97,11 @@ export default function RootLayout({ children }) {
           <Header />
           {children}
           <NoSSR fallback={null}>
-            <a href="tel:+917500269270" className="floating-button" aria-label="Call Us">
+            <a href="tel:+917017197678" className="floating-button" aria-label="Call Us">
                 <FaPhoneAlt className="w-6 h-6" color="#FFF" />
             </a>
 
-            <a href="https://wa.me/7500269270" target="_blank" rel="noopener noreferrer" className="floating-button whatsapp" aria-label="Chat on WhatsApp">
+            <a href="https://wa.me/7017197678" target="_blank" rel="noopener noreferrer" className="floating-button whatsapp" aria-label="Chat on WhatsApp">
                 <IoLogoWhatsapp className="w-6 h-6" color="#FFF" />
             </a>
           </NoSSR>
