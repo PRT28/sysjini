@@ -4,15 +4,22 @@ import Head from "next/head";
 import Image from "next/image";
 import { ScrollProgress, GradientOrbs, FloatingParticles } from "../../components/Animation/ModernEffects";
 import { FloatingTechCube, TechDNAHelix, NetworkNodes, HolographicCode, CircuitBoard } from "../../components/3D";
+import ClientWrapper from "../../components/ClientWrapper/ClientWrapper";
+import NoSSR from "../../components/NoSSR/NoSSR";
+import ErrorBoundary from "../../components/ErrorBoundary/ErrorBoundary";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    // Ensure we're on the client side
+    setIsMounted(true);
+
     // Ensure page is fully loaded before showing content
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 100);
+    }, 200);
 
     return () => clearTimeout(timer);
   }, []);
@@ -22,7 +29,7 @@ export default function Home() {
   }
 
   // Show loading state while components are initializing
-  if (!isLoaded) {
+  if (!isMounted || !isLoaded) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-forest-50 flex items-center justify-center">
         <div className="text-center">
@@ -33,7 +40,7 @@ export default function Home() {
     );
   }
   return (
-    <>
+    <ErrorBoundary>
       <Head>
         <link rel="canonical" href="https://sysjini.in" />
       </Head>
@@ -52,9 +59,11 @@ export default function Home() {
         </div>
 
         {/* 3D Floating Tech Cube */}
-        <div className="absolute top-20 right-20 w-96 h-96 opacity-60 hidden lg:block">
-          <FloatingTechCube />
-        </div>
+        <NoSSR fallback={<div className="absolute top-20 right-20 w-96 h-96 opacity-60 hidden lg:block"></div>}>
+          <div className="absolute top-20 right-20 w-96 h-96 opacity-60 hidden lg:block">
+            <FloatingTechCube />
+          </div>
+        </NoSSR>
 
         <div className="container mx-auto px-4 text-center relative z-10 pt-20">
           <div className="max-w-5xl mx-auto">
@@ -103,9 +112,11 @@ export default function Home() {
             <div className="w-1 h-3 bg-emerald-400 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
-        <div className="absolute bottom-10 left-10 w-80 h-80 opacity-30 hidden xl:block">
+        <NoSSR fallback={<div className="absolute bottom-10 left-10 w-80 h-80 opacity-30 hidden xl:block"></div>}>
+          <div className="absolute bottom-10 left-10 w-80 h-80 opacity-30 hidden xl:block">
             <TechDNAHelix />
           </div>
+        </NoSSR>
       </section>
 
       {/* Why Choose Us Section */}
@@ -390,14 +401,18 @@ export default function Home() {
       {/* Technology Stack Section */}
       <section id="technology-stack" className="py-20 md:py-32 relative overflow-hidden">
         {/* 3D Network Nodes Background */}
-        <div className="absolute top-0 right-0 w-96 h-96 opacity-40 hidden lg:block">
-          <NetworkNodes />
-        </div>
+        <NoSSR fallback={<div className="absolute top-0 right-0 w-96 h-96 opacity-40 hidden lg:block"></div>}>
+          <div className="absolute top-0 right-0 w-96 h-96 opacity-40 hidden lg:block">
+            <NetworkNodes />
+          </div>
+        </NoSSR>
 
         {/* 3D Circuit Board Background */}
-        <div className="absolute bottom-0 left-0 w-80 h-80 opacity-30 hidden xl:block">
-          <CircuitBoard />
-        </div>
+        <NoSSR fallback={<div className="absolute bottom-0 left-0 w-80 h-80 opacity-30 hidden xl:block"></div>}>
+          <div className="absolute bottom-0 left-0 w-80 h-80 opacity-30 hidden xl:block">
+            <CircuitBoard />
+          </div>
+        </NoSSR>
 
         <div className="container mx-auto px-4 relative z-10">
           {/* Section Header */}
@@ -416,9 +431,11 @@ export default function Home() {
           {/* Technology Stack Visual - 3D Holographic Code */}
           <div className="flex justify-center animated-element animate-scale-in delay-300">
             <div className="modern-card p-8 rounded-3xl max-w-4xl w-full h-96 relative overflow-hidden">
-              <div className="absolute inset-0">
-                <HolographicCode />
-              </div>
+              <NoSSR fallback={<div className="absolute inset-0 bg-gradient-to-br from-emerald-900/20 to-forest-900/20"></div>}>
+                <div className="absolute inset-0">
+                  <HolographicCode />
+                </div>
+              </NoSSR>
 
               {/* Overlay with tech stack info */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/20 flex items-center justify-center">
@@ -648,6 +665,6 @@ export default function Home() {
         {/* Pulse animation */}
         <div className="absolute inset-0 rounded-full bg-emerald-600 animate-ping opacity-20"></div>
       </button>
-    </>
+    </ErrorBoundary>
   );
 }

@@ -39,6 +39,7 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
     scrollRestoration: true,
+    esmExternals: true,
   },
 
   // Compiler optimizations
@@ -49,6 +50,18 @@ const nextConfig = {
   // Performance optimizations
   poweredByHeader: false,
   compress: true,
+
+  // React strict mode for better hydration debugging
+  reactStrictMode: true,
+
+  // Optimize for production
+  swcMinify: true,
+
+  // Handle hydration issues
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
   // Webpack configuration for any custom setups
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Custom webpack config if needed

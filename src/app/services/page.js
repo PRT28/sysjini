@@ -1,8 +1,28 @@
+'use client'
+import { useState, useEffect } from 'react'
+import NoSSR from "../../../components/NoSSR/NoSSR"
+import ErrorBoundary from "../../../components/ErrorBoundary/ErrorBoundary"
 // Note: Metadata moved to layout.js since this is a client component
 
 export default function Services() {
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return (
+            <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-forest-50 flex items-center justify-center">
+                <div className="text-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600 mx-auto mb-4"></div>
+                    <p className="text-gray-600">Loading...</p>
+                </div>
+            </div>
+        );
+    }
     return (
-        <>
+        <ErrorBoundary>
             {/* Hero Section */}
             <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
                 {/* Animated Background */}
@@ -219,6 +239,6 @@ export default function Services() {
                     </div>
                 </div>
             </section>
-        </>
+        </ErrorBoundary>
     )
 }

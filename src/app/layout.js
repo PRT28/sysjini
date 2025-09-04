@@ -5,6 +5,8 @@ import Footer from "../../components/Footer/Footer";
 import Script from "next/script"; // ✅ use next/script
 import PerformanceOptimizer from "../../components/Performance/PerformanceOptimizer";
 import StructuredData, { organizationSchema, websiteSchema } from "../../components/SEO/StructuredData";
+import ErrorBoundary from "../../components/ErrorBoundary/ErrorBoundary";
+import NoSSR from "../../components/NoSSR/NoSSR";
 
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -86,24 +88,28 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={inter.className}>
-        <PerformanceOptimizer />
-        <StructuredData schema={organizationSchema} />
-        <StructuredData schema={websiteSchema} />
-        <Header />
-        {children}
-        <a href="tel:+917500269270" className="floating-button" aria-label="Call Us">
-            <FaPhoneAlt className="w-6 h-6" color="#FFF" />
-        </a>
+        <ErrorBoundary>
+          <NoSSR>
+            <PerformanceOptimizer />
+          </NoSSR>
+          <StructuredData schema={organizationSchema} />
+          <StructuredData schema={websiteSchema} />
+          <Header />
+          {children}
+          <NoSSR fallback={null}>
+            <a href="tel:+917500269270" className="floating-button" aria-label="Call Us">
+                <FaPhoneAlt className="w-6 h-6" color="#FFF" />
+            </a>
 
-        <a href="https://wa.me/7500269270" target="_blank" rel="noopener noreferrer" className="floating-button whatsapp" aria-label="Chat on WhatsApp">
-            <IoLogoWhatsapp className="w-6 h-6" color="#FFF" />
-        </a>
-        <Footer />
+            <a href="https://wa.me/7500269270" target="_blank" rel="noopener noreferrer" className="floating-button whatsapp" aria-label="Chat on WhatsApp">
+                <IoLogoWhatsapp className="w-6 h-6" color="#FFF" />
+            </a>
+          </NoSSR>
+          <Footer />
+        </ErrorBoundary>
 
-        {/* ✅ Modern animation script */}
-        <Script src="/modern-animation.js" strategy="afterInteractive" />
-        {/* ✅ Timeline animations */}
-        <Script src="/timeline-animations.js" strategy="afterInteractive" />
+        {/* <Script src="/modern-animation.js" strategy="afterInteractive" />
+        <Script src="/timeline-animations.js" strategy="afterInteractive" /> */}
       </body>
     </html>
   );

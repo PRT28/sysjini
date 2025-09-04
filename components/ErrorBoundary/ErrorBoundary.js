@@ -4,7 +4,13 @@ import React from 'react';
 class ErrorBoundary extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { hasError: false, error: null };
+        this.state = {
+            hasError: false,
+            error: null,
+            errorInfo: null,
+            retryCount: 0,
+            isHydrationError: false
+        };
     }
 
     static getDerivedStateFromError(error) {
@@ -15,6 +21,31 @@ class ErrorBoundary extends React.Component {
     componentDidCatch(error, errorInfo) {
         // Log error for debugging
         console.error('ErrorBoundary caught an error:', error, errorInfo);
+
+        // Check if it's a hydration error
+        const isHydrationError = error.message?.includes('hydration') ||
+                                error.message?.includes('Hydration') ||
+                                error.message?.includes('server HTML') ||
+                                error.message?.includes('client') ||
+                                errorInfo.componentStack?.includes('hydration');
+
+        this.setState({
+            error,
+            errorInfo,
+            isHydrationError
+        });
+
+        // Auto-retry for hydration errors (up to 2 times)
+        if (isHydrationError && this.state.retryCount < 2) {
+            setTimeout(() => {
+                this.setState({
+                    hasError: false,
+                    error: null,
+                    errorInfo: null,
+                    retryCount: this.state.retryCount + 1
+                });
+            }, 1500);
+        }
     }
 
     render() {
