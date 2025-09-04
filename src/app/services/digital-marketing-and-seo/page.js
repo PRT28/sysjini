@@ -1,6 +1,8 @@
 'use client'
 import { TechDNAHelix, CircuitBoard } from "../../../../components/3D"
 
+// Note: Metadata moved to layout.js since this is a client component
+
 export default function DigitalMarketingAndSEO() {
     return (
         <>
@@ -9,9 +11,9 @@ export default function DigitalMarketingAndSEO() {
                 {/* Animated Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-forest-50 to-sage-50">
                     <div className="absolute inset-0 bg-mesh-gradient opacity-30"></div>
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-forest-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-                    <div className="absolute top-40 right-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float delay-1000"></div>
-                    <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-sage-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float delay-500"></div>
+                    <div className="absolute top-20 left-10 w-72 h-72 bg-forest-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
+                    <div className="absolute top-40 right-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
+                    <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-sage-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
                 </div>
 
                 {/* 3D DNA Helix for Growth */}
@@ -26,13 +28,13 @@ export default function DigitalMarketingAndSEO() {
 
                 <div className="container mx-auto px-4 text-center relative z-10">
                     <div className="max-w-5xl mx-auto">
-                        <div className="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-forest-400 to-forest-600 rounded-2xl flex items-center justify-center shadow-green animated-element animate-scale-in">
+                        <div className="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-forest-400 to-forest-600 rounded-2xl flex items-center justify-center shadow-green">
                             <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                             </svg>
                         </div>
 
-                        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 animated-element animate-fade-in-up">
+                        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
                             <span className="bg-gradient-to-r from-forest-600 via-emerald-600 to-sage-700 bg-clip-text text-transparent">
                                 Digital Marketing
                             </span>
@@ -40,12 +42,12 @@ export default function DigitalMarketingAndSEO() {
                             <span className="text-gray-800">& SEO Services</span>
                         </h1>
 
-                        <p className="text-xl md:text-2xl max-w-4xl mx-auto mb-12 text-gray-600 leading-relaxed animated-element animate-fade-in-up delay-200">
+                        <p className="text-xl md:text-2xl max-w-4xl mx-auto mb-12 text-gray-600 leading-relaxed">
                             Boosting your online visibility and driving targeted traffic to achieve your business goals through
                             <span className="text-forest-600 font-semibold"> comprehensive digital marketing strategies</span>.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animated-element animate-fade-in-up delay-400">
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                             <a href="#services" className="btn-primary hover-lift text-lg px-8 py-4">
                                 Explore Our Services
                                 <svg className="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -63,18 +65,18 @@ export default function DigitalMarketingAndSEO() {
             <section id="services" className="py-20 md:py-32 relative">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 animated-element animate-fade-in-up">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6">
                             <span className="bg-gradient-to-r from-forest-600 to-emerald-700 bg-clip-text text-transparent">
                                 What We Offer
                             </span>
                         </h2>
-                        <p className="text-xl text-gray-600 max-w-4xl mx-auto animated-element animate-fade-in-up delay-200">
+                        <p className="text-xl text-gray-600 max-w-4xl mx-auto">
                             We provide a full spectrum of digital marketing services designed to enhance your brand&apos;s online presence, engage your target audience, and convert leads into loyal customers.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-100">
+                        <div className="modern-card hover-lift p-8 rounded-2xl">
                             <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-forest-400 to-forest-600 rounded-2xl flex items-center justify-center">
                                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -84,7 +86,7 @@ export default function DigitalMarketingAndSEO() {
                             <p className="text-gray-600 text-center leading-relaxed">On-page, off-page, and technical SEO to improve your search rankings.</p>
                         </div>
 
-                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-200">
+                        <div className="modern-card hover-lift p-8 rounded-2xl">
                             <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center">
                                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
@@ -94,7 +96,7 @@ export default function DigitalMarketingAndSEO() {
                             <p className="text-gray-600 text-center leading-relaxed">Strategic pay-per-click advertising and Google Ads management for maximum ROI.</p>
                         </div>
 
-                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-300">
+                        <div className="modern-card hover-lift p-8 rounded-2xl">
                             <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-sage-400 to-sage-600 rounded-2xl flex items-center justify-center">
                                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
@@ -104,7 +106,7 @@ export default function DigitalMarketingAndSEO() {
                             <p className="text-gray-600 text-center leading-relaxed">Strategy and campaign management across all social media platforms.</p>
                         </div>
 
-                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-400">
+                        <div className="modern-card hover-lift p-8 rounded-2xl">
                             <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-mint-400 to-mint-600 rounded-2xl flex items-center justify-center">
                                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -114,7 +116,7 @@ export default function DigitalMarketingAndSEO() {
                             <p className="text-gray-600 text-center leading-relaxed">Strategy, creation, and distribution of engaging content that converts.</p>
                         </div>
 
-                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-500">
+                        <div className="modern-card hover-lift p-8 rounded-2xl">
                             <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-emerald-500 to-forest-500 rounded-2xl flex items-center justify-center">
                                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -124,7 +126,7 @@ export default function DigitalMarketingAndSEO() {
                             <p className="text-gray-600 text-center leading-relaxed">Automated email campaigns and marketing automation for lead nurturing.</p>
                         </div>
 
-                        <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-600">
+                        <div className="modern-card hover-lift p-8 rounded-2xl">
                             <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-forest-400 to-sage-500 rounded-2xl flex items-center justify-center">
                                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -246,8 +248,8 @@ export default function DigitalMarketingAndSEO() {
             <section className="py-20 md:py-32 bg-gradient-to-br from-forest-600 via-emerald-600 to-sage-700 relative overflow-hidden">
                 {/* Background Effects */}
                 <div className="absolute inset-0">
-                    <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-10 animate-float"></div>
-                    <div className="absolute bottom-10 right-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-10 animate-float delay-1000"></div>
+                    <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-10"></div>
+                    <div className="absolute bottom-10 right-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-10"></div>
                 </div>
 
                 <div className="container mx-auto px-4 text-center relative z-10">

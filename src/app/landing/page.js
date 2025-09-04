@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react';
 import Head from "next/head";
+import Image from "next/image";
 import { ScrollProgress } from "../../../components/Animation/ModernEffects";
 import ContactModal from "../../../components/ContactModal/ContactModal";
 import useContactModal from "../../../hooks/useContactModal";
@@ -277,9 +278,9 @@ export default function LandingPage() {
           {/* Animated Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-forest-50 to-sage-50">
             <div className="absolute inset-0 bg-mesh-gradient opacity-30"></div>
-            <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-            <div className="absolute top-40 right-10 w-72 h-72 bg-forest-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float delay-1000"></div>
-            <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-sage-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float delay-500"></div>
+            <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
+            <div className="absolute top-40 right-10 w-72 h-72 bg-forest-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
+            <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-sage-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
           </div>
 
           {/* 3D Floating Tech Cube */}
@@ -291,7 +292,7 @@ export default function LandingPage() {
             <div className="max-w-5xl mx-auto">
               
 
-              <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 animated-element animate-fade-in-up">
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
                 <span className="bg-gradient-to-r from-emerald-600 via-forest-600 to-sage-700 bg-clip-text text-transparent">
                   Transform Your Business
                 </span>
@@ -299,14 +300,14 @@ export default function LandingPage() {
                 <span className="text-gray-800">Digitally</span>
               </h1>
 
-              <p className="text-xl md:text-2xl max-w-4xl mx-auto mb-12 text-gray-600 leading-relaxed animated-element animate-fade-in-up delay-200">
-                Complete digital solutions from 
-                <span className="text-emerald-600 font-semibold"> web development</span> to 
-                <span className="text-forest-600 font-semibold"> digital marketing</span>. 
+              <p className="text-xl md:text-2xl max-w-4xl mx-auto mb-12 text-gray-600 leading-relaxed">
+                Complete digital solutions from
+                <span className="text-emerald-600 font-semibold"> web development</span> to
+                <span className="text-forest-600 font-semibold"> digital marketing</span>.
                 We help businesses thrive in the digital world.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animated-element animate-fade-in-up delay-400">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <button
                   onClick={scrollToContact}
                   className="btn-primary hover-lift text-lg px-8 py-4"
@@ -336,22 +337,21 @@ export default function LandingPage() {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-6xl font-bold mb-6 animated-element animate-fade-in-up">
+              <h2 className="text-4xl md:text-6xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-emerald-600 to-forest-700 bg-clip-text text-transparent">
                   Our Services
                 </span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto animated-element animate-fade-in-up delay-200">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Comprehensive digital solutions tailored to your business needs
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <div 
+                <div
                   key={service.title}
-                  className="group modern-card p-8 rounded-3xl hover-lift animated-element animate-slide-up"
-                  style={{ animationDelay: `₹{index * 100}ms` }}
+                  className="group modern-card p-8 rounded-3xl hover-lift"
                 >
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ₹{service.gradient} flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     {service.icon}
@@ -397,12 +397,12 @@ export default function LandingPage() {
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 animated-element animate-fade-in-up">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-emerald-600 to-forest-700 bg-clip-text text-transparent">
                   Our Process
                 </span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto animated-element animate-fade-in-up delay-200">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 A proven methodology that ensures project success from start to finish
               </p>
             </div>
@@ -411,12 +411,11 @@ export default function LandingPage() {
               {timeline.map((phase, index) => (
                 <div
                   key={phase.phase}
-                  className="flex items-center mb-12 animated-element animate-slide-up"
-                  style={{ animationDelay: `₹{index * 150}ms` }}
+                  className="flex items-center mb-12"
                 >
                   {/* Timeline Line */}
                   <div className="hidden md:flex flex-col items-center mr-8">
-                    <div className={`w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-forest-600 flex items-center justify-center text-2xl shadow-green ₹{index === 0 ? 'animate-pulse' : ''}`}>
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-forest-600 flex items-center justify-center text-2xl shadow-green">
                       {phase.icon}
                     </div>
                     {index < timeline.length - 1 && (
@@ -449,22 +448,24 @@ export default function LandingPage() {
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 animated-element animate-fade-in-up">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-emerald-600 to-forest-700 bg-clip-text text-transparent">
                   Technology Stack
                 </span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-4xl mx-auto animated-element animate-fade-in-up delay-200">
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto">
                 We use cutting-edge technologies to build scalable, secure, and high-performance solutions
               </p>
             </div>
 
-            <div className="flex justify-center animated-element animate-scale-in delay-300">
+            <div className="flex justify-center">
               <div className="modern-card p-8 rounded-3xl max-w-4xl w-full">
-                <img
+                <Image
                   src="/stack.svg"
                   alt="Technology Stack"
-                  className="w-full h-auto hover:scale-105 transition-transform duration-500"
+                  width={1000}
+                  height={1000}
+                  className="mx-auto"
                 />
               </div>
             </div>
@@ -475,19 +476,19 @@ export default function LandingPage() {
         <section id="testimonials" className="py-20 md:py-32 bg-gradient-to-br from-emerald-50 to-forest-50 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-20 left-20 w-64 h-64 bg-emerald-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float"></div>
-          <div className="absolute bottom-20 right-20 w-64 h-64 bg-forest-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float delay-1000"></div>
+          <div className="absolute top-20 left-20 w-64 h-64 bg-emerald-200 rounded-full mix-blend-multiply filter blur-xl opacity-30"></div>
+          <div className="absolute bottom-20 right-20 w-64 h-64 bg-forest-200 rounded-full mix-blend-multiply filter blur-xl opacity-30"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 animated-element animate-fade-in-up">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-emerald-600 to-forest-700 bg-clip-text text-transparent">
                 What Our Clients Say
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto animated-element animate-fade-in-up delay-200">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Don&apos;t just take our word for it. Here&apos;s what our satisfied clients have to say about their experience with Sysjini.
             </p>
           </div>
@@ -495,7 +496,7 @@ export default function LandingPage() {
           {/* Testimonials Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
-            <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-100">
+            <div className="modern-card hover-lift p-8 rounded-2xl">
               <div className="flex items-center mb-6">
                 <div className="flex text-emerald-500">
                   {[...Array(5)].map((_, i) => (
@@ -520,7 +521,7 @@ export default function LandingPage() {
             </div>
 
             {/* Testimonial 2 */}
-            <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-200">
+            <div className="modern-card hover-lift p-8 rounded-2xl">
               <div className="flex items-center mb-6">
                 <div className="flex text-emerald-500">
                   {[...Array(5)].map((_, i) => (
@@ -545,7 +546,7 @@ export default function LandingPage() {
             </div>
 
             {/* Testimonial 3 */}
-            <div className="modern-card hover-lift p-8 rounded-2xl animated-element animate-scale-in delay-300">
+            <div className="modern-card hover-lift p-8 rounded-2xl">
               <div className="flex items-center mb-6">
                 <div className="flex text-emerald-500">
                   {[...Array(5)].map((_, i) => (
@@ -581,19 +582,19 @@ export default function LandingPage() {
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 animated-element animate-fade-in-up">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-emerald-600 to-forest-700 bg-clip-text text-transparent">
                   Our Recent Projects
                 </span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto animated-element animate-fade-in-up delay-200">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Take a look at some of our recent work and see how we&apos;ve helped businesses transform their digital presence.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
               {/* Project 1 - Glazia */}
-              <div className="modern-card hover-lift p-8 rounded-3xl animated-element animate-scale-in delay-100">
+              <div className="modern-card hover-lift p-8 rounded-3xl">
                 <div className="relative mb-6 overflow-hidden rounded-2xl">
                   <div className="aspect-video bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
                     <div className="text-center">
@@ -638,7 +639,7 @@ export default function LandingPage() {
               </div>
 
               {/* Project 2 - Meat Wala */}
-              <div className="modern-card hover-lift p-8 rounded-3xl animated-element animate-scale-in delay-200">
+              <div className="modern-card hover-lift p-8 rounded-3xl">
                 <div className="relative mb-6 overflow-hidden rounded-2xl">
                   <div className="aspect-video bg-gradient-to-br from-red-100 to-orange-100 flex items-center justify-center">
                     <div className="text-center">
@@ -686,7 +687,7 @@ export default function LandingPage() {
             </div>
 
             {/* Call to Action */}
-            <div className="text-center mt-16 animated-element animate-fade-in-up delay-400">
+            <div className="text-center mt-16">
               <p className="text-xl text-gray-600 mb-8">
                 Ready to see your project come to life?
               </p>
@@ -706,22 +707,22 @@ export default function LandingPage() {
         {/* Contact Section */}
         <section id="contact-section" className="py-20 md:py-32 bg-gradient-to-br from-emerald-600 via-forest-600 to-sage-700 relative overflow-hidden">
           <div className="absolute inset-0">
-            <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-10 animate-float"></div>
-            <div className="absolute bottom-10 right-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-10 animate-float delay-1000"></div>
+            <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-10"></div>
+            <div className="absolute bottom-10 right-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-10"></div>
           </div>
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 animated-element animate-fade-in-up">
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
                 Ready to Start Your Project?
               </h2>
-              <p className="text-xl md:text-2xl text-emerald-100 mb-12 leading-relaxed animated-element animate-fade-in-up delay-200">
+              <p className="text-xl md:text-2xl text-emerald-100 mb-12 leading-relaxed">
                 Let&apos;s discuss your ideas and turn them into reality. Get a free consultation and quote today.
               </p>
 
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 {/* Contact Info */}
-                <div className="text-left animated-element animate-fade-in-up delay-400">
+                <div className="text-left">
                   <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
 
                   <div className="space-y-4">
@@ -765,7 +766,7 @@ export default function LandingPage() {
                 </div>
 
                 {/* Contact Form */}
-                <div className="animated-element animate-fade-in-up delay-600">
+                <div>
                   {formState.isSubmitted ? (
                     <div className="text-center py-8">
                       <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">

@@ -28,9 +28,11 @@ export default function Footer() {
                         <div className="md:col-span-2">
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="relative">
-                                    <img
+                                    <Image
                                         src="/logoGnRm2.png"
                                         alt="Sysjini Logo"
+                                        width={48}
+                                        height={48}
                                         className="h-12 w-12 rounded-xl"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 to-forest-600/20 rounded-xl"></div>

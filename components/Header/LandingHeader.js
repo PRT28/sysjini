@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function LandingHeader({ onContactClick }) {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -25,10 +26,13 @@ export default function LandingHeader({ onContactClick }) {
                 {/* Logo Section */}
                 <div className="flex items-center gap-3 animated-element animate-fade-in delay-100">
                     <div className="relative">
-                        <img
+                        <Image
                             src="/logoGnRm2.png"
                             alt="Sysjini Logo"
+                            width={48}
+                            height={48}
                             className="h-12 w-12 rounded-xl shadow-md hover:shadow-green transition-all duration-300 hover:scale-105"
+                            priority
                         />
                         <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 to-forest-600/20 rounded-xl"></div>
                     </div>

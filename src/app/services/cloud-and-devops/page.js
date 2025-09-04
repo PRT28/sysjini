@@ -1,6 +1,8 @@
 'use client'
 import { NetworkNodes, FloatingTechCube } from "../../../../components/3D"
 
+// Note: Metadata moved to layout.js since this is a client component
+
 export default function CloudAndDevOps() {
     return (
         <>
@@ -8,9 +10,9 @@ export default function CloudAndDevOps() {
             <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-forest-50 to-sage-50">
                     <div className="absolute inset-0 bg-mesh-gradient opacity-30"></div>
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-forest-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-                    <div className="absolute top-40 right-10 w-72 h-72 bg-sage-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float delay-1000"></div>
-                    <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float delay-500"></div>
+                    <div className="absolute top-20 left-10 w-72 h-72 bg-forest-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
+                    <div className="absolute top-40 right-10 w-72 h-72 bg-sage-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
+                    <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
                 </div>
 
                 {/* 3D Network Nodes for Cloud Infrastructure */}
@@ -25,13 +27,13 @@ export default function CloudAndDevOps() {
 
                 <div className="container mx-auto px-4 text-center relative z-10">
                     <div className="max-w-5xl mx-auto">
-                        <div className="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-forest-400 to-forest-600 rounded-2xl flex items-center justify-center shadow-green animated-element animate-scale-in">
+                        <div className="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-forest-400 to-forest-600 rounded-2xl flex items-center justify-center shadow-green">
                             <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
                             </svg>
                         </div>
 
-                        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 animated-element animate-fade-in-up">
+                        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
                             <span className="bg-gradient-to-r from-forest-600 via-sage-600 to-emerald-700 bg-clip-text text-transparent">
                                 Cloud & DevOps
                             </span>
@@ -39,12 +41,12 @@ export default function CloudAndDevOps() {
                             <span className="text-gray-800">Services</span>
                         </h1>
 
-                        <p className="text-xl md:text-2xl max-w-4xl mx-auto mb-12 text-gray-600 leading-relaxed animated-element animate-fade-in-up delay-200">
+                        <p className="text-xl md:text-2xl max-w-4xl mx-auto mb-12 text-gray-600 leading-relaxed">
                             Accelerating your digital transformation with robust cloud infrastructure and streamlined
                             <span className="text-forest-600 font-semibold"> DevOps practices</span> for efficiency and scalability.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animated-element animate-fade-in-up delay-400">
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                             <a href="/contact" className="btn-primary hover-lift text-lg px-8 py-4">
                                 Optimize Your Infrastructure
                                 <svg className="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,20 +63,20 @@ export default function CloudAndDevOps() {
             {/* CTA Section */}
             <section className="py-20 md:py-32 bg-gradient-to-br from-forest-600 via-sage-600 to-emerald-700 relative overflow-hidden">
                 <div className="absolute inset-0">
-                    <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-10 animate-float"></div>
-                    <div className="absolute bottom-10 right-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-10 animate-float delay-1000"></div>
+                    <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-10"></div>
+                    <div className="absolute bottom-10 right-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-xl opacity-10"></div>
                 </div>
 
                 <div className="container mx-auto px-4 text-center relative z-10">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 animated-element animate-fade-in-up">
+                        <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
                             Ready to Scale Your Infrastructure?
                         </h2>
-                        <p className="text-xl md:text-2xl text-emerald-100 mb-12 leading-relaxed animated-element animate-fade-in-up delay-200">
+                        <p className="text-xl md:text-2xl text-emerald-100 mb-12 leading-relaxed">
                             Let&apos;s modernize your development workflow with cloud-native solutions and DevOps best practices. Our expert team will help you achieve faster deployments, better reliability, and seamless scalability.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animated-element animate-fade-in-up delay-400">
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                             <a href="/contact" className="bg-white text-forest-600 px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-emerald-50">
                                 Start Your Cloud Journey
                                 <svg className="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,7 +88,7 @@ export default function CloudAndDevOps() {
                             </a>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 animated-element animate-fade-in-up delay-600">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
                             <div className="text-center">
                                 <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-2xl flex items-center justify-center">
                                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -35,10 +35,20 @@ const nextConfig = {
       'source.unsplash.com',
     ],
   },
-  // Enable experimental features if needed
+  // Enable experimental features for better performance
   experimental: {
-    // Add any experimental features here
+    optimizeCss: true,
+    scrollRestoration: true,
   },
+
+  // Compiler optimizations
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+
+  // Performance optimizations
+  poweredByHeader: false,
+  compress: true,
   // Webpack configuration for any custom setups
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Custom webpack config if needed

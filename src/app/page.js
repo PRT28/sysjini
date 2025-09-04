@@ -1,15 +1,12 @@
 'use client'
 import { useState, useEffect } from 'react';
 import Head from "next/head";
+import Image from "next/image";
 import { ScrollProgress, GradientOrbs, FloatingParticles } from "../../components/Animation/ModernEffects";
-import ContactModal from "../../components/ContactModal/ContactModal";
-import useContactModal from "../../hooks/useContactModal";
-import ErrorBoundary from "../../components/ErrorBoundary/ErrorBoundary";
 import { FloatingTechCube, TechDNAHelix, NetworkNodes, HolographicCode, CircuitBoard } from "../../components/3D";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const { isModalOpen, autoOpened, openModal, closeModal } = useContactModal();
 
   useEffect(() => {
     // Ensure page is fully loaded before showing content
@@ -19,6 +16,10 @@ export default function Home() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  const openModal = () => {
+    console.log('Clicked');
+  }
 
   // Show loading state while components are initializing
   if (!isLoaded) {
@@ -422,7 +423,13 @@ export default function Home() {
               {/* Overlay with tech stack info */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/20 flex items-center justify-center">
                 <div className="text-center text-white">
-                  <img src="/stack.svg" alt="" />
+                  <Image
+                    src="/stack.svg"
+                    alt="Technology Stack"
+                    width={1000}
+                    height={1000}
+                    className="mx-auto"
+                  />
                 </div>
               </div>
             </div>
@@ -641,15 +648,6 @@ export default function Home() {
         {/* Pulse animation */}
         <div className="absolute inset-0 rounded-full bg-emerald-600 animate-ping opacity-20"></div>
       </button>
-
-      {/* Contact Modal */}
-      <ErrorBoundary>
-        <ContactModal
-          isOpen={isModalOpen}
-          onClose={closeModal}
-          autoOpened={autoOpened}
-        />
-      </ErrorBoundary>
     </>
   );
 }

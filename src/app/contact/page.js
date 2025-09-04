@@ -2,6 +2,8 @@
 'use client'
 import { useState } from 'react';
 
+// Note: Metadata moved to layout.js since this is a client component
+
 export default function Contact() {
     const [formData, setFormData] = useState({
         name: '',
@@ -69,14 +71,14 @@ export default function Contact() {
                 {/* Animated Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-forest-50 to-sage-50">
                     <div className="absolute inset-0 bg-mesh-gradient opacity-30"></div>
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-                    <div className="absolute top-40 right-10 w-72 h-72 bg-forest-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float delay-1000"></div>
-                    <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-sage-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float delay-500"></div>
+                    <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
+                    <div className="absolute top-40 right-10 w-72 h-72 bg-forest-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
+                    <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-sage-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
                 </div>
 
                 <div className="container mx-auto px-4 text-center relative z-10">
                     <div className="max-w-4xl mx-auto">
-                        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 animated-element animate-fade-in-up">
+                        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
                             <span className="bg-gradient-to-r from-emerald-600 via-forest-600 to-sage-700 bg-clip-text text-transparent">
                                 Get in Touch
                             </span>
@@ -84,13 +86,13 @@ export default function Contact() {
                             <span className="text-gray-800">with Sysjini</span>
                         </h1>
 
-                        <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-12 text-gray-600 leading-relaxed animated-element animate-fade-in-up delay-200">
+                        <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-12 text-gray-600 leading-relaxed">
                             We&apos;d love to hear from you. Reach out to discuss your project or
                             <span className="text-emerald-600 font-semibold"> any inquiries </span>
                             you might have.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animated-element animate-fade-in-up delay-400">
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                             <a href="#contact-form" className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
                                 Send Message
                                 <svg className="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,16 +113,16 @@ export default function Contact() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                         {/* Contact Form */}
                         <div>
-                            <h2 className="text-4xl md:text-5xl font-bold mb-8 animated-element animate-fade-in-up">
+                            <h2 className="text-4xl md:text-5xl font-bold mb-8">
                                 <span className="bg-gradient-to-r from-emerald-600 to-forest-700 bg-clip-text text-transparent">
                                     Send Us a Message
                                 </span>
                             </h2>
-                            <p className="text-xl text-gray-600 mb-8 animated-element animate-fade-in-up delay-100">
+                            <p className="text-xl text-gray-600 mb-8">
                                 Ready to start your project? Fill out the form below and we&apos;ll get back to you within 24 hours.
                             </p>
 
-                            <div className="modern-card p-8 rounded-2xl animated-element animate-scale-in delay-200">
+                            <div className="modern-card p-8 rounded-2xl">
                                 {formState.isSubmitted ? (
                                     <div className="text-center py-8">
                                         <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -261,7 +263,7 @@ export default function Contact() {
                             </div>
                         </div>
                         {/* Contact Information */}
-                        <div className="animated-element animate-fade-in-up delay-300">
+                        <div className="">
                             <h3 className="text-3xl font-bold mb-8">
                                 <span className="bg-gradient-to-r from-emerald-600 to-forest-700 bg-clip-text text-transparent">
                                     Contact Information
