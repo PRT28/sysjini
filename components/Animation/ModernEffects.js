@@ -255,7 +255,7 @@ export const RevealAnimation = ({ children, direction = 'up', className = "" }) 
   );
 };
 
-export default {
+const ModernEffects = {
   FloatingParticles,
   GradientOrbs,
   AnimatedGrid,
@@ -266,3 +266,5 @@ export default {
   RevealAnimation,
   useIntersectionObserver,
 };
+
+export default ModernEffects;

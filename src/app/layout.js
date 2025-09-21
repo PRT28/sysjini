@@ -101,7 +101,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <ErrorBoundary>
           <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7HG7KGW"
-          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+          height="0" width="0" style={{display: 'none', visibility: 'hidden'}}></iframe></noscript>
           <NoSSR>
             <PerformanceOptimizer />
           </NoSSR>

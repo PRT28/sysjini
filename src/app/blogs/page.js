@@ -1,4 +1,5 @@
 // Note: Metadata moved to layout.js since this is a client component
+import Image from "next/image";
 
 export default function Blogs() {
     return (
@@ -43,7 +44,7 @@ export default function Blogs() {
 
                     <div id="blog-posts-container" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <a href="blog-post-1.html" className="blog-post-item bg-gray-50 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300" data-category="web-dev">
-                            <img src="https://placehold.co/400x250/228B22/FFFFFF?text=Web+Dev+Trends" alt="Blog Post Image" className="w-full h-48 object-cover" />
+                            <Image src="https://placehold.co/400x250/228B22/FFFFFF?text=Web+Dev+Trends" alt="Blog Post Image" className="w-full h-48 object-cover" width={400} height={250} />
                             <div className="p-6">
                                 <span className="text-sm text-gray-500 mb-2 block">Web Development - June 10, 2025</span>
                                 <h3 className="text-xl font-semibold text-gray-800 mb-2">The Future of Web Development: Trends to Watch</h3>
@@ -52,7 +53,7 @@ export default function Blogs() {
                             </div>
                         </a>
                         <a href="blog-post-2.html" className="blog-post-item bg-gray-50 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300" data-category="digital-marketing" >
-                            <img src="https://placehold.co/400x250/228B22/FFFFFF?text=SEO+Guide" alt="Blog Post Image" className="w-full h-48 object-cover" />
+                            <Image src="https://placehold.co/400x250/228B22/FFFFFF?text=SEO+Guide" alt="Blog Post Image" className="w-full h-48 object-cover" width={400} height={250} />
                             <div className="p-6">
                                 <span className="text-sm text-gray-500 mb-2 block">Digital Marketing - June 5, 2025</span>
                                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Mastering SEO: A Guide for Small Businesses</h3>
@@ -61,7 +62,7 @@ export default function Blogs() {
                             </div>
                         </a>
                         <a href="blog-post-3.html" className="blog-post-item bg-gray-50 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300" data-category="ai-ml">
-                            <img src="https://placehold.co/400x250/228B22/FFFFFF?text=AI+Innovations" alt="Blog Post Image" className="w-full h-48 object-cover" />
+                            <Image src="https://placehold.co/400x250/228B22/FFFFFF?text=AI+Innovations" alt="Blog Post Image" className="w-full h-48 object-cover" width={400} height={250} />
                             <div className="p-6">
                                 <span className="text-sm text-gray-500 mb-2 block">AI/ML - May 28, 2025</span>
                                 <h3 className="text-xl font-semibold text-gray-800 mb-2">The Rise of AI in Business: Innovations & Impact</h3>
@@ -70,7 +71,7 @@ export default function Blogs() {
                             </div>
                         </a>
                         <a href="blog-post-4.html" className="blog-post-item bg-gray-50 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300" data-category="devops">
-                            <img src="https://placehold.co/400x250/228B22/FFFFFF?text=DevOps+Best" alt="Blog Post Image" className="w-full h-48 object-cover" />
+                            <Image src="https://placehold.co/400x250/228B22/FFFFFF?text=DevOps+Best" alt="Blog Post Image" className="w-full h-48 object-cover" width={400} height={250} />
                             <div className="p-6">
                                 <span className="text-sm text-gray-500 mb-2 block">DevOps - May 20, 2025</span>
                                 <h3 className="text-xl font-semibold text-gray-800 mb-2">DevOps Best Practices for Seamless Deployment</h3>

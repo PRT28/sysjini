@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function AdminDashboard() {
@@ -10,18 +10,7 @@ export default function AdminDashboard() {
     const [selectedContact, setSelectedContact] = useState(null);
     const router = useRouter();
 
-    useEffect(() => {
-        // Check authentication
-        const token = localStorage.getItem('adminToken');
-        if (!token) {
-            router.push('/admin');
-            return;
-        }
-
-        fetchContacts();
-    }, [router]);
-
-    const fetchContacts = async () => {
+    const fetchContacts = useCallback(async () => {
         try {
             const token = localStorage.getItem('adminToken');
             const response = await fetch('/api/admin/contacts?stats=true&limit=100', {
@@ -50,7 +39,18 @@ export default function AdminDashboard() {
         } finally {
             setIsLoading(false);
         }
-    };
+    }, [router]);
+
+    useEffect(() => {
+        // Check authentication
+        const token = localStorage.getItem('adminToken');
+        if (!token) {
+            router.push('/admin');
+            return;
+        }
+
+        fetchContacts();
+    }, [router, fetchContacts]);
 
     const updateContactStatus = async (rowNumber, status) => {
         try {

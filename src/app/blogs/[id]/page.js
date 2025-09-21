@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
     return (
         <>
@@ -9,7 +11,7 @@ export default function Home() {
 
             <section className="py-16 md:py-24 bg-white">
                 <div className="container mx-auto px-4 max-w-3xl">
-                    <img src="https://placehold.co/800x450/228B22/FFFFFF?text=Web+Dev+Trends+Featured" alt="Featured Image for Blog Post" className="w-full h-auto rounded-lg shadow-md mb-8 animated-element animate-fade-in-up delay-300" />
+                    <Image src="https://placehold.co/800x450/228B22/FFFFFF?text=Web+Dev+Trends+Featured" alt="Featured Image for Blog Post" className="w-full h-auto rounded-lg shadow-md mb-8 animated-element animate-fade-in-up delay-300" width={800} height={450} />
 
                     <div className="prose prose-lg mx-auto text-gray-700 animated-element animate-fade-in-up delay-400">
                         <p>
