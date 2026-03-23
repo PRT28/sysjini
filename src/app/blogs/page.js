@@ -1,87 +1,45 @@
-// Note: Metadata moved to layout.js since this is a client component
-import Image from "next/image";
+import ModelShowcase from "../../../components/site/ModelShowcase";
+import { blogPosts } from "../../../components/site/siteData";
 
-export default function Blogs() {
-    return (
-        <>
-            {/* Hero Section */}
-            <section className="relative py-32 md:py-40 overflow-hidden">
-                {/* Animated Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-forest-50 to-sage-50">
-                    <div className="absolute inset-0 bg-mesh-gradient opacity-30"></div>
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
-                    <div className="absolute top-40 right-10 w-72 h-72 bg-forest-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
-                </div>
+export default function BlogsPage() {
+  return (
+    <main className="page-top-space">
+      <section className="section-space-lg">
+        <div className="site-shell grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr]">
+          <div className="space-y-7">
+            <span className="eyebrow">Insights</span>
+            <h1 className="font-[family-name:var(--font-display)] text-[clamp(3rem,7vw,6rem)] font-semibold leading-[0.92] tracking-[-0.07em]">
+              <span className="headline-gradient">Sharp thinking on web, AI, cloud, and growth.</span>
+            </h1>
+            <p className="max-w-2xl text-lg leading-8 text-white/68">
+              The Sysjini insights section focuses on practical execution, not filler. Expect guidance on product
+              delivery, digital strategy, cloud maturity, and AI implementation that fits real operations.
+            </p>
+          </div>
+          <ModelShowcase
+            src="/models/brain_hologram.glb"
+            title="Insight and analysis model"
+            caption="The insights page uses the brain hologram model to match strategy, analysis, and AI-oriented thinking."
+          />
+        </div>
+      </section>
 
-                <div className="container mx-auto px-4 text-center relative z-10 pt-20">
-                    <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
-                        <span className="bg-gradient-to-r from-emerald-600 via-forest-600 to-sage-700 bg-clip-text text-transparent">
-                            Our Latest
-                        </span>
-                        <br />
-                        <span className="text-gray-800">Blogs</span>
-                    </h1>
-
-                    <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-12 text-gray-600 leading-relaxed">
-                        Stay updated with insights on
-                        <span className="text-emerald-600 font-semibold"> web development, digital marketing, AI, </span>
-                        and more.
-                    </p>
-                </div>
-            </section>
-
-            {/* Blog Posts Section */}
-            <section className="py-20 md:py-32 relative">
-                <div className="container mx-auto px-4">
-                    {/* Filter Buttons */}
-                    <div className="flex flex-wrap justify-center gap-4 mb-16">
-                        <button className="px-8 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-forest-600 text-white font-semibold hover:from-emerald-700 hover:to-forest-700 transition-all duration-300 shadow-lg">All</button>
-                        <button className="px-8 py-3 rounded-xl border-2 border-emerald-600 text-emerald-600 font-semibold hover:bg-emerald-600 hover:text-white transition-all duration-300" data-category="web-dev">Web Development</button>
-                        <button className="px-8 py-3 rounded-xl border-2 border-forest-600 text-forest-600 font-semibold hover:bg-forest-600 hover:text-white transition-all duration-300" data-category="digital-marketing">Digital Marketing</button>
-                        <button className="px-8 py-3 rounded-xl border-2 border-sage-600 text-sage-600 font-semibold hover:bg-sage-600 hover:text-white transition-all duration-300" data-category="ai-ml">AI/ML</button>
-                        <button className="px-8 py-3 rounded-xl border-2 border-mint-600 text-mint-600 font-semibold hover:bg-mint-600 hover:text-white transition-all duration-300" data-category="devops">DevOps</button>
-                    </div>
-
-                    <div id="blog-posts-container" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <a href="blog-post-1.html" className="blog-post-item bg-gray-50 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300" data-category="web-dev">
-                            <Image src="https://placehold.co/400x250/228B22/FFFFFF?text=Web+Dev+Trends" alt="Blog Post Image" className="w-full h-48 object-cover" width={400} height={250} />
-                            <div className="p-6">
-                                <span className="text-sm text-gray-500 mb-2 block">Web Development - June 10, 2025</span>
-                                <h3 className="text-xl font-semibold text-gray-800 mb-2">The Future of Web Development: Trends to Watch</h3>
-                                <p className="text-gray-600 text-sm">Discover the cutting-edge technologies and methodologies shaping the web development landscape in 2025...</p>
-                                <span className="text-forest-green hover:underline font-medium mt-4 block">Read More &rarr;</span>
-                            </div>
-                        </a>
-                        <a href="blog-post-2.html" className="blog-post-item bg-gray-50 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300" data-category="digital-marketing" >
-                            <Image src="https://placehold.co/400x250/228B22/FFFFFF?text=SEO+Guide" alt="Blog Post Image" className="w-full h-48 object-cover" width={400} height={250} />
-                            <div className="p-6">
-                                <span className="text-sm text-gray-500 mb-2 block">Digital Marketing - June 5, 2025</span>
-                                <h3 className="text-xl font-semibold text-gray-800 mb-2">Mastering SEO: A Guide for Small Businesses</h3>
-                                <p className="text-gray-600 text-sm">Unlock the secrets to higher search rankings and organic traffic with our essential SEO tips...</p>
-                                <span className="text-forest-green hover:underline font-medium mt-4 block">Read More &rarr;</span>
-                            </div>
-                        </a>
-                        <a href="blog-post-3.html" className="blog-post-item bg-gray-50 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300" data-category="ai-ml">
-                            <Image src="https://placehold.co/400x250/228B22/FFFFFF?text=AI+Innovations" alt="Blog Post Image" className="w-full h-48 object-cover" width={400} height={250} />
-                            <div className="p-6">
-                                <span className="text-sm text-gray-500 mb-2 block">AI/ML - May 28, 2025</span>
-                                <h3 className="text-xl font-semibold text-gray-800 mb-2">The Rise of AI in Business: Innovations & Impact</h3>
-                                <p className="text-gray-600 text-sm">Explore how artificial intelligence and machine learning are revolutionizing industries...</p>
-                                <span className="text-forest-green hover:underline font-medium mt-4 block">Read More &rarr;</span>
-                            </div>
-                        </a>
-                        <a href="blog-post-4.html" className="blog-post-item bg-gray-50 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300" data-category="devops">
-                            <Image src="https://placehold.co/400x250/228B22/FFFFFF?text=DevOps+Best" alt="Blog Post Image" className="w-full h-48 object-cover" width={400} height={250} />
-                            <div className="p-6">
-                                <span className="text-sm text-gray-500 mb-2 block">DevOps - May 20, 2025</span>
-                                <h3 className="text-xl font-semibold text-gray-800 mb-2">DevOps Best Practices for Seamless Deployment</h3>
-                                <p className="text-gray-600 text-sm">Learn how to streamline your development and operations for faster, more reliable software delivery...</p>
-                                <span className="text-forest-green hover:underline font-medium mt-4 block">Read More &rarr;</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </>
-    );
+      <section className="section-space">
+        <div className="site-shell grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {blogPosts.map((post) => (
+            <a key={post.id} href={`/blogs/${post.id}`} className="surface-card outline-grid rounded-[30px] p-7 transition hover:-translate-y-1">
+              <div className="text-sm text-white/42">
+                {post.category} • {post.date}
+              </div>
+              <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-[-0.05em]">
+                {post.title}
+              </h2>
+              <p className="mt-4 text-white/66">{post.excerpt}</p>
+              <div className="mt-6 text-sm font-medium text-[#b49aff]">Read article</div>
+            </a>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
 }
