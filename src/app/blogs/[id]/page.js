@@ -26,7 +26,7 @@ export default function BlogPostPage({ params }) {
             <p className="max-w-2xl text-lg leading-8 text-white/68">{post.excerpt}</p>
           </div>
           <ModelShowcase
-            src="/models/brain_hologram.glb"
+            variant="intelligence"
             title="Editorial relevance model"
             caption="The article view keeps the brain hologram model to anchor insight, strategy, and AI-adjacent subject matter."
             compact

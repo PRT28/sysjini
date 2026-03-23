@@ -55,7 +55,7 @@ export default function AboutPage() {
             </div>
           </div>
           <ModelShowcase
-            src="/models/brain_hologram.glb"
+            variant="intelligence"
             title="Strategic intelligence model"
             caption="The about page uses the brain hologram model to represent strategy, design thinking, and AI capability."
           />

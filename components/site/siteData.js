@@ -18,7 +18,7 @@ export const services = [
       "High-performance websites, mobile products, and platforms engineered for scale, usability, and commercial impact.",
     description:
       "From discovery to deployment, Sysjini designs and develops digital products that feel polished, move fast, and stay maintainable as your business grows.",
-    model: "/models/space_station.glb",
+    model: "station",
     accent: "Build",
     capabilities: [
       "Custom marketing sites and conversion-focused web experiences",
@@ -50,7 +50,7 @@ export const services = [
       "Performance-led acquisition strategies across SEO, content, paid media, and analytics.",
     description:
       "We help brands earn attention, improve discoverability, and turn traffic into measurable pipeline with a disciplined growth engine.",
-    model: "/models/earth-00.glb",
+    model: "earth",
     accent: "Grow",
     capabilities: [
       "Technical SEO, content strategy, and search visibility improvements",
@@ -82,7 +82,7 @@ export const services = [
       "Brand systems, visual direction, and digital interfaces that signal credibility from the first interaction.",
     description:
       "Sysjini builds brand identities and digital design systems that feel sharp, intentional, and commercially effective across every touchpoint.",
-    model: "/models/brain_hologram.glb",
+    model: "intelligence",
     accent: "Shape",
     capabilities: [
       "Brand identity systems, tone, and visual language",
@@ -114,7 +114,7 @@ export const services = [
       "Conversion-ready storefronts, commerce operations, and checkout experiences built to lift revenue.",
     description:
       "We design and engineer commerce systems that balance brand presentation, customer trust, and operational efficiency.",
-    model: "/models/Credit_Card.glb",
+    model: "commerce",
     accent: "Sell",
     capabilities: [
       "Storefront design and custom development",
@@ -146,7 +146,7 @@ export const services = [
       "Reliable infrastructure, CI/CD pipelines, and cloud operations for secure product delivery.",
     description:
       "We modernize infrastructure so teams can ship faster, monitor smarter, and scale with confidence.",
-    model: "/models/Data_Center.glb",
+    model: "infrastructure",
     accent: "Scale",
     capabilities: [
       "Cloud architecture, migration, and environment design",
@@ -178,7 +178,7 @@ export const services = [
       "User experience strategy, interface audits, and design systems that make products easier to adopt and harder to leave.",
     description:
       "We diagnose friction, redesign journeys, and align teams around experience decisions that improve product clarity and conversion.",
-    model: "/models/brain_hologram.glb",
+    model: "intelligence",
     accent: "Refine",
     capabilities: [
       "UX audits, heuristic reviews, and conversion diagnosis",

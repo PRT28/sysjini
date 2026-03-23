@@ -43,7 +43,7 @@ export default function ServicesPage() {
             </div>
           </div>
           <ModelShowcase
-            src="/models/earth-00.glb"
+            variant="earth"
             title="Global delivery model"
             caption="The services overview uses the earth model to represent connected digital systems, reach, and multi-channel execution."
           />

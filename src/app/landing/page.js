@@ -1,4 +1,5 @@
 import ModelShowcase from "../../../components/site/ModelShowcase";
+import { TechStackSection, TimelineSection } from "../../../components/site/SharedSections";
 import { services } from "../../../components/site/siteData";
 
 export default function LandingPage() {
@@ -25,7 +26,7 @@ export default function LandingPage() {
             </div>
           </div>
           <ModelShowcase
-            src="/models/space_station.glb"
+            variant="station"
             title="Condensed systems model"
             caption="The landing page uses the space station model to keep the message focused on structured, high-value digital systems."
           />
@@ -46,25 +47,9 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="section-space">
-        <div className="site-shell">
-          <div className="surface-card-strong rounded-[36px] px-7 py-8 md:px-10 md:py-10">
-            <div className="grid gap-5 md:grid-cols-4">
-              {[
-                "Clarify goals and scope",
-                "Design the system and interface",
-                "Build and integrate the solution",
-                "Launch, optimize, and scale",
-              ].map((step, index) => (
-                <div key={step} className="rounded-[22px] border border-white/8 bg-white/[0.03] p-5">
-                  <div className="mb-2 text-sm text-[#8A5CF5]">0{index + 1}</div>
-                  <p className="text-white/72">{step}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <TechStackSection />
+
+      <TimelineSection />
     </main>
   );
 }

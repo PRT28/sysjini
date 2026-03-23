@@ -17,7 +17,7 @@ export default function GlossaryPage() {
             </p>
           </div>
           <ModelShowcase
-            src="/models/Data_Center.glb"
+            variant="infrastructure"
             title="Systems reference model"
             caption="The glossary page uses the data center model to reflect architecture, systems knowledge, and technical clarity."
           />

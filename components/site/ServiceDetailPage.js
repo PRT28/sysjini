@@ -33,9 +33,9 @@ export default function ServiceDetailPage({ service }) {
             </div>
           </div>
           <ModelShowcase
-            src={service.model}
+            variant={service.model}
             title={`${service.shortTitle} system model`}
-            caption={`Selected from /public/models to visually match the ${service.shortTitle.toLowerCase()} page context.`}
+            caption={`Selected to visually match the ${service.shortTitle.toLowerCase()} page context.`}
           />
         </div>
       </section>

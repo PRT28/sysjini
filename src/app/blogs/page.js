@@ -17,7 +17,7 @@ export default function BlogsPage() {
             </p>
           </div>
           <ModelShowcase
-            src="/models/brain_hologram.glb"
+            variant="intelligence"
             title="Insight and analysis model"
             caption="The insights page uses the brain hologram model to match strategy, analysis, and AI-oriented thinking."
           />

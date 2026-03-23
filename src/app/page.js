@@ -1,4 +1,5 @@
 import { blogPosts, services } from "../../components/site/siteData";
+import { TechStackSection, TimelineSection } from "../../components/site/SharedSections";
 
 const highlights = [
   { value: "End to End", label: "Delivery across strategy, build, launch, and scale." },
@@ -211,6 +212,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <TechStackSection />
+
+      <TimelineSection />
 
       <section className="section-space">
         <div className="site-shell grid gap-6 lg:grid-cols-[1fr_0.9fr]">
