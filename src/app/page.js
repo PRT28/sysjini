@@ -1,5 +1,3 @@
-import HeroRobot from "../../components/site/HeroRobot";
-import ModelShowcase from "../../components/site/ModelShowcase";
 import { blogPosts, services } from "../../components/site/siteData";
 
 const highlights = [
@@ -82,8 +80,35 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="relative h-full rounded-[34px] border border-white/8 bg-[radial-gradient(circle_at_top,rgba(138,92,245,0.14),transparent_42%),linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] p-2 shadow-[0_24px_70px_rgba(0,0,0,0.28)]">
-            <HeroRobot />
+          <div className="relative overflow-hidden rounded-[34px] border border-white/8 bg-[radial-gradient(circle_at_30%_18%,rgba(138,92,245,0.28),transparent_26%),radial-gradient(circle_at_80%_72%,rgba(138,92,245,0.18),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] p-7 shadow-[0_24px_70px_rgba(0,0,0,0.28)] min-h-[520px]">
+            <div className="absolute inset-x-10 top-10 h-40 rounded-full bg-[#8A5CF5]/18 blur-3xl" />
+            <div className="absolute right-[-4rem] top-20 h-72 w-72 rounded-full border border-white/8 bg-[radial-gradient(circle,rgba(255,255,255,0.16),rgba(138,92,245,0.1)_48%,transparent_74%)] blur-[2px]" />
+            <div className="relative flex h-full min-h-[460px] flex-col justify-between rounded-[28px] border border-white/8 bg-black/18 p-6 md:p-8">
+              <div className="flex items-start justify-between gap-4">
+                <div className="max-w-sm">
+                  <div className="text-xs uppercase tracking-[0.22em] text-white/46">Delivery System</div>
+                  <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-[-0.05em] text-white">
+                    Strategy, interface, engineering, and launch quality in one flow.
+                  </h2>
+                </div>
+                <div className="rounded-full border border-[#8A5CF5]/35 bg-[#8A5CF5]/12 px-4 py-2 text-xs uppercase tracking-[0.18em] text-[#c9b7ff]">
+                  Static-first hero
+                </div>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                {[
+                  ["Web and mobile", "Production-grade websites, apps, and conversion surfaces."],
+                  ["AI automation", "Workflow systems that remove repetitive work and increase clarity."],
+                  ["Cloud and commerce", "Infrastructure, reliability, and revenue-focused delivery."],
+                  ["Senior execution", "Sharp design and engineering decisions without added process drag."],
+                ].map(([title, copy]) => (
+                  <div key={title} className="rounded-[24px] border border-white/8 bg-white/[0.04] p-5">
+                    <div className="text-sm text-[#b99cff]">{title}</div>
+                    <p className="mt-3 text-sm leading-7 text-white/66">{copy}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -156,24 +181,32 @@ export default function Home() {
               </p>
             </div>
             <div className="grid gap-6 lg:grid-cols-3">
-              <ModelShowcase
-                src="/models/brain_hologram.glb"
-                title="AI and design intelligence"
-                caption="Used where strategy, UI systems, and AI capability intersect."
-                compact
-              />
-              <ModelShowcase
-                src="/models/Credit_Card.glb"
-                title="Commerce systems"
-                caption="Used for transactional flows, checkout, and revenue-focused experiences."
-                compact
-              />
-              <ModelShowcase
-                src="/models/Data_Center.glb"
-                title="Cloud infrastructure"
-                caption="Used for DevOps, hosting, reliability, and platform operations."
-                compact
-              />
+              {[
+                {
+                  title: "AI and design intelligence",
+                  caption: "Positioning, UX systems, and applied AI aligned around business outcomes.",
+                },
+                {
+                  title: "Commerce systems",
+                  caption: "Checkout, transactional UX, and conversion-critical engineering decisions.",
+                },
+                {
+                  title: "Cloud infrastructure",
+                  caption: "Platform reliability, deployment pipelines, and scalable service foundations.",
+                },
+              ].map((item, index) => (
+                <div key={item.title} className="surface-card rounded-[30px] p-6">
+                  <div className="mb-6 flex items-center justify-between">
+                    <span className="eyebrow">Relevant Model</span>
+                    <span className="text-sm text-white/36">0{index + 1}</span>
+                  </div>
+                  <div className="mb-6 h-48 rounded-[24px] border border-white/8 bg-[radial-gradient(circle_at_30%_30%,rgba(138,92,245,0.32),transparent_24%),radial-gradient(circle_at_70%_65%,rgba(255,255,255,0.14),transparent_18%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]" />
+                  <h3 className="font-[family-name:var(--font-display)] text-2xl font-semibold tracking-[-0.05em]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-white/66">{item.caption}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

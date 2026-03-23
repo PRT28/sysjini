@@ -197,20 +197,7 @@ textarea {
 .headline-gradient {
   color: var(--site-text);
   display: inline-block;
-}
-
-@supports ((-webkit-background-clip: text) or (background-clip: text)) {
-  .headline-gradient {
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--site-text) 100%, white 0%) 0%,
-    color-mix(in srgb, var(--site-text) 72%, transparent 28%) 100%
-  );
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-  }
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
 .muted-copy {

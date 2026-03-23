@@ -1,148 +1,65 @@
-"use client";
-
-import { Suspense, useMemo } from "react";
-import { Canvas } from "@react-three/fiber";
-import {
-  Float,
-  OrbitControls,
-  PresentationControls,
-  Sphere,
-  Stage,
-  useGLTF,
-  useTexture,
-} from "@react-three/drei";
-import { Box3, Group, SRGBColorSpace, Vector3 } from "three";
-
-const MODEL_PRESETS = {
+const MODEL_STYLES = {
   "earth-00.glb": {
-    cameraPosition: [0, 0.4, 4.35],
-    fov: 27,
+    badge: "Global Systems",
+    glow: "bg-[radial-gradient(circle_at_30%_35%,rgba(138,92,245,0.34),transparent_24%),radial-gradient(circle_at_70%_55%,rgba(88,153,255,0.22),transparent_18%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]",
   },
   "space_station.glb": {
-    cameraPosition: [0, 0.52, 4.3],
-    fov: 24,
-    scaleMultiplier: 1.9,
-    stageAdjustCamera: 2,
-    yOffset: 0.28,
+    badge: "Platform Architecture",
+    glow: "bg-[radial-gradient(circle_at_32%_30%,rgba(138,92,245,0.32),transparent_22%),radial-gradient(circle_at_76%_62%,rgba(255,255,255,0.18),transparent_16%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]",
+  },
+  "Credit_Card.glb": {
+    badge: "Commerce Engine",
+    glow: "bg-[radial-gradient(circle_at_26%_34%,rgba(138,92,245,0.28),transparent_24%),radial-gradient(circle_at_68%_68%,rgba(255,214,122,0.18),transparent_16%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]",
+  },
+  "Data_Center.glb": {
+    badge: "Infrastructure Layer",
+    glow: "bg-[radial-gradient(circle_at_28%_32%,rgba(138,92,245,0.28),transparent_22%),radial-gradient(circle_at_72%_64%,rgba(106,210,255,0.18),transparent_18%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]",
+  },
+  "brain_hologram.glb": {
+    badge: "Strategy Signal",
+    glow: "bg-[radial-gradient(circle_at_30%_34%,rgba(138,92,245,0.34),transparent_22%),radial-gradient(circle_at_68%_58%,rgba(255,255,255,0.16),transparent_18%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]",
   },
   default: {
-    cameraPosition: [0, 0.8, 6.5],
-    fov: 32,
-    scaleMultiplier: 1,
-    stageAdjustCamera: 1.25,
-    yOffset: 0,
+    badge: "System View",
+    glow: "bg-[radial-gradient(circle_at_30%_30%,rgba(138,92,245,0.32),transparent_24%),radial-gradient(circle_at_70%_65%,rgba(255,255,255,0.14),transparent_18%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]",
   },
 };
 
-function getModelPreset(src) {
-  const matchedKey = Object.keys(MODEL_PRESETS).find((key) => key !== "default" && src.includes(key));
-  return matchedKey ? { ...MODEL_PRESETS.default, ...MODEL_PRESETS[matchedKey] } : MODEL_PRESETS.default;
+function getModelStyle(src = "") {
+  const key = Object.keys(MODEL_STYLES).find((item) => item !== "default" && src.includes(item));
+  return key ? MODEL_STYLES[key] : MODEL_STYLES.default;
 }
 
-function Model({ src, scaleMultiplier = 1, yOffset = 0 }) {
-  const { scene } = useGLTF(src);
-
-  const normalizedScene = useMemo(() => {
-    const clonedScene = scene.clone(true);
-    const box = new Box3().setFromObject(clonedScene);
-    const size = box.getSize(new Vector3());
-    const center = box.getCenter(new Vector3());
-    const maxDimension = Math.max(size.x, size.y, size.z) || 1;
-    const scale = (2.35 / maxDimension) * scaleMultiplier;
-
-    const group = new Group();
-    clonedScene.position.sub(center);
-    clonedScene.position.y += yOffset;
-    clonedScene.scale.setScalar(scale);
-    group.add(clonedScene);
-
-    return group;
-  }, [scene, scaleMultiplier, yOffset]);
-
-  return <primitive object={normalizedScene} />;
-}
-
-function EarthModel() {
-  const [colorMap, bumpMap, cloudsMap, lightsMap] = useTexture([
-    "/models/earth_textures/web/earth_color_4k.jpg",
-    "/models/earth_textures/web/topography_4k.png",
-    "/models/earth_textures/web/earth_clouds_4k.jpg",
-    "/models/earth_textures/web/earth_nightlights_4k.jpg",
-  ]);
-
-  colorMap.colorSpace = SRGBColorSpace;
-  cloudsMap.colorSpace = SRGBColorSpace;
-  lightsMap.colorSpace = SRGBColorSpace;
+export default function ModelShowcase({ src, title, caption, className = "", compact = false }) {
+  const style = getModelStyle(src);
 
   return (
-    <group rotation={[0.35, -0.9, 0.08]}>
-      <Sphere args={[1.45, 96, 96]}>
-        <meshStandardMaterial map={colorMap} bumpMap={bumpMap} bumpScale={0.05} roughness={1} metalness={0} />
-      </Sphere>
-      <Sphere args={[1.468, 64, 64]}>
-        <meshStandardMaterial
-          map={lightsMap}
-          emissiveMap={lightsMap}
-          emissive="#6f8cff"
-          emissiveIntensity={0.45}
-          transparent
-          opacity={0.32}
-          depthWrite={false}
-          roughness={1}
-          metalness={0}
-        />
-      </Sphere>
-      <Sphere args={[1.515, 64, 64]}>
-        <meshStandardMaterial
-          map={cloudsMap}
-          transparent
-          opacity={0.18}
-          depthWrite={false}
-          roughness={1}
-          metalness={0}
-        />
-      </Sphere>
-    </group>
-  );
-}
-
-export default function ModelShowcase({
-  src,
-  title,
-  caption,
-  className = "",
-  compact = false,
-}) {
-  const preset = getModelPreset(src);
-
-  return (
-    <div className={`model-shell ${className}`}>
-      <div className="model-meta">
+    <div className={`surface-card outline-grid rounded-[32px] p-6 md:p-7 ${className}`}>
+      <div className="mb-6 flex items-center justify-between gap-4">
         <span className="eyebrow">Relevant Model</span>
-        <h3>{title}</h3>
-        {caption ? <p>{caption}</p> : null}
+        <span className="text-xs uppercase tracking-[0.18em] text-white/38">{style.badge}</span>
       </div>
-      <div className={`model-canvas ${compact ? "model-canvas-compact" : ""}`}>
-        <Canvas camera={{ position: preset.cameraPosition, fov: preset.fov }}>
-          <ambientLight intensity={0.9} />
-          <directionalLight position={[4, 6, 4]} intensity={1.8} />
-          <pointLight position={[-5, -2, -4]} intensity={0.35} color="#8a5cf5" />
-          <Suspense fallback={null}>
-            <PresentationControls speed={1.2} zoom={1} polar={[-0.22, 0.28]} azimuth={[-0.55, 0.55]}>
-              <Float speed={1.8} rotationIntensity={0.5} floatIntensity={0.7}>
-                {src.includes("earth-00.glb") ? (
-                  <EarthModel />
-                ) : (
-                  <Stage intensity={0.3} environment={null} shadows={false} adjustCamera={preset.stageAdjustCamera}>
-                    <Model src={src} scaleMultiplier={preset.scaleMultiplier} yOffset={preset.yOffset} />
-                  </Stage>
-                )}
-              </Float>
-            </PresentationControls>
-          </Suspense>
-          <OrbitControls enablePan={false} enableZoom={false} autoRotate autoRotateSpeed={1.4} />
-        </Canvas>
+      <div
+        className={`relative mb-6 overflow-hidden rounded-[28px] border border-white/8 ${compact ? "h-48" : "h-[340px]"} ${style.glow}`}
+      >
+        <div className="absolute inset-x-[14%] top-[14%] h-[34%] rounded-full bg-white/8 blur-3xl" />
+        <div className="absolute inset-x-10 bottom-8 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent" />
+        <div className="absolute left-8 top-8 rounded-full border border-white/10 bg-black/20 px-4 py-2 text-xs uppercase tracking-[0.18em] text-white/52">
+          Static visual
+        </div>
+        <div className="absolute inset-8 rounded-[24px] border border-white/8 bg-black/12" />
+        <div className="absolute bottom-8 left-8 right-8 grid gap-3 sm:grid-cols-3">
+          {["Clarity", "Reliability", "Relevance"].map((item) => (
+            <div key={item} className="rounded-[18px] border border-white/8 bg-white/[0.04] px-4 py-3 text-sm text-white/68">
+              {item}
+            </div>
+          ))}
+        </div>
       </div>
+      <h3 className="font-[family-name:var(--font-display)] text-2xl font-semibold tracking-[-0.05em] text-white">
+        {title}
+      </h3>
+      {caption ? <p className="mt-4 text-sm leading-7 text-white/66">{caption}</p> : null}
     </div>
   );
 }
