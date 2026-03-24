@@ -30,10 +30,7 @@ export default function ContactPage() {
               </div>
             </div>
             <div className="relative overflow-visible">
-              <div className="mb-4 flex items-center gap-3">
-                <span className="eyebrow">Relevant Model</span>
-                <span className="text-sm text-white/42">Satellite system</span>
-              </div>
+              
               <ContactSatellite />
             </div>
           </div>
