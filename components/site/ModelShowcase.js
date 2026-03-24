@@ -1,3 +1,6 @@
+import LottieVisual from "./LottieVisual";
+import { getLottiePath } from "./lottiePaths";
+
 const MODEL_STYLES = {
   earth: {
     badge: "Global Systems",
@@ -31,34 +34,11 @@ function getModelStyle(variant = "") {
 
 export default function ModelShowcase({ variant, title, caption, className = "", compact = false }) {
   const style = getModelStyle(variant);
+  const lottiePath = getLottiePath(variant);
 
   return (
     <div className={`surface-card outline-grid rounded-[32px] p-6 md:p-7 ${className}`}>
-      <div className="mb-6 flex items-center justify-between gap-4">
-        <span className="eyebrow">Relevant Model</span>
-        <span className="text-xs uppercase tracking-[0.18em] text-white/38">{style.badge}</span>
-      </div>
-      <div
-        className={`relative mb-6 overflow-hidden rounded-[28px] border border-white/8 ${compact ? "h-48" : "h-[340px]"} ${style.glow}`}
-      >
-        <div className="absolute inset-x-[14%] top-[14%] h-[34%] rounded-full bg-white/8 blur-3xl" />
-        <div className="absolute inset-x-10 bottom-8 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent" />
-        <div className="absolute left-8 top-8 rounded-full border border-white/10 bg-black/20 px-4 py-2 text-xs uppercase tracking-[0.18em] text-white/52">
-          Static visual
-        </div>
-        <div className="absolute inset-8 rounded-[24px] border border-white/8 bg-black/12" />
-        <div className="absolute bottom-8 left-8 right-8 grid gap-3 sm:grid-cols-3">
-          {["Clarity", "Reliability", "Relevance"].map((item) => (
-            <div key={item} className="rounded-[18px] border border-white/8 bg-white/[0.04] px-4 py-3 text-sm text-white/68">
-              {item}
-            </div>
-          ))}
-        </div>
-      </div>
-      <h3 className="font-[family-name:var(--font-display)] text-2xl font-semibold tracking-[-0.05em] text-white">
-        {title}
-      </h3>
-      {caption ? <p className="mt-4 text-sm leading-7 text-white/66">{caption}</p> : null}
+      <LottieVisual path={lottiePath} className="h-full w-full scale-[1.04]" />
     </div>
   );
 }

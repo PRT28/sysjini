@@ -21,7 +21,7 @@ export default function ServicesPage() {
     <main className="page-top-space">
       <section className="section-space-lg relative overflow-hidden">
         <div className="hero-orb hero-orb-primary left-[-6rem] top-12 h-72 w-72" />
-        <div className="site-shell grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="site-shell grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="space-y-7">
             <span className="eyebrow">Capabilities</span>
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(3rem,7vw,6rem)] font-semibold leading-[0.92] tracking-[-0.07em]">
@@ -43,7 +43,7 @@ export default function ServicesPage() {
             </div>
           </div>
           <ModelShowcase
-            variant="earth"
+            variant="station"
             title="Global delivery model"
             caption="The services overview uses the earth model to represent connected digital systems, reach, and multi-channel execution."
           />

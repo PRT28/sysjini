@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "googleapis": "^128.0.0",
+    "lottie-react": "^2.4.1",
     "next": "14.2.4",
     "nodemailer": "^6.9.8",
     "react": "^18",

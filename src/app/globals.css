@@ -328,6 +328,27 @@ textarea {
   min-height: 260px;
 }
 
+.lottie-shell,
+.lottie-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.lottie-shell svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.lottie-fallback {
+  background:
+    radial-gradient(circle at 32% 28%, rgba(138, 92, 245, 0.18), transparent 24%),
+    radial-gradient(circle at 70% 62%, rgba(255, 255, 255, 0.1), transparent 18%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
 .input-shell {
   width: 100%;
   border-radius: 1rem;

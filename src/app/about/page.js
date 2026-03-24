@@ -28,7 +28,7 @@ export default function AboutPage() {
   return (
     <main className="page-top-space">
       <section className="section-space-lg">
-        <div className="site-shell grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="site-shell grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="space-y-7">
             <span className="eyebrow">About Sysjini</span>
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(3rem,7vw,6rem)] font-semibold leading-[0.92] tracking-[-0.07em]">
@@ -55,7 +55,7 @@ export default function AboutPage() {
             </div>
           </div>
           <ModelShowcase
-            variant="intelligence"
+            variant="home"
             title="Strategic intelligence model"
             caption="The about page uses the brain hologram model to represent strategy, design thinking, and AI capability."
           />
