@@ -43,7 +43,7 @@ export default function Home() {
       <section className="relative overflow-visible pb-24 pt-14 md:pb-28 md:pt-10">
         <div className="hero-orb hero-orb-primary left-[-7rem] top-10 h-80 w-80" />
         <div className="hero-orb hero-orb-soft right-[-3rem] top-36 h-72 w-72" />
-        <div className="site-shell grid items-center gap-12 lg:grid-cols-[0.96fr_1.04fr]">
+        <div className="site-shell grid items-center gap-10 xl:gap-12 lg:grid-cols-[0.96fr_1.04fr]">
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="font-[family-name:var(--font-display)] text-[clamp(3.4rem,8vw,7rem)] font-semibold leading-[0.9] tracking-[-0.08em]">
@@ -54,24 +54,24 @@ export default function Home() {
                 for companies that need execution with polish and business relevance.
               </p>
             </div>
-            <div className="flex flex-wrap gap-4">
-              <a href="/contact" className="btn-primary">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+              <a href="/contact" className="btn-primary w-full sm:w-auto">
                 Start Your Project
               </a>
-              <a href="/services" className="btn-secondary">
+              <a href="/services" className="btn-secondary w-full sm:w-auto">
                 Explore Services
               </a>
             </div>
-            <div className="flex flex-wrap gap-3 text-sm text-white/56">
+            <div className="flex flex-wrap gap-3 text-xs text-white/56 sm:text-sm">
               {["Web & mobile products", "AI workflow automation", "Commerce and cloud systems"].map((item) => (
                 <span key={item} className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2">
                   {item}
                 </span>
               ))}
             </div>
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
               {highlights.map((item) => (
-                <div key={item.value} className="surface-card card-hover flex min-h-[220px] flex-col justify-between rounded-[26px] p-6">
+                <div key={item.value} className="surface-card card-hover flex min-h-[180px] flex-col justify-between rounded-[26px] p-5 sm:min-h-[220px] sm:p-6">
                   <div className="mb-5 h-px w-14 bg-gradient-to-r from-[#8A5CF5] to-transparent" />
                   <div className="font-[family-name:var(--font-display)] text-[clamp(1.9rem,3vw,2.85rem)] font-semibold leading-[0.94] tracking-[-0.06em] text-white">
                     {item.value}
@@ -81,18 +81,18 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="relative overflow-hidden rounded-[34px] border border-white/8 bg-[radial-gradient(circle_at_30%_18%,rgba(138,92,245,0.28),transparent_26%),radial-gradient(circle_at_80%_72%,rgba(138,92,245,0.18),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] p-7 shadow-[0_24px_70px_rgba(0,0,0,0.28)] min-h-[520px]">
-            <div className="absolute inset-x-10 top-10 h-40 rounded-full bg-[#8A5CF5]/18 blur-3xl" />
-            <div className="absolute right-[-4rem] top-20 h-72 w-72 rounded-full border border-white/8 bg-[radial-gradient(circle,rgba(255,255,255,0.16),rgba(138,92,245,0.1)_48%,transparent_74%)] blur-[2px]" />
-            <div className="relative flex h-full min-h-[460px] flex-col justify-between rounded-[28px] border border-white/8 bg-black/18 p-6 md:p-8">
-              <div className="flex items-start justify-between gap-4">
+          <div className="relative overflow-hidden rounded-[34px] border border-white/8 bg-[radial-gradient(circle_at_30%_18%,rgba(138,92,245,0.28),transparent_26%),radial-gradient(circle_at_80%_72%,rgba(138,92,245,0.18),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] p-5 shadow-[0_24px_70px_rgba(0,0,0,0.28)] sm:p-6 lg:p-7 lg:min-h-[520px]">
+            <div className="absolute inset-x-6 top-6 h-28 rounded-full bg-[#8A5CF5]/18 blur-3xl sm:inset-x-10 sm:top-10 sm:h-40" />
+            <div className="absolute right-[-4rem] top-20 hidden h-72 w-72 rounded-full border border-white/8 bg-[radial-gradient(circle,rgba(255,255,255,0.16),rgba(138,92,245,0.1)_48%,transparent_74%)] blur-[2px] sm:block" />
+            <div className="relative flex h-full min-h-[auto] flex-col justify-between rounded-[28px] border border-white/8 bg-black/18 p-5 sm:p-6 lg:min-h-[460px] lg:p-8">
+              <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div className="max-w-sm">
                   <div className="text-xs uppercase tracking-[0.22em] text-white/46">Delivery System</div>
-                  <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-[-0.05em] text-white">
+                  <h2 className="mt-3 font-[family-name:var(--font-display)] text-2xl font-semibold tracking-[-0.05em] text-white sm:text-3xl">
                     Strategy, interface, engineering, and launch quality in one flow.
                   </h2>
                 </div>
-                <div className="rounded-full border border-[#8A5CF5]/35 bg-[#8A5CF5]/12 px-4 py-2 text-xs uppercase tracking-[0.18em] text-[#c9b7ff]">
+                <div className="rounded-full border border-[#8A5CF5]/35 bg-[#8A5CF5]/12 px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-[#c9b7ff] sm:text-xs">
                   Static-first hero
                 </div>
               </div>
@@ -103,7 +103,7 @@ export default function Home() {
                   ["Cloud and commerce", "Infrastructure, reliability, and revenue-focused delivery."],
                   ["Senior execution", "Sharp design and engineering decisions without added process drag."],
                 ].map(([title, copy]) => (
-                  <div key={title} className="rounded-[24px] border border-white/8 bg-white/[0.04] p-5">
+                  <div key={title} className="rounded-[24px] border border-white/8 bg-white/[0.04] p-4 sm:p-5">
                     <div className="text-sm text-[#b99cff]">{title}</div>
                     <p className="mt-3 text-sm leading-7 text-white/66">{copy}</p>
                   </div>
@@ -242,7 +242,7 @@ export default function Home() {
           </div>
           <div className="surface-card outline-grid rounded-[32px] p-7 md:p-10">
             <span className="eyebrow">Start Here</span>
-            <h2 className="font-[family-name:var(--font-display)] mt-5 text-4xl font-semibold tracking-[-0.05em]">
+            <h2 className="font-[family-name:var(--font-display)] mt-5 text-3xl font-semibold tracking-[-0.05em] sm:text-4xl">
               Need a sharp website, app, or AI workflow?
             </h2>
             <p className="mt-4 text-white/66">
@@ -254,11 +254,11 @@ export default function Home() {
               <div className="rounded-[22px] border border-white/8 bg-black/20 p-4">AI automation and end-to-end solution design</div>
               <div className="rounded-[22px] border border-white/8 bg-black/20 p-4">Cloud, DevOps, commerce, and growth systems</div>
             </div>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a href="/contact" className="btn-primary">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+              <a href="/contact" className="btn-primary w-full sm:w-auto">
                 Book a Consultation
               </a>
-              <a href="tel:+917017197678" className="btn-secondary">
+              <a href="tel:+917017197678" className="btn-secondary w-full sm:w-auto">
                 Call Now
               </a>
             </div>

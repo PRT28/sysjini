@@ -16,11 +16,11 @@ export default function LandingPage() {
               This landing page is tuned for quick evaluation. It summarizes what Sysjini does, how the work is
               structured, and where the value sits across websites, apps, AI, commerce, and infrastructure.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <a href="/contact" className="btn-primary">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+              <a href="/contact" className="btn-primary w-full sm:w-auto">
                 Request a Proposal
               </a>
-              <a href="/services" className="btn-secondary">
+              <a href="/services" className="btn-secondary w-full sm:w-auto">
                 Review Services
               </a>
             </div>
@@ -34,7 +34,7 @@ export default function LandingPage() {
       </section>
 
       <section className="section-space">
-        <div className="site-shell grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="site-shell grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
           {services.map((service) => (
             <a key={service.href} href={service.href} className="surface-card rounded-[30px] p-7 transition hover:-translate-y-1">
               <div className="mb-3 text-xs uppercase tracking-[0.18em] text-white/42">{service.eyebrow}</div>

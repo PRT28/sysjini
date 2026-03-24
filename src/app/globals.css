@@ -54,11 +54,14 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
+  max-width: 100%;
   background: var(--site-background);
   color: var(--site-text);
   overflow-x: hidden;
@@ -115,6 +118,7 @@ textarea {
 .site-shell {
   width: min(calc(100% - 2rem), var(--site-max));
   margin: 0 auto;
+  min-width: 0;
 }
 
 .section-space {
@@ -349,6 +353,7 @@ textarea {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+  min-width: 0;
 }
 
 .tech-icon-card {
@@ -362,6 +367,7 @@ textarea {
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
   animation: tech-float 6s ease-in-out infinite;
   will-change: transform;
+  min-width: 0;
 }
 
 .tech-icon-card:hover {
@@ -391,7 +397,7 @@ textarea {
   bottom: 0.85rem;
   transform: translate(-50%, 0.55rem);
   opacity: 0;
-  white-space: nowrap;
+  max-width: calc(100% - 1rem);
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(10, 10, 11, 0.84);
@@ -400,9 +406,11 @@ textarea {
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.02em;
+  text-align: center;
   transition: transform 180ms ease, opacity 180ms ease;
 }
 
+.tech-icon-card:focus-within .tech-icon-label,
 .tech-icon-card:hover .tech-icon-label {
   opacity: 1;
   transform: translate(-50%, 0);
@@ -411,12 +419,14 @@ textarea {
 .timeline-grid {
   display: grid;
   gap: 1.25rem;
+  min-width: 0;
 }
 
 .timeline-item {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1rem;
+  min-width: 0;
 }
 
 .timeline-rail {
@@ -457,6 +467,7 @@ textarea {
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.03);
   padding: 1.4rem;
+  min-width: 0;
 }
 
 .timeline-card-icon {
@@ -548,6 +559,22 @@ textarea {
   }
 }
 
+@media (hover: none) {
+  .tech-icon-card {
+    min-height: 8.4rem;
+  }
+
+  .tech-icon-wrap {
+    min-height: 6rem;
+  }
+
+  .tech-icon-label {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    bottom: 0.75rem;
+  }
+}
+
 @supports (animation-timeline: view()) {
   .timeline-item {
     view-timeline-name: --timeline-step;
@@ -573,11 +600,11 @@ textarea {
 
 @media (min-width: 768px) {
   .tech-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .timeline-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.4rem;
   }
 
@@ -597,6 +624,64 @@ textarea {
     width: 100%;
     flex: 1;
     background: linear-gradient(90deg, rgba(138, 92, 245, 0.6), rgba(255, 255, 255, 0.08));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .site-shell {
+    width: min(calc(100% - 2.5rem), var(--site-max));
+  }
+
+  .section-space {
+    padding: 4.5rem 0;
+  }
+
+  .section-space-lg {
+    padding: 5.5rem 0;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .timeline-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .timeline-item {
+    grid-template-columns: auto 1fr;
+  }
+
+  .timeline-rail {
+    width: 3rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline-line {
+    min-height: 4rem;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(138, 92, 245, 0.6), rgba(255, 255, 255, 0.08));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  @supports (animation-timeline: view()) {
+    .timeline-line {
+      transform-origin: top center;
+      transform: scaleY(0);
+      animation-name: timeline-line-reveal-vertical;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .tech-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .timeline-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -620,7 +705,7 @@ textarea {
 
 .floating-button {
   position: fixed;
-  right: 1rem;
+  right: calc(env(safe-area-inset-right, 0px) + 1rem);
   z-index: 40;
   display: inline-flex;
   height: 3.35rem;
@@ -705,11 +790,11 @@ textarea {
 }
 
 .floating-button.whatsapp {
-  bottom: 1rem;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
 }
 
 .floating-button:not(.whatsapp) {
-  bottom: 5rem;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 5rem);
 }
 
 @media (max-width: 768px) {
@@ -725,21 +810,47 @@ textarea {
     padding-top: 6rem;
   }
 
+  .section-title {
+    font-size: clamp(1.9rem, 8vw, 2.8rem);
+  }
+
+  .site-shell {
+    width: min(calc(100% - 1.25rem), var(--site-max));
+  }
+
+  .tech-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .model-canvas {
     min-height: 240px;
+  }
+
+  .eyebrow {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+  }
+
+  .timeline-card {
+    padding: 1.2rem;
+  }
+
+  .timeline-card-title {
+    font-size: 1.3rem;
   }
 
   .floating-button {
     height: 3rem;
     width: 3rem;
-    right: 0.75rem;
+    right: calc(env(safe-area-inset-right, 0px) + 0.625rem);
   }
 
   .floating-button.whatsapp {
-    bottom: 0.75rem;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 0.75rem);
   }
 
   .floating-button:not(.whatsapp) {
-    bottom: 4.5rem;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 4.5rem);
   }
 }

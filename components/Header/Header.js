@@ -37,10 +37,10 @@ export default function Header() {
               priority
             />
             <div>
-              <div className="font-[family-name:var(--font-display)] text-lg font-semibold tracking-[-0.04em] text-white">
+              <div className="font-[family-name:var(--font-display)] text-base font-semibold tracking-[-0.04em] text-white sm:text-lg">
                 Sysjini
               </div>
-              <div className="text-xs uppercase tracking-[0.22em] text-white/45">Build. Scale. Automate.</div>
+              <div className="hidden text-xs uppercase tracking-[0.22em] text-white/45 sm:block">Build. Scale. Automate.</div>
             </div>
           </a>
 
